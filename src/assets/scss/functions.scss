@@ -1,0 +1,16 @@
+/// Ensures value keeps proportional to given screen height
+/// @access public
+/// @param {number} $sizeToCalculate
+/// @param {number} $screenHeight
+/// @returns {number} as vw
+@function to-proportion-height($sizeToCalculate, $screenHeight) {
+  @return #{$sizeToCalculate * 100 / $screenHeight}vh;
+}
+/// Ensures value keeps proportional to given screen width
+/// @access public
+/// @param {number} $sizeToCalculate
+/// @param {number} $screenWidth
+/// @returns {number} as vw
+@function to-proportion-width($sizeToCalculate, $screenWidth) {
+  @return #{$sizeToCalculate * 100 / $screenWidth}vw;
+}

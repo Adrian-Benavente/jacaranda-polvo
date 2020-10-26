@@ -1,28 +1,71 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheHeader />
+    <Home />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "@/views/Home";
+import TheHeader from "@/components/header/TheHeader";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TheHeader,
+    Home,
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+@font-face {
+  font-family: "bebas_neueregular";
+  src: url("./assets/fonts/bebasneue_regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/bebasneue_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "bebas_neuebold";
+  src: url("./assets/fonts/bebasneue_bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/bebasneue_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bebas: "bebas_neueregular", arial, sans-serif;
+  --bebas_bold: "bebas_neuebold", arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+/// If an element has this class, it will be hidden
+/// from user's eyes yet remaining accessible
+/// to assistive technologies.
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 </style>
