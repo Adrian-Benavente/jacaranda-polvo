@@ -2,7 +2,7 @@
   <section class="aldea" aria-labelledby="aldea">
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
-    <kinesis-container class="aldea__menu" active="false">
+    <kinesis-container class="aldea__menu">
       <kinesis-element
         :strength="5"
         aria-hidden="true"
@@ -63,11 +63,6 @@ import { KinesisContainer, KinesisElement } from "vue-kinesis";
 export default {
   name: "AldeaMain",
   components: { KinesisContainer, KinesisElement },
-  computed: {
-    isMobile() {
-      return window.matchMedia("(max-width: 400px)").matches;
-    }
-  },
   mounted() {
     this.$nextTick(() => {
       setTimeout(() => {
@@ -90,6 +85,12 @@ export default {
   bottom: 0;
   left: 0;
   margin: auto;
+}
+
+@media (max-width: 400px) {
+  * {
+    transform: none!important;
+  }
 }
 
 .aldea {
