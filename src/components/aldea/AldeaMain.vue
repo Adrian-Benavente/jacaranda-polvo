@@ -219,6 +219,9 @@ export default {
       //&:hover {
       //  transform: scale(1.1);
       //}
+      &:hover a {
+        transform: none!important;
+      }
     }
     &.explode .tv {
       top: -69%;
