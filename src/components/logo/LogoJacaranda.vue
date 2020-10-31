@@ -30,6 +30,8 @@ export default {
     display: block;
     height: fn.to-proportion-width(62, 1440);
     margin-right: 1rem;
+    min-height: 42px;
+    min-width: 42px;
     width: fn.to-proportion-width(62, 1440);
   }
 }
