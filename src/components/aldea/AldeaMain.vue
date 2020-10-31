@@ -4,7 +4,7 @@
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
       <kinesis-element
-        :strength="10"
+        :strength="5"
         aria-hidden="true"
         class="aldea__background"
       >
@@ -23,12 +23,12 @@
             </kinesis-element>
           </li>
           <li class="aldea__item teatro">
-            <kinesis-element :strength="5" tag="a" href="#teatro"
+            <kinesis-element tag="a" href="#teatro"
               ><span class="aldea__item-text">Teatro</span></kinesis-element
             >
           </li>
           <li class="aldea__item contenido">
-            <kinesis-element :strength="30" tag="a" href="#contenido"
+            <kinesis-element :strength="40" tag="a" href="#contenido"
               ><span class="aldea__item-text">Contenido</span></kinesis-element
             >
           </li>
@@ -43,12 +43,12 @@
             >
           </li>
           <li class="aldea__item sesiones">
-            <kinesis-element :strenth="50" tag="a" href="#sesiones"
+            <kinesis-element :strength="30" tag="a" href="#sesiones"
               ><span class="aldea__item-text">Sesiones</span></kinesis-element
             >
           </li>
           <li class="aldea__item cine">
-            <kinesis-element :strength="70" tag="a" href="#cine"
+            <kinesis-element :strength="60" tag="a" href="#cine"
               ><span class="aldea__item-text">Cine</span></kinesis-element
             >
           </li>
@@ -188,8 +188,8 @@ export default {
     &.cine {
       min-height: 65.4px;
       min-width: 65.394px;
-      height: fn.to-proportion-width(129, 1440);
-      width: fn.to-proportion-width(128.99, 1440);
+      height: fn.to-proportion-width(119, 1440);
+      width: fn.to-proportion-width(118.99, 1440);
       a {
         background-image: url("../../assets/img/aldea/cine.svg");
       }
@@ -277,8 +277,8 @@ export default {
     background-size: cover;
     filter: brightness(50%) grayscale(100%);
     position: absolute;
-    height: 150%;
-    width: 150%;
+    height: 100%;
+    width: 100%;
   }
   &__pyramid {
     @extend %middle;
