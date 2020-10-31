@@ -18,7 +18,7 @@
       <nav>
         <ul>
           <li class="aldea__item tv">
-            <kinesis-element :strength="30" tag="a" href="#tv">
+            <kinesis-element :strength="40" tag="a" href="#tv">
               <span class="aldea__item-text">Tv</span>
             </kinesis-element>
           </li>
@@ -48,7 +48,7 @@
             >
           </li>
           <li class="aldea__item cine">
-            <kinesis-element :strength="60" tag="a" href="#cine"
+            <kinesis-element :strength="70" tag="a" href="#cine"
               ><span class="aldea__item-text">Cine</span></kinesis-element
             >
           </li>
@@ -215,15 +215,15 @@ export default {
       //}
     }
     &.explode .tv {
-      top: -66%;
-      left: -45%;
+      top: -69%;
+      left: -30%;
       @media (min-width: 800px) {
         top: -65%;
         left: 0;
       }
     }
     &.explode .teatro {
-      top: -60%;
+      top: -70%;
       left: 30%;
       @media (min-width: 800px) {
         top: -45%;
@@ -231,16 +231,16 @@ export default {
       }
     }
     &.explode .contenido {
-      top: -35%;
-      left: 50%;
+      top: -30%;
+      left: 60%;
       @media (min-width: 800px) {
         top: 10%;
         left: 55%;
       }
     }
     &.explode .albums {
-      top: 10%;
-      left: 20%;
+      top: 40%;
+      left: 60%;
       @media (min-width: 800px) {
         top: 65%;
         left: 30%;
@@ -254,7 +254,7 @@ export default {
       }
     }
     &.explode .sesiones {
-      top: 32%;
+      top: 40%;
       left: -60%;
       @media (min-width: 800px) {
         top: 10%;
@@ -262,8 +262,8 @@ export default {
       }
     }
     &.explode .cine {
-      top: -48%;
-      left: -100%;
+      top: -30%;
+      left: -60%;
       @media (min-width: 800px) {
         top: -45%;
         left: -30%;
