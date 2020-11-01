@@ -10,8 +10,6 @@
       >
       </kinesis-element>
       <kinesis-element
-        type="depth_inv"
-        :strength="5"
         class="aldea__pyramid"
         aria-hidden="true"
       ></kinesis-element>
@@ -23,7 +21,7 @@
             </kinesis-element>
           </li>
           <li class="aldea__item teatro">
-            <kinesis-element tag="a" href="#teatro"
+            <kinesis-element :strength="15" tag="a" href="#teatro"
               ><span class="aldea__item-text">Teatro</span></kinesis-element
             >
           </li>
@@ -38,7 +36,7 @@
             >
           </li>
           <li class="aldea__item contacto">
-            <kinesis-element tag="a" href="#contacto"
+            <kinesis-element :strength="15" tag="a" href="#contacto"
               ><span class="aldea__item-text">Contacto</span></kinesis-element
             >
           </li>
@@ -89,7 +87,7 @@ export default {
 
 @media (max-width: 400px) {
   * {
-    transform: none!important;
+    transform: none !important;
   }
 }
 
@@ -126,7 +124,7 @@ export default {
       font-size: 1rem;
       text-align: center;
       text-transform: uppercase;
-      top: 100%
+      top: 100%;
     }
     @media (min-width: 800px) {
       &-text {
@@ -220,7 +218,7 @@ export default {
       //  transform: scale(1.1);
       //}
       &:hover a {
-        transform: none!important;
+        transform: none !important;
       }
     }
     &.explode .tv {
@@ -295,14 +293,16 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: fn.to-proportion-width(147.54, 1440);
-    min-height: 108px;
-    min-width: 300px;
+    height: 0;
     opacity: 0;
-    transition: opacity 1s linear, transform 1s cubic-bezier(0.23, 1, 0.32, 1) !important;
-    width: fn.to-proportion-width(440.72, 1440);
+    transition: opacity 1.5s linear, transform 1s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    width: 0;
     &.visible {
+      height: fn.to-proportion-width(147.54, 1440);
+      min-height: 108px;
+      min-width: 300px;
       opacity: 1;
+      width: fn.to-proportion-width(440.72, 1440);
     }
   }
 }
