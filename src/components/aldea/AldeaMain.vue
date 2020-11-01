@@ -18,7 +18,7 @@
       <nav>
         <ul>
           <li class="aldea__item tv">
-            <kinesis-element :strength="40" tag="a" href="#tv">
+            <kinesis-element :strength="30" tag="a" href="#tv">
               <span class="aldea__item-text">Tv</span>
             </kinesis-element>
           </li>
