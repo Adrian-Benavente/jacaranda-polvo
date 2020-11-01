@@ -214,12 +214,12 @@ export default {
     &.explode .aldea__item {
       opacity: 1;
       transform: scale(1);
-      //&:hover {
-      //  transform: scale(1.1);
-      //}
-      &:hover a {
-        transform: none !important;
+      &:hover {
+        transform: scale(1.1);
       }
+      //&:hover a {
+      //  transform: none !important;
+      //}
     }
     &.explode .tv {
       top: -69%;
