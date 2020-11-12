@@ -6,6 +6,7 @@
 @function to-proportion-height($sizeToCalculate, $screenHeight) {
   @return #{$sizeToCalculate * 100 / $screenHeight}vh;
 }
+
 /// Ensures value keeps proportional to given screen width
 /// @access public
 /// @param {number} $sizeToCalculate
@@ -13,4 +14,8 @@
 /// @returns {number} as vw
 @function to-proportion-width($sizeToCalculate, $screenWidth) {
   @return #{$sizeToCalculate * 100 / $screenWidth}vw;
+}
+
+@function to-rem($value) {
+  @return #{$value / 16}rem;
 }

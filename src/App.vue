@@ -27,7 +27,6 @@ export default {
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "bebas_neuebold";
   src: url("./assets/fonts/bebasneue_bold-webfont.woff2") format("woff2"),
@@ -36,10 +35,28 @@ export default {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "montserrat";
+  src: url("./assets/fonts/montserrat-regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "montserratbold";
+  src: url("./assets/fonts/montserrat-bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bebas: "bebas_neueregular", arial, sans-serif;
-  --bebas_bold: "bebas_neuebold", arial, sans-serif;
+  --bebas-bold: "bebas_neuebold", arial, sans-serif;
+  --montserrat: "montserrat", arial, sans-serif;
+  --montserrat-bold: "montserratbold", arial, sans-serif;
 }
 
 * {
@@ -54,6 +71,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+body {
+  background-color: black;
 }
 
 /// If an element has this class, it will be hidden

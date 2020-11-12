@@ -6841,6 +6841,11 @@ relateurl@0.2.x:
   resolved "https://registry.npm.taobao.org/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
+rellax@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/rellax/-/rellax-1.12.1.tgz#1b433ef7ac4aa3573449a33efab391c112f6b34d"
+  integrity sha512-XBIi0CDpW5FLTujYjYBn1CIbK2CJL6TsAg/w409KghP2LucjjzBjsujXDAjyBLWgsfupfUcL5WzdnIPcGfK7XA==
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/remove-trailing-separator/download/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -7086,6 +7091,11 @@ schema-utils@^3.0.0:
     "@types/json-schema" "^7.0.6"
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
+
+scroll-out@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/scroll-out/-/scroll-out-2.2.12.tgz#6b092e24fd726e73b81cd10519b4769d648c07b6"
+  integrity sha512-BPWQJat8mmcjQCq+l4DsibBopkmQQb5ngPJ6T9XRxRl86/LJo7V+0d3Sjd9fxzIJkZmkjoGxEAam+Urvem8VRw==
 
 select-hose@^2.0.0:
   version "2.0.0"
@@ -8201,6 +8211,11 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-parallaxy@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-parallaxy/-/vue-parallaxy-1.1.1.tgz#2f6037f7bffa4b4ca71759924090eca581f5f459"
+  integrity sha512-qZiVpfyRes6Z0Q0DJnsos1WlV7eY478Ek+/s/6CkX67OGCIV5M16X4stQ1AccaEdKvSk+iw8jmfpM/5c6PEFDQ==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"

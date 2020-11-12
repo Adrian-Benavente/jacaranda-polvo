@@ -58,6 +58,7 @@
 
 <script>
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+
 export default {
   name: "AldeaMain",
   components: { KinesisContainer, KinesisElement },
@@ -76,14 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../../assets/scss/functions" as fn;
-%middle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
+@use "../../assets/scss/placeholders";
 
 @media (max-width: 400px) {
   * {
@@ -93,7 +87,7 @@ export default {
 
 .aldea {
   background-color: black;
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   color: aliceblue;
   overflow: hidden;
@@ -116,6 +110,9 @@ export default {
       height: 100%;
       text-decoration: none;
       width: 100%;
+      &:hover {
+        filter: drop-shadow(0 0 3px gold);
+      }
     }
     &-text {
       @extend %middle;
@@ -124,7 +121,10 @@ export default {
       font-size: 1rem;
       text-align: center;
       text-transform: uppercase;
-      top: 100%;
+      top: 110%;
+      @media (min-width: 1440px) {
+        font-size: fn.to-proportion-width(15, 1440);
+      }
     }
     @media (min-width: 800px) {
       &-text {
@@ -215,11 +215,9 @@ export default {
       opacity: 1;
       transform: scale(1);
       &:hover {
+        transition-duration: 0.3s;
         transform: scale(1.1);
       }
-      //&:hover a {
-      //  transform: none !important;
-      //}
     }
     &.explode .tv {
       top: -69%;

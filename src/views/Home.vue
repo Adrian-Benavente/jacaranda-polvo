@@ -1,14 +1,19 @@
 <template>
   <div>
-    <AldeaMain/>
+    <AldeaMain />
+    <Welcome />
+    <Cine />
   </div>
 </template>
 
 <script>
 import AldeaMain from "@/components/aldea/AldeaMain";
+import Welcome from "@/components/welcome/Welcome";
+import Cine from "@/components/cine/Cine";
+
 export default {
   name: "Home",
-  components: { AldeaMain },
+  components: { Cine, Welcome, AldeaMain },
 };
 </script>
 
