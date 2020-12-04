@@ -72,8 +72,7 @@ export default {
   .stroke {
     animation: none;
     background-color: var(--color-hero);
-    border: 1px solid var(--color-hero);
-    height: 1px;
+    height: 0.8px;
     margin: 0;
     width: 5px;
 
