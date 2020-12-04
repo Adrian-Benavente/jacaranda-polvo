@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Home from "@/views/Home";
-import TheHeader from "@/components/header/TheHeader";
+import Home from '@/views/Home';
+import TheHeader from '@/components/header/TheHeader';
 
 export default {
   name: "App",
@@ -43,10 +43,38 @@ export default {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "montserratbold";
   src: url("./assets/fonts/montserrat-bold-webfont.woff2") format("woff2"),
     url("./assets/fonts/montserrat-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("./assets/fonts/roboto-regular-webfont.woff2"),
+    url("./assets/fonts/roboto-regular-webfont.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotomedium";
+  src: url("./assets/fonts/roboto-medium-webfont.woff2"),
+    url("./assets/fonts/roboto-medium-webfont.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robotobold";
+  src: url("./assets/fonts/roboto-bold-webfont.woff2"),
+    url("./assets/fonts/roboto-bold-webfont.woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -57,6 +85,11 @@ export default {
   --bebas-bold: "bebas_neuebold", arial, sans-serif;
   --montserrat: "montserrat", arial, sans-serif;
   --montserrat-bold: "montserratbold", arial, sans-serif;
+  --roboto: "roboto", arial, sans-serif;
+  --roboto-medium: "robotomedium", arial, sans-serif;
+  --roboto-bold: "robotobold", arial, sans-serif;
+
+  --color-hero: #efbb53;
 }
 
 * {

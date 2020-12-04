@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import ScrollOut from "scroll-out";
-import Parallax from "vue-parallaxy";
-import SectionTitle from "@/components/lib/SectionTitle";
+import ScrollOut from 'scroll-out';
+import Parallax from 'vue-parallaxy';
+import SectionTitle from '@/components/lib/SectionTitle';
 
 export default {
   name: "Cine",
@@ -77,11 +77,9 @@ export default {
 
 <style lang="scss" module>
 @use "../../assets/scss/functions" as fn;
-@use "../../assets/scss/mixins" as mx;
 @use "../../assets/scss/placeholders";
 
 .container {
-  @include mx.fade-in-out;
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -108,6 +106,18 @@ export default {
   height: 2em;
   text-decoration: none;
   width: max-content;
+
+  &[data-scroll] {
+    transition: opacity 1s;
+  }
+
+  &[data-scroll="in"] {
+    opacity: 1;
+  }
+
+  &[data-scroll="out"] {
+    opacity: 0;
+  }
 }
 .linkTitle {
   align-items: center;
