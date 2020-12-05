@@ -35,9 +35,6 @@ export default {
     opacity: false,
   }),
   methods: {
-    changeOpacity() {
-      this.opacity = this.scrollPastHero();
-    },
     scrollPastHero() {
       return window.pageYOffset >= window.innerHeight;
     },
@@ -45,8 +42,13 @@ export default {
   mounted() {
     this.visible = this.scrollPastHero();
     window.addEventListener("scroll", () => {
-      this.visible = this.scrollPastHero();
-      setTimeout(this.changeOpacity, 300);
+      if (this.scrollPastHero()) {
+        this.visible = this.scrollPastHero();
+        setTimeout(() => (this.opacity = this.scrollPastHero()), 300);
+      } else {
+        this.opacity = this.scrollPastHero();
+        setTimeout(() => (this.visible = this.scrollPastHero()), 300);
+      }
     });
   },
 };
@@ -72,11 +74,9 @@ export default {
   margin-right: fn.to-proportion-width(30, 1440);
   opacity: 0;
   transition: opacity 0.5s;
-
   &.visible {
     display: flex;
   }
-
   &.opacity {
     opacity: 1;
     transition: opacity 0.5s;

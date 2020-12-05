@@ -1,7 +1,13 @@
 <template>
   <section :class="$style.container" aria-labelledby="cine">
     <parallax fixed direction="down" :sectionHeight="100">
-      <div :class="[$style.background, $style[currentMovie.slug]]"></div>
+      <div
+        :class="[
+          $style.background,
+          $style[currentMovie.slug],
+          currentMovie.overlay && $style.overlay,
+        ]"
+      ></div>
     </parallax>
     <a
       href="https://www.youtube.com/playlist?list=PLundnWmdl9_9y27zBPe6n6ymI4Jm9GRtm"
@@ -45,16 +51,19 @@ export default {
         id: 1,
         title: "La tierra que arde",
         slug: "la-tierra-que-arde",
+        overlay: true,
       },
       {
         id: 2,
         title: "Chacabuco",
         slug: "chacabuco",
+        overlay: false,
       },
       {
         id: 3,
         title: "El atentado",
         slug: "el-atentado",
+        overlay: false,
       },
     ],
     active: 1,
@@ -67,6 +76,9 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
+      onShown(el) {
+        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000);
+      },
     });
   },
   destroyed() {
@@ -93,6 +105,17 @@ export default {
 }
 .la-tierra-que-arde {
   background-image: url("../../assets/img/cine/la-tierra-que-arde/background.jpg");
+}
+.overlay {
+  position: absolute;
+  &::before {
+    background-color: rgba(black, 0.2);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
 }
 .chacabuco {
   background-image: url("../../assets/img/cine/chacabuco/background.jpg");
@@ -141,7 +164,6 @@ export default {
 }
 .controls {
   align-items: center;
-  background-color: black;
   bottom: 0;
   right: 0;
   display: flex;
@@ -155,8 +177,9 @@ export default {
   }
 }
 .arrow {
+  backdrop-filter: blur(5px);
   background: {
-    color: black;
+    color: rgba(black, 0.8);
     image: url("../../assets/img/lib/chevron.svg");
     position: center;
     repeat: no-repeat;

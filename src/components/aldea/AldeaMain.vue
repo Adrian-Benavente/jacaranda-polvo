@@ -3,12 +3,12 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-      <kinesis-element
-        :strength="5"
-        aria-hidden="true"
-        class="aldea__background"
-      >
-      </kinesis-element>
+<!--      <kinesis-element-->
+<!--        :strength="5"-->
+<!--        aria-hidden="true"-->
+<!--        class="aldea__background"-->
+<!--      >-->
+<!--      </kinesis-element>-->
       <kinesis-element
         class="aldea__pyramid"
         aria-hidden="true"
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 
 export default {
   name: "AldeaMain",
@@ -86,8 +86,7 @@ export default {
 }
 
 .aldea {
-  background-color: black;
-  height: 105vh;
+  height: 100vh;
   width: 100%;
   color: aliceblue;
   overflow: hidden;
