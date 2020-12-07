@@ -39,7 +39,7 @@ export default {
         if (index >= this.arrLetters.length) index = 0;
         this.letter = this.arrLetters[index];
         index++;
-      }, 2000);
+      }, 1000);
     },
   },
   mounted() {

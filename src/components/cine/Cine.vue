@@ -1,35 +1,32 @@
 <template>
   <section :class="$style.container" aria-labelledby="cine">
-    <parallax fixed direction="down" :sectionHeight="100">
-      <div
-        :class="[
-          $style.background,
-          $style[currentMovie.slug],
-          currentMovie.overlay && $style.overlay,
-        ]"
-      ></div>
-    </parallax>
+    <div
+      :class="[
+        $style.background,
+        $style[currentMovie.slug],
+        currentMovie.overlay && $style.overlay,
+      ]"
+    ></div>
     <a
       href="https://www.youtube.com/playlist?list=PLundnWmdl9_9y27zBPe6n6ymI4Jm9GRtm"
       target="_blank"
       :class="$style.link"
       data-scroll
     >
-      <span class="sr-only">Reproudcir</span>
       <span :class="$style.linkTitle">{{ currentMovie.title }}</span>
       <span :class="$style.viewMore">Ver más</span>
     </a>
-    <SectionTitle :title-text="'cine'" />
+    <SectionTitle :title-text="'cine'" :title-appears="titleAppears" />
     <div :class="$style.controls">
       <button
         :class="[$style.arrow, $style.prev]"
-        @click="active > 1 && active--"
+        @click="active > 0 ? active-- : (active = movies.length - 1)"
       >
         <span class="sr-only">Anterior</span>
       </button>
       <button
         :class="[$style.arrow, $style.next]"
-        @click="active < movies.length && active++"
+        @click="active < movies.length - 1 ? active++ : (active = 0)"
       >
         <span class="sr-only">Siguiente</span>
       </button>
@@ -39,34 +36,35 @@
 
 <script>
 import ScrollOut from 'scroll-out';
-import Parallax from 'vue-parallaxy';
 import SectionTitle from '@/components/lib/SectionTitle';
 
 export default {
   name: "Cine",
-  components: { SectionTitle, Parallax },
+  components: { SectionTitle },
   data: () => ({
+    titleAppears: false,
     movies: [
       {
-        id: 1,
+        id: 0,
         title: "La tierra que arde",
         slug: "la-tierra-que-arde",
         overlay: true,
       },
       {
-        id: 2,
+        id: 1,
         title: "Chacabuco",
         slug: "chacabuco",
         overlay: false,
       },
       {
-        id: 3,
+        id: 2,
         title: "El atentado",
         slug: "el-atentado",
         overlay: false,
       },
     ],
-    active: 1,
+    active: 0,
+    interval: null,
   }),
   computed: {
     currentMovie() {
@@ -76,8 +74,19 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
-      onShown(el) {
-        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000);
+      onShown: () => {
+        setTimeout(() => (this.titleAppears = true), 500);
+
+        let index = 0;
+        this.interval = setInterval(() => {
+          if (index >= this.movies.length) index = 0;
+          this.active = this.movies[index].id;
+          index++;
+        }, 5000);
+      },
+      onHidden: () => {
+        this.titleAppears = false;
+        clearInterval(this.interval);
       },
     });
   },
@@ -97,8 +106,12 @@ export default {
   overflow: hidden;
 }
 .background {
-  background-color: black;
-  background-size: cover;
+  background: {
+    attachment: fixed;
+    color: black;
+    position: center;
+    size: cover;
+  }
   height: 100%;
   transition: background-image 0.5s;
   width: 100%;
@@ -109,7 +122,7 @@ export default {
 .overlay {
   position: absolute;
   &::before {
-    background-color: rgba(black, 0.2);
+    background-color: rgba(black, 0.3);
     content: "";
     display: block;
     height: 100%;
@@ -184,7 +197,7 @@ export default {
     position: center;
     repeat: no-repeat;
   }
-  border: none;
+  border: 0;
   cursor: pointer;
   height: 100%;
   width: 100%;

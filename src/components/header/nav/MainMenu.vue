@@ -46,7 +46,7 @@ export default {
     font-size: 0.875rem;
     color: white;
     display: block;
-    margin-left: fn.to-rem(24);
+    margin-left: fn.to-rem(8);
     text-decoration: none;
     text-transform: uppercase;
   }
