@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="$style.logo" id="logo">
+  <h1 :class="[$style.logo, webp && $style.webp]" id="logo">
     <span :class="[$style.text, wrap && $style.wrapped]">Jacarandá Polvo</span>
   </h1>
 </template>
@@ -9,8 +9,11 @@ export default {
   name: "LogoJacaranda",
   data: () => ({
     wrap: false,
+    webp: false,
   }),
   mounted() {
+    this.webp = document.documentElement.classList.contains("webp");
+    console.log(this.webp);
     window.addEventListener("scroll", () => {
       this.wrap = window.pageYOffset >= window.innerHeight;
     });
@@ -54,6 +57,11 @@ export default {
   &.wrapped {
     opacity: 0;
     text-indent: -200px;
+  }
+}
+.logo.webp {
+  &::before {
+    background-image: url("../../assets/img/logo/arbol.webp");
   }
 }
 </style>
