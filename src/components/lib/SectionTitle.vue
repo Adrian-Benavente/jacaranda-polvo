@@ -1,7 +1,7 @@
 <template>
   <header :class="[$style.container, titleAppears && $style.appear]">
     <h2
-      :id="titleText.toString()"
+      :id="titleText.toString().trim()"
       :aria-label="titleText.toString()"
       :class="$style.title"
     >

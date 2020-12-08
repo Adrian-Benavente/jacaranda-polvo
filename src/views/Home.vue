@@ -5,7 +5,7 @@
       <Welcome />
     </div>
     <Cine />
-    <Teatro />
+    <Television />
   </div>
 </template>
 
@@ -13,11 +13,11 @@
 import AldeaMain from '@/components/aldea/AldeaMain';
 import Welcome from '@/components/welcome/Welcome';
 import Cine from '@/components/cine/Cine';
-import Teatro from '@/components/teatro/Teatro';
+import Television from '@/components/tv/Television';
 
 export default {
   name: "Home",
-  components: {Teatro, Cine, Welcome, AldeaMain },
+  components: { Television, Cine, Welcome, AldeaMain },
 };
 </script>
 

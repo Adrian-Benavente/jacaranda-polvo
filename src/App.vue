@@ -110,9 +110,12 @@ body {
   background-color: black;
 }
 
-/// If an element has this class, it will be hidden
-/// from user's eyes yet remaining accessible
-/// to assistive technologies.
+a {
+  color: var(--color-hero);
+  text-decoration: none;
+}
+
+/// a11y
 .sr-only {
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
