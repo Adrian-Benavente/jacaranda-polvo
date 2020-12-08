@@ -69,11 +69,6 @@ export default {
       },
     ],
   }),
-  computed: {
-    currentITem() {
-      return this.videos.find((el) => el.id === this.active);
-    },
-  },
   methods: {
     hoverVideo() {
       const arrItems = [
