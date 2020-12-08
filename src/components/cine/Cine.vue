@@ -8,13 +8,15 @@
       ]"
     ></div>
     <a
-      href="https://www.youtube.com/playlist?list=PLundnWmdl9_9y27zBPe6n6ymI4Jm9GRtm"
+      :href="`/cine/${currentMovie.slug}`"
       target="_blank"
       :class="$style.link"
       data-scroll
     >
-      <span :class="$style.linkTitle">{{ currentMovie.title }}</span>
-      <span :class="$style.viewMore">Ver más</span>
+      <div>
+        <span :class="$style.linkTitle">{{ currentMovie.title }}</span>
+        <span :class="$style.viewMore">Ver más</span>
+      </div>
     </a>
     <SectionTitle :title-text="'cine'" :title-appears="titleAppears" />
     <div :class="$style.controls">
@@ -138,10 +140,12 @@ export default {
 }
 .link {
   @extend %middle;
-  display: block;
-  height: 2em;
+  align-items: center;
+  display: grid;
+  height: 100%;
+  justify-items: center;
   text-decoration: none;
-  width: max-content;
+  width: 100%;
 
   &[data-scroll] {
     transition: opacity 1s;
