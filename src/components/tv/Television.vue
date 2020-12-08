@@ -147,6 +147,7 @@ export default {
           position: fixed;
           top: 0;
           width: 314px;
+          z-index: -1;
         }
         &:hover {
           video {
@@ -157,12 +158,16 @@ export default {
       dt {
         color: white;
         font: fn.to-rem(45) var(--bebas);
+        position: relative;
         text-transform: uppercase;
+        z-index: 3;
       }
       dd {
         font: fn.to-rem(25) / 200% var(--montserrat);
         padding-right: 3rem;
+        position: relative;
         transition: color 0.3s;
+        z-index: 2;
         &:not(:hover) {
           color: white;
         }
