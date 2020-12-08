@@ -145,6 +145,19 @@ export default {
       }
       @media (min-width: 768px) {
         grid-template-columns: 2fr 3fr;
+        video {
+          display: none;
+          height: 200px;
+          left: 0;
+          position: fixed;
+          top: 0;
+          width: 314px;
+        }
+        &:hover {
+          video {
+            display: block;
+          }
+        }
       }
       dt {
         color: white;
@@ -157,19 +170,6 @@ export default {
         transition: color 0.3s;
         &:not(:hover) {
           color: white;
-        }
-      }
-      video {
-        display: none;
-        height: 200px;
-        left: 0;
-        position: fixed;
-        top: 0;
-        width: 314px;
-      }
-      &:hover {
-        video {
-          display: block;
         }
       }
     }
