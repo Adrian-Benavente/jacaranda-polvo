@@ -20,16 +20,10 @@
     </a>
     <SectionTitle :title-text="'cine'" :title-appears="titleAppears" />
     <div :class="$style.controls">
-      <button
-        :class="[$style.arrow, $style.prev]"
-        @click="active > 0 ? active-- : (active = movies.length - 1)"
-      >
+      <button :class="[$style.arrow, $style.prev]" @click="movePrev">
         <span class="sr-only">Anterior</span>
       </button>
-      <button
-        :class="[$style.arrow, $style.next]"
-        @click="active < movies.length - 1 ? active++ : (active = 0)"
-      >
+      <button :class="[$style.arrow, $style.next]" @click="moveNext">
         <span class="sr-only">Siguiente</span>
       </button>
     </div>
@@ -71,6 +65,18 @@ export default {
   computed: {
     currentMovie() {
       return this.movies.find((el) => el.id === this.active);
+    },
+  },
+  methods: {
+    movePrev() {
+      return this.active > 0
+        ? this.active--
+        : (this.active = this.movies.length - 1);
+    },
+    moveNext() {
+      return this.active < this.movies.length - 1
+        ? this.active++
+        : (this.active = 0);
     },
   },
   mounted() {
