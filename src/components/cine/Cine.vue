@@ -171,6 +171,7 @@ export default {
   flex-direction: column;
   color: white;
   font: #{fn.to-rem(32)} var(--bebas);
+  letter-spacing: fn.to-rem(1.5);
   margin-bottom: 0.25em;
   text-align: center;
   @media (min-width: 1440px) {

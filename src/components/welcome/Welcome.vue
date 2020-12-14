@@ -3,11 +3,9 @@
     <div data-scroll>
       <p :class="$style.text">
         Desde 2010 en Jacarandá Polvo nos dedicamos a la producción musical para
-        artistas y proyectos en diversas plataformas.
-      </p>
-      <p :class="$style.text">
-        Componemos, grabamos y editamos música para Cine, Tv y Teatro.
-        Realizamos contenido audiovisual original.
+        artistas y proyectos en diversas plataformas. Componemos, grabamos y
+        editamos música para Cine, Tv y Teatro. Realizamos contenido audiovisual
+        original.
       </p>
       <p :class="$style.text">
         Si tenés una idea o un proyecto no dudes en consultarnos.
