@@ -6,6 +6,7 @@
     </div>
     <Cine />
     <Television />
+    <Albums />
   </div>
 </template>
 
@@ -14,10 +15,11 @@ import AldeaMain from '@/components/aldea/AldeaMain';
 import Welcome from '@/components/welcome/Welcome';
 import Cine from '@/components/cine/Cine';
 import Television from '@/components/tv/Television';
+import Albums from '@/components/albums/Albums';
 
 export default {
   name: "Home",
-  components: { Television, Cine, Welcome, AldeaMain },
+  components: { Albums, Television, Cine, Welcome, AldeaMain },
 };
 </script>
 

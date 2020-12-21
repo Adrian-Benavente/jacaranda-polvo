@@ -3,12 +3,6 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-<!--      <kinesis-element-->
-<!--        :strength="5"-->
-<!--        aria-hidden="true"-->
-<!--        class="aldea__background"-->
-<!--      >-->
-<!--      </kinesis-element>-->
       <kinesis-element
         class="aldea__pyramid"
         aria-hidden="true"
@@ -16,37 +10,37 @@
       <nav>
         <ul>
           <li class="aldea__item tv">
-            <kinesis-element :strength="30" tag="a" href="#tv">
+            <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text">Tv</span>
             </kinesis-element>
           </li>
           <li class="aldea__item teatro">
-            <kinesis-element :strength="15" tag="a" href="#teatro"
+            <kinesis-element :strength="15" tag="a" href="#section-teatro"
               ><span class="aldea__item-text">Teatro</span></kinesis-element
             >
           </li>
           <li class="aldea__item contenido">
-            <kinesis-element :strength="40" tag="a" href="#contenido"
+            <kinesis-element :strength="40" tag="a" href="#section-contenido"
               ><span class="aldea__item-text">Contenido</span></kinesis-element
             >
           </li>
           <li class="aldea__item albums">
-            <kinesis-element :strength="80" tag="a" href="#albums"
+            <kinesis-element :strength="80" tag="a" href="#section-albums"
               ><span class="aldea__item-text">Albums</span></kinesis-element
             >
           </li>
           <li class="aldea__item contacto">
-            <kinesis-element :strength="15" tag="a" href="#contacto"
+            <kinesis-element :strength="15" tag="a" href="#section-contacto"
               ><span class="aldea__item-text">Contacto</span></kinesis-element
             >
           </li>
           <li class="aldea__item sesiones">
-            <kinesis-element :strength="30" tag="a" href="#sesiones"
+            <kinesis-element :strength="30" tag="a" href="#section-sesiones"
               ><span class="aldea__item-text">Sesiones</span></kinesis-element
             >
           </li>
           <li class="aldea__item cine">
-            <kinesis-element :strength="70" tag="a" href="#cine"
+            <kinesis-element :strength="70" tag="a" href="#section-cine"
               ><span class="aldea__item-text">Cine</span></kinesis-element
             >
           </li>

@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.container" aria-labelledby="tv">
+  <section id="section-tv" :class="$style.container" aria-labelledby="tv">
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
@@ -51,14 +51,14 @@ export default {
         id: 1,
         title: "Música Original para TV",
         slug: "musica-original-tv",
-        synopsis: `<p>Composición y Grabación de canciones originales con Registro en SADAIC / DNDA / AADI.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
+        synopsis: `<p>Composición y Grabación de canciones originales.</p><p>Registro en SADAIC / DNDA / AADI.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
         file: require("../../assets/video/tv/02-musica-original-tv.mp4"),
       },
       {
         id: 2,
         title: "Sonido directo",
         slug: "sonido-directo",
-        synopsis: `<p>Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales.</p><p>Edición y Post Producción. Remax Encuesta, Argentina.</p>`,
+        synopsis: `<p>Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales. Edición y Post Producción. </p><p>Remax Encuesta, Argentina.</p>`,
         file: require("../../assets/video/tv/03-sonido-directo.mp4"),
       },
     ],
@@ -151,22 +151,28 @@ export default {
       }
       dt {
         color: white;
-        font: fn.to-rem(45) var(--bebas);
+        font: fn.to-rem(30) var(--bebas);
         position: relative;
         text-transform: uppercase;
         z-index: 3;
+        @media (min-width: 1920px) {
+          font-size: fn.to-proportion-width(30, 1440);
+        }
         .slash {
           margin-right: 2rem;
         }
       }
       dd {
-        font: fn.to-rem(25) / 200% var(--montserrat);
+        font: fn.to-rem(14) / 130% var(--montserrat);
         padding-right: 3rem;
         position: relative;
         transition: color 0.3s;
         z-index: 2;
         &:not(:hover) {
           color: white;
+        }
+        @media (min-width: 1920px) {
+          font-size: fn.to-proportion-width(14, 1440);
         }
       }
     }

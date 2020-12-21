@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.container" aria-labelledby="cine">
+  <section id="section-cine" :class="$style.container" aria-labelledby="cine">
     <div
       :class="[
         $style.background,
@@ -19,24 +19,18 @@
       </div>
     </a>
     <SectionTitle :title-text="'cine'" :title-appears="titleAppears" />
-    <div :class="$style.controls">
-      <button :class="[$style.arrow, $style.prev]" @click="movePrev">
-        <span class="sr-only">Anterior</span>
-      </button>
-      <button :class="[$style.arrow, $style.next]" @click="moveNext">
-        <span class="sr-only">Siguiente</span>
-      </button>
-    </div>
+    <CarouselControls @move-prev="movePrev" @move-next="moveNext" />
   </section>
 </template>
 
 <script>
 import ScrollOut from 'scroll-out';
 import SectionTitle from '@/components/lib/SectionTitle';
+import CarouselControls from '@/components/lib/CarouselControls';
 
 export default {
   name: "Cine",
-  components: { SectionTitle },
+  components: { CarouselControls, SectionTitle },
   data: () => ({
     titleAppears: false,
     movies: [
@@ -69,14 +63,26 @@ export default {
   },
   methods: {
     movePrev() {
+      clearInterval(this.interval);
+      console.log(this.active);
+      this.autoSlides(this.active);
       return this.active > 0
         ? this.active--
         : (this.active = this.movies.length - 1);
     },
     moveNext() {
+      clearInterval(this.interval);
+      this.autoSlides(this.active + 1);
       return this.active < this.movies.length - 1
         ? this.active++
         : (this.active = 0);
+    },
+    autoSlides(index) {
+      this.interval = setInterval(() => {
+        if (index >= this.movies.length) index = 0;
+        this.active = this.movies[index].id;
+        index++;
+      }, 5000);
     },
   },
   mounted() {
@@ -84,13 +90,7 @@ export default {
       scope: this.$el,
       onShown: () => {
         setTimeout(() => (this.titleAppears = true), 500);
-
-        let index = 0;
-        this.interval = setInterval(() => {
-          if (index >= this.movies.length) index = 0;
-          this.active = this.movies[index].id;
-          index++;
-        }, 5000);
+        this.autoSlides(this.active);
       },
       onHidden: () => {
         this.titleAppears = false;
@@ -185,42 +185,5 @@ export default {
 .linkTitle,
 .viewMore {
   text-shadow: 0 0 3px rgba(black, 0.6);
-}
-.controls {
-  align-items: center;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  width: 7rem;
-  height: 3rem;
-  @media (min-width: 768px) {
-    height: fn.to-proportion-width(91, 1440);
-    width: fn.to-proportion-width(198, 1440);
-  }
-}
-.arrow {
-  backdrop-filter: blur(5px);
-  background: {
-    color: rgba(black, 0.8);
-    image: url("../../assets/img/lib/chevron.svg");
-    position: center;
-    repeat: no-repeat;
-  }
-  border: 0;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  @media (min-width: 1440px) {
-    background-size: fn.to-proportion-width(9.7, 1440)
-      fn.to-proportion-width(20.37, 1440);
-  }
-  &:focus {
-    outline: 0;
-  }
-}
-.next {
-  transform: rotate(180deg);
 }
 </style>
