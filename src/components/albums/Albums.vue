@@ -23,13 +23,13 @@
         </div>
         <div :class="$style.right">
           <div :class="$style.carouselContent">
-            <img
-              :class="$style.carouselImage"
-              :src="
-                require(`@/assets/img/albums/${currentAlbum.path}/cover.jpg`)
-              "
-              :alt="currentAlbum.title"
-            />
+            <a
+              href="#"
+              :class="$style.carouselLink"
+              :style="{ backgroundImage: `url('${currentAlbum.cover}')` }"
+            >
+              <span class="sr-only">{{ currentAlbum.title }}</span>
+            </a>
             <CarouselControls
               @move-prev="movePrev"
               @move-next="moveNext"
@@ -45,10 +45,10 @@
 </template>
 
 <script>
-import ScrollOut from 'scroll-out';
-import SectionTitle from '@/components/lib/SectionTitle';
-import CarouselControls from '@/components/lib/CarouselControls';
-import { albumList } from '@/components/albums/data-albums';
+import ScrollOut from "scroll-out";
+import SectionTitle from "@/components/lib/SectionTitle";
+import CarouselControls from "@/components/lib/CarouselControls";
+import { albumList } from "@/components/albums/data-albums";
 
 export default {
   name: "Albums",
@@ -60,34 +60,29 @@ export default {
   }),
   computed: {
     currentAlbum() {
-      return this.albumList.find((el) => el.id === this.active);
+      return this.albumList.find(({ id }) => id === this.active);
     },
   },
   methods: {
-    fadeTransition() {
-      document.querySelector(`.${this.$style.carouselImage}`).style.opacity = 0;
-      setTimeout(() => {
-        document.querySelector(
-          `.${this.$style.carouselImage}`
-        ).style.opacity = 1;
-      }, 300);
-    },
     movePrev() {
-      this.fadeTransition();
-      setTimeout(() => {
-        this.active > 0
-          ? this.active--
-          : (this.active = this.albumList.length - 1);
-      }, 200);
+      this.active > 0
+        ? this.active--
+        : (this.active = this.albumList.length - 1);
     },
     moveNext() {
-      this.fadeTransition();
-      setTimeout(() => {
-        this.active < this.albumList.length - 1
-          ? this.active++
-          : (this.active = 0);
-      }, 200);
+      this.active < this.albumList.length - 1
+        ? this.active++
+        : (this.active = 0);
     },
+    preloadImages() {
+      albumList.forEach(({ cover }) => {
+        const image = new Image();
+        image.src = cover;
+      });
+    },
+  },
+  created() {
+    this.preloadImages();
   },
   mounted() {
     this.so = ScrollOut({
@@ -138,19 +133,20 @@ export default {
   justify-self: end;
   align-self: center;
 }
-.carouselImage {
-  display: block;
-  max-width: 100%;
-  height: fn.to-proportion-width(653, 1440);
-  object: {
-    fit: cover;
+.carouselLink {
+  background: {
     position: center;
+    repeat: no-repeat;
+    size: cover;
   }
-  transition: opacity 0.3s;
-  width: fn.to-proportion-width(741, 1440);
-}
-.carouselImage[class^="fade-animation"] {
-  opacity: 0;
+  display: block;
+  height: fn.to-proportion-width(118, 360);
+  transition: background-image 0.5s;
+  width: fn.to-proportion-width(134, 360);
+  @media (min-width: 1440px) {
+    height: fn.to-proportion-width(741, 1440);
+    width: fn.to-proportion-width(741, 1440);
+  }
 }
 .info {
   margin-left: 7vw;

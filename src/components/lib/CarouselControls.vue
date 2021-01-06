@@ -1,12 +1,24 @@
 <template>
   <div :class="$style.controls">
-    <button :class="[$style.arrow, $style.prev]" @click="$emit('move-prev')">
+    <button
+      :class="[$style.arrow, $style.prev]"
+      @click="
+        $emit('move');
+        $emit('move-prev');
+      "
+    >
       <span class="sr-only">Anterior</span>
     </button>
     <div v-if="showNumbers" :class="$style.numbers">
       {{ current }}/{{ length }}
     </div>
-    <button :class="[$style.arrow, $style.next]" @click="$emit('move-next')">
+    <button
+      :class="[$style.arrow, $style.next]"
+      @click="
+        $emit('move');
+        $emit('move-next');
+      "
+    >
       <span class="sr-only">Siguiente</span>
     </button>
   </div>
