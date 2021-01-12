@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import ScrollOut from 'scroll-out';
-import SectionTitle from '@/components/lib/SectionTitle';
-import CarouselControls from '@/components/lib/CarouselControls';
+import ScrollOut from "scroll-out";
+import SectionTitle from "@/components/lib/SectionTitle";
+import CarouselControls from "@/components/lib/CarouselControls";
 
 export default {
   name: "Cine",
@@ -62,6 +62,13 @@ export default {
     },
   },
   methods: {
+    autoSlides(index) {
+      this.interval = setInterval(() => {
+        if (index >= this.movies.length) index = 0;
+        this.active = this.movies[index].id;
+        index++;
+      }, 5000);
+    },
     movePrev() {
       clearInterval(this.interval);
       console.log(this.active);
@@ -77,18 +84,22 @@ export default {
         ? this.active++
         : (this.active = 0);
     },
-    autoSlides(index) {
-      this.interval = setInterval(() => {
-        if (index >= this.movies.length) index = 0;
-        this.active = this.movies[index].id;
-        index++;
-      }, 5000);
+    preloadImages() {
+      this.movies.forEach(() => {
+        const imageTierra = new Image();
+        const imageChacabuco = new Image();
+        const imageAtentado = new Image();
+        imageTierra.src = require("@/assets/img/cine/la-tierra-que-arde/background.jpg");
+        imageChacabuco.src = require("@/assets/img/cine/chacabuco/background.jpg");
+        imageAtentado.src = require("@/assets/img/cine/el-atentado/background.jpg");
+      });
     },
   },
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
       onShown: () => {
+        this.preloadImages();
         setTimeout(() => (this.titleAppears = true), 500);
         this.autoSlides(this.active);
       },
@@ -121,7 +132,7 @@ export default {
     size: cover;
   }
   height: 100%;
-  transition: background-image 0.5s;
+  transition: background-image 0.3s;
   width: 100%;
 }
 .la-tierra-que-arde {

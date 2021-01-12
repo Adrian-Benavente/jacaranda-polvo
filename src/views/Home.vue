@@ -7,19 +7,21 @@
     <Cine />
     <Television />
     <Albums />
+    <Sesiones />
   </div>
 </template>
 
 <script>
-import AldeaMain from '@/components/aldea/AldeaMain';
-import Welcome from '@/components/welcome/Welcome';
-import Cine from '@/components/cine/Cine';
-import Television from '@/components/tv/Television';
-import Albums from '@/components/albums/Albums';
+import AldeaMain from "@/components/aldea/AldeaMain";
+import Welcome from "@/components/welcome/Welcome";
+import Cine from "@/components/cine/Cine";
+import Television from "@/components/tv/Television";
+import Albums from "@/components/albums/Albums";
+import Sesiones from "@/components/sesiones/Sesiones";
 
 export default {
   name: "Home",
-  components: { Albums, Television, Cine, Welcome, AldeaMain },
+  components: { Sesiones, Albums, Television, Cine, Welcome, AldeaMain },
 };
 </script>
 

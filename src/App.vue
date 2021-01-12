@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Home from '@/views/Home';
-import TheHeader from '@/components/header/TheHeader';
+import Home from "@/views/Home";
+import TheHeader from "@/components/header/TheHeader";
 
 export default {
   name: "App",

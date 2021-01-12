@@ -1,0 +1,69 @@
+<template>
+  <section
+    id="section-sesiones"
+    :class="$style.container"
+    aria-labelledby="albums"
+  >
+    <div :class="$style.scrollOutContainer" data-scroll>
+      <SectionTitle
+        :class="$style.title"
+        :title-text="'sesiones'"
+        :title-appears="titleAppears"
+      />
+      <div :class="$style.carouselContainer">
+        <SesionesCarousel />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+import ScrollOut from "scroll-out";
+import SectionTitle from "@/components/lib/SectionTitle";
+import SesionesCarousel from "@/components/sesiones/carousel/SesionesCarousel";
+
+export default {
+  name: "Sesiones",
+  components: { SesionesCarousel, SectionTitle },
+  data: () => ({
+    titleAppears: false,
+  }),
+  mounted() {
+    this.so = ScrollOut({
+      scope: this.$el,
+      onShown: () => {
+        setTimeout(() => (this.titleAppears = true), 500);
+      },
+      onHidden: () => {
+        this.titleAppears = false;
+      },
+    });
+  },
+  destroyed() {
+    this.so.teardown();
+  },
+};
+</script>
+
+<style lang="scss" module>
+.container {
+  align-items: center;
+  display: grid;
+  background-color: black;
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+.scrollOutContainer {
+  height: 100%;
+}
+.title {
+  left: -3.9%;
+  z-index: 9999;
+}
+.carouselContainer {
+  align-items: center;
+  display: grid;
+  height: 100%;
+}
+</style>

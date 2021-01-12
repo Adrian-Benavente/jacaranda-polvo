@@ -75,19 +75,17 @@ export default {
         : (this.active = 0);
     },
     preloadImages() {
-      albumList.forEach(({ cover }) => {
+      this.albumList.forEach(({ cover }) => {
         const image = new Image();
         image.src = cover;
       });
     },
   },
-  created() {
-    this.preloadImages();
-  },
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
       onShown: () => {
+        this.preloadImages();
         setTimeout(() => (this.titleAppears = true), 500);
       },
       onHidden: () => {
@@ -143,7 +141,7 @@ export default {
   height: fn.to-proportion-width(118, 360);
   transition: background-image 0.5s;
   width: fn.to-proportion-width(134, 360);
-  @media (min-width: 1440px) {
+  @media (min-width: 768px) {
     height: fn.to-proportion-width(741, 1440);
     width: fn.to-proportion-width(741, 1440);
   }

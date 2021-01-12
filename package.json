@@ -13,8 +13,11 @@
     "rellax": "^1.12.1",
     "scroll-out": "^2.2.12",
     "vue": "^2.6.11",
+    "vue-carousel": "^0.18.0",
+    "vue-dragscroll": "^2.1.0",
     "vue-kinesis": "^1.1.5",
-    "vue-parallaxy": "^1.1.1"
+    "vue-parallaxy": "^1.1.1",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
