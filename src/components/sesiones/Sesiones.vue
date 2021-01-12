@@ -61,9 +61,4 @@ export default {
   left: -3.9%;
   z-index: 9999;
 }
-.carouselContainer {
-  align-items: center;
-  display: grid;
-  height: 100%;
-}
 </style>
