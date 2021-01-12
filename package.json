@@ -16,8 +16,7 @@
     "vue-carousel": "^0.18.0",
     "vue-dragscroll": "^2.1.0",
     "vue-kinesis": "^1.1.5",
-    "vue-parallaxy": "^1.1.1",
-    "vue-slick-carousel": "^1.0.6"
+    "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
