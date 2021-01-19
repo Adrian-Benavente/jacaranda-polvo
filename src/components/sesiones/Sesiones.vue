@@ -55,6 +55,8 @@ export default {
   position: relative;
 }
 .scrollOutContainer {
+  align-items: center;
+  display: grid;
   height: 100%;
 }
 .title {
