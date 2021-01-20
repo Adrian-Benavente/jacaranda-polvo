@@ -3,7 +3,7 @@
     <div
       :class="$style.wrapper"
       :style="{
-        marginLeft: `${slideOffset}px`,
+        paddingLeft: `${slideOffset}px`,
         transform: `translateX(${translateValue}px)`,
       }"
     >
@@ -12,37 +12,59 @@
         v-for="session in sesiones"
         :key="session.id"
       >
-        <img
-          :class="$style.image"
-          :src="session.thumbnail"
-          :alt="session.title"
-        />
+        <button :class="$style.modalButton" @click="openModal(session.youtube)">
+          <img
+            :class="$style.image"
+            :src="session.thumbnail"
+            :alt="session.title"
+          />
+        </button>
         <article :class="$style.details">
-          <h2 :class="$style.title">{{ session.title }}</h2>
+          <h2 :class="$style.title">
+            <button :class="$style.modalButton" @click="modalOpen = true">
+              {{ session.title }}
+            </button>
+          </h2>
           <ul v-html="session.details"></ul>
         </article>
       </div>
     </div>
-    <CarouselControls @move-next="moveRight" @move-prev="moveLeft" />
+    <CarouselControls
+      @move-next="moveRight"
+      @move-prev="moveLeft"
+      :style="{
+        left: `${slideOffset + controlsOffset}px`,
+      }"
+      :class="$style.controls"
+    />
+    <VideoModal
+      v-if="modalOpen"
+      @close="modalOpen = false"
+      :modal-open="modalOpen"
+      :url="youtubeUrl"
+    />
   </div>
 </template>
 
 <script>
 import { sesiones } from "@/components/sesiones/data-sesiones";
 import CarouselControls from "@/components/lib/CarouselControls";
+import VideoModal from "@/components/lib/VideoModal";
 
 export default {
   name: "SesionesCarousel",
-  components: { CarouselControls },
+  components: { VideoModal, CarouselControls },
   data: () => ({
     active: null,
     container: null,
+    controlsOffset: null,
+    modalOpen: false,
     rem: null,
     sesiones,
     slideOffset: null,
     slideWidth: null,
     translateValue: null,
-    window,
+    youtubeUrl: null,
   }),
   methods: {
     moveLeft() {
@@ -60,9 +82,14 @@ export default {
         setTimeout(() => (this.active = 0), 500);
       }
     },
+    openModal(youtubeUrl) {
+      this.modalOpen = true;
+      this.youtubeUrl = youtubeUrl;
+    },
     setInitial() {
       this.active = 0;
       this.translateValue = 0;
+
       const compStyles = window.getComputedStyle(document.documentElement);
       this.rem = parseInt(
         compStyles.getPropertyValue("font-size").split("px")[0]
@@ -70,8 +97,14 @@ export default {
 
       this.container = document.querySelector(`.${this.$style.container}`);
       this.slideWidth =
-        document.querySelector(`.${this.$style.slide}`).offsetWidth + this.rem;
+        document.querySelector(`.${this.$style.slide}`).offsetWidth +
+        this.rem +
+        this.rem / 2;
       this.slideOffset = this.slideWidth / 2;
+
+      this.controlsOffset =
+        document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
+      console.log(this.$style.controls);
     },
   },
   mounted() {
@@ -84,10 +117,17 @@ export default {
 <style lang="scss" module>
 @use "../../../assets/scss/functions" as fn;
 
+.container {
+  padding-bottom: fn.to-proportion-width(50, 1440);
+  position: relative;
+}
+
 .wrapper {
   display: flex;
   gap: 1.5rem;
+  position: relative;
   transition: transform 0.5s 0.5s;
+  z-index: 1;
 }
 
 .slide {
@@ -106,25 +146,29 @@ export default {
 .image {
   display: block;
   margin: auto;
+  user-select: none;
   width: 100%;
   @media (min-width: 768px) {
-    width: fn.to-proportion-width(385, 1440);
+    width: fn.to-proportion-width(280, 1440);
   }
 }
 
 .details {
   background: rgba(18, 18, 18, 0.56);
   opacity: 0;
-  height: fn.to-rem(260);
+  min-height: fn.to-rem(260);
   margin: auto;
-  padding: fn.to-rem(34) fn.to-rem(29);
+  padding: fn.to-rem(34) fn.to-rem(29) fn.to-rem(30);
   transition: opacity 0.3s 0.7s;
   .title {
-    color: var(--color-hero);
-    font: fn.to-rem(30) / 130% var(--bebas);
-    margin-bottom: 1rem;
     text-align: start;
-    text-transform: uppercase;
+    .modalButton {
+      color: var(--color-hero);
+      font: fn.to-rem(30) / 130% var(--bebas);
+      margin-bottom: 1rem;
+      text-align: inherit;
+      text-transform: uppercase;
+    }
   }
   ul {
     color: white;
@@ -135,5 +179,17 @@ export default {
       font: fn.to-rem(14) / 160% var(--montserrat);
     }
   }
+}
+.controls {
+  display: flex;
+  z-index: 0;
+}
+.modalButton,
+.modalButton:active {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 </style>

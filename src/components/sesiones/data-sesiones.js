@@ -10,7 +10,7 @@ export const sesiones = [
       <li><b>Ubicación:</b> Buenos Aires / Salta, Argentina. 2015</li>
     `,
     thumbnail: require("@/assets/img/sesiones/01-sofia-viola.jpg"),
-    youtube: "https://youtu.be/Q99_jobgGzA",
+    youtube: "https://youtube.com/embed/Q99_jobgGzA",
   },
   {
     id: 1,
@@ -25,7 +25,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Guadalajara, México. 2020.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/02-matraka.jpg"),
-    youtube: "https://youtu.be/6TGmYpS5uck",
+    youtube: "https://youtube.com/embed/6TGmYpS5uck",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Saavedra, Argentina. 2020.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/03-mar-joppich.jpg"),
-    youtube: "https://www.youtube.com/watch?v=qp6oKNFMmwY&t=6s",
+    youtube: "https://www.youtube.com/embed/qp6oKNFMmwY",
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const sesiones = [
       <li><b>Ubicación:</b> Salta, Argentina. 2016.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/04-sergio-aguiar.jpg"),
-    youtube: "https://youtu.be/O2KLR65HRhA",
+    youtube: "https://youtube.com/embed/O2KLR65HRhA",
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const sesiones = [
       <li><b>Ubicación:</b> Buenos Aires, Argentina. 2018.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/05-matias-suarez.jpg"),
-    youtube: "https://youtu.be/cVqvL_g2oc8",
+    youtube: "https://youtube.com/embed/cVqvL_g2oc8",
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Buenos Aires, Argentina. 2018.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/06-gordo.jpg"),
-    youtube: "https://youtu.be/vhJ0l6mIC28",
+    youtube: "https://youtube.com/embed/vhJ0l6mIC28",
   },
   {
     id: 6,
@@ -91,7 +91,7 @@ export const sesiones = [
       <li><b>Ubicación:</b> Buenos Aires, Argentina. 2014.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/07-cdu.jpg"),
-    youtube: "https://youtu.be/Or9meZVO7Rk",
+    youtube: "https://youtube.com/embed/Or9meZVO7Rk",
   },
   {
     id: 7,
@@ -104,7 +104,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Delta del Tigre, Argentina. 2018.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/08-facu-dial.jpg"),
-    youtube: "https://www.youtube.com/watch?v=xPY6KanCiAU&feature=youtu.be",
+    youtube: "https://www.youtube.com/embed/xPY6KanCiAU",
   },
   {
     id: 8,
@@ -117,7 +117,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Buenos Aires, Argentina. 2018.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/09-ofelia.jpg"),
-    youtube: "https://youtu.be/seqlWR0moi4",
+    youtube: "https://youtube.com/embed/seqlWR0moi4",
   },
   {
     id: 9,
@@ -129,7 +129,7 @@ export const sesiones = [
       <li><b>Ubicación</b>: Buenos Aires, Argentina. 2018.</li>
     `,
     thumbnail: require("@/assets/img/sesiones/10-ofelia.jpg"),
-    youtube: "https://youtu.be/KkfA5AShMQo",
+    youtube: "https://youtube.com/embed/KkfA5AShMQo",
   },
   {
     id: 10,
@@ -142,6 +142,6 @@ export const sesiones = [
       <li><b>Ubicación:</b> Delta del Tigre, Argentina. 2018</li>
     `,
     thumbnail: require("@/assets/img/sesiones/11-facu-dial.jpg"),
-    youtube: "https://youtu.be/-wt1GeXfov4",
+    youtube: "https://youtube.com/embed/-wt1GeXfov4",
   },
 ];
