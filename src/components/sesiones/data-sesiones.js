@@ -1,6 +1,19 @@
 export const sesiones = [
   {
     id: 0,
+    title: "Facu Dial - Sesión Delta",
+    details: `
+      <li><b>Producción General:</b> Facu Dial</li>
+      <li><b>Dirección:</b> Arnaldo Díaz</li>
+      <li><b>Sonido Directo y Mezcla:</b> Facu Rissotti</li>
+      <li><b>Producción:</b> Liz Guevara, Buquino Cabrera</li>
+      <li><b>Ubicación:</b> Delta del Tigre, Argentina. 2018</li>
+    `,
+    thumbnail: require("@/assets/img/sesiones/11-facu-dial.jpg"),
+    youtube: "https://youtube.com/embed/-wt1GeXfov4",
+  },
+  {
+    id: 1,
     title: "Sofía Viola - Pueblo Chico",
     details: `
       <li><b>Producción General:</b> Facundo Rissotti</li>
@@ -13,7 +26,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/Q99_jobgGzA",
   },
   {
-    id: 1,
+    id: 2,
     title: "Matraka - Pueblo Chico",
     details: `
       <li><b>Drag Queen y Producción</b>: Matraka</li>
@@ -28,7 +41,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/6TGmYpS5uck",
   },
   {
-    id: 2,
+    id: 3,
     title: "Mar Joppich - Remolinos",
     details: `
       <li><b>Composición, guitarras, arte y video</b>: Mar Joppich</li>
@@ -40,7 +53,7 @@ export const sesiones = [
     youtube: "https://www.youtube.com/embed/qp6oKNFMmwY",
   },
   {
-    id: 3,
+    id: 4,
     title: "Sergio Aguiar - Herencia",
     details: `
       <li><b>Poema:</b> Sergio Aguiar</li>
@@ -53,7 +66,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/O2KLR65HRhA",
   },
   {
-    id: 4,
+    id: 5,
     title: "Matías Suárez - El espíritu del valle",
     details: `
       <li><b>Guitarra y voz:</b> Matías Suarez</li>
@@ -67,7 +80,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/cVqvL_g2oc8",
   },
   {
-    id: 5,
+    id: 6,
     title: "Gordo - Vuelta al sol",
     details: `
       <li><b>Guitarra y voz</b>: Juan Manuel Colonna</li>
@@ -81,7 +94,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/vhJ0l6mIC28",
   },
   {
-    id: 6,
+    id: 7,
     title: "Cerebro de Uva - Estudio MCL",
     details: `
       <li><b>Dirección, cámara y edición:</b> Pablo Pérez Fiedler</li>
@@ -94,7 +107,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/Or9meZVO7Rk",
   },
   {
-    id: 7,
+    id: 8,
     title: "Facu Dial - Sesión Delta Trailer",
     details: `
       <li><b>Producción general</b>: Facu Dial</li>
@@ -107,7 +120,7 @@ export const sesiones = [
     youtube: "https://www.youtube.com/embed/xPY6KanCiAU",
   },
   {
-    id: 8,
+    id: 9,
     title: "Ofelia - Despierta",
     details: `
       <li><b>Cámara y edición de video</b>: Andrés Riffo</li>
@@ -120,7 +133,7 @@ export const sesiones = [
     youtube: "https://youtube.com/embed/seqlWR0moi4",
   },
   {
-    id: 9,
+    id: 10,
     title: "Ofelia - Vidala para mi sombra",
     details: `
       <li><b>Cámara y edición de video</b>: Andrés Riffo</li>
@@ -130,18 +143,5 @@ export const sesiones = [
     `,
     thumbnail: require("@/assets/img/sesiones/10-ofelia.jpg"),
     youtube: "https://youtube.com/embed/KkfA5AShMQo",
-  },
-  {
-    id: 10,
-    title: "Facu Dial - Sesión Delta",
-    details: `
-      <li><b>Producción General:</b> Facu Dial</li>
-      <li><b>Dirección:</b> Arnaldo Díaz</li>
-      <li><b>Sonido Directo y Mezcla:</b> Facu Rissotti</li>
-      <li><b>Producción:</b> Liz Guevara, Buquino Cabrera</li>
-      <li><b>Ubicación:</b> Delta del Tigre, Argentina. 2018</li>
-    `,
-    thumbnail: require("@/assets/img/sesiones/11-facu-dial.jpg"),
-    youtube: "https://youtube.com/embed/-wt1GeXfov4",
   },
 ];

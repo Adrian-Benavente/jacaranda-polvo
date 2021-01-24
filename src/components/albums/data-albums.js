@@ -2,9 +2,9 @@ export const albumList = [
   {
     id: 0,
     artist: "Cerebro de Uva",
-    title: "EP",
-    year: 2014,
-    cover: require("@/assets/img/albums/cerebro-de-uva/ep/cover.jpg"),
+    title: "Los Infelices",
+    year: 2013,
+    cover: require("@/assets/img/albums/cerebro-de-uva/los-infelices/cover.jpg"),
   },
   {
     id: 1,
@@ -51,9 +51,9 @@ export const albumList = [
   {
     id: 7,
     artist: "Cerebro de Uva",
-    title: "Los Infelices",
-    year: 2013,
-    cover: require("@/assets/img/albums/cerebro-de-uva/los-infelices/cover.jpg"),
+    title: "EP",
+    year: 2014,
+    cover: require("@/assets/img/albums/cerebro-de-uva/ep/cover.jpg"),
   },
   {
     id: 8,

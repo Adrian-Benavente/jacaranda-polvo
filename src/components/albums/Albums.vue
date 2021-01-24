@@ -13,8 +13,8 @@
       <div :class="$style.grid">
         <div :class="$style.left">
           <div :class="$style.info">
-            <h3 :class="$style.infoTitle">{{ currentAlbum.artist }}</h3>
-            <p :class="$style.infoType">{{ currentAlbum.title }}</p>
+            <h3 :class="$style.infoArtist">{{ currentAlbum.artist }}</h3>
+            <p :class="$style.infoTitle">{{ currentAlbum.title }}</p>
             <p :class="$style.infoYear">{{ currentAlbum.year }}</p>
             <a :class="$style.infoLink" href="#">
               Ver album <span :class="$style.arrowRight"></span>
@@ -149,31 +149,44 @@ export default {
 .info {
   margin-left: 7vw;
 }
+.infoArtist,
 .infoTitle,
-.infoType,
 .infoYear {
   margin-bottom: fn.to-rem(5);
 }
-.infoTitle {
+.infoArtist {
+  color: white;
   font-size: fn.to-rem(35);
   letter-spacing: fn.to-rem(1);
-  color: var(--color-hero);
+  margin-bottom: 1rem;
+  @media (min-width: 1920px) {
+    font-size: fn.to-proportion-width(35, 1440);
+  }
 }
-.infoType {
+.infoTitle {
   font-size: fn.to-rem(20);
+  @media (min-width: 1920px) {
+    font-size: fn.to-proportion-width(20, 1440);
+  }
+}
+.infoYear {
+  @media (min-width: 1920px) {
+    font-size: fn.to-proportion-width(16, 1440);
+  }
 }
 .infoLink {
   align-items: center;
-  color: white;
+  color: var(--color-links);
   display: flex;
-  font: fn.to-rem(12) var(--montserrat);
+  font: fn.to-rem(18) var(--montserrat);
+  margin-top: 1rem;
+  @media (min-width: 1920px) {
+    font-size: fn.to-proportion-width(18, 1440);
+  }
 }
 .arrowRight {
-  background: {
-    image: url("../../assets/img/lib/arrow-right.svg");
-    repeat: no-repeat;
-    size: contain;
-  }
+  background: url("../../assets/img/lib/arrow-right.svg") center / contain
+    no-repeat;
   display: inline-block;
   height: fn.to-rem(17);
   margin-left: fn.to-rem(13);

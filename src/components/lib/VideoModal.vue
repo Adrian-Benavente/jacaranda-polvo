@@ -9,7 +9,7 @@
       ></iframe>
       <button :class="$style.close" @click="$emit('close')">Cerrar</button>
     </div>
-    <div :class="$style.overlay"></div>
+    <div :class="$style.overlay" @click="$emit('close')"></div>
   </div>
 </template>
 

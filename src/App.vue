@@ -90,6 +90,7 @@ export default {
   --roboto-bold: "robotobold", arial, sans-serif;
 
   --color-hero: #efbb53;
+  --color-links: #4e00ff;
 }
 
 * {

@@ -12,12 +12,12 @@
         v-for="session in sesiones"
         :key="session.id"
       >
-        <button :class="$style.modalButton" @click="openModal(session.youtube)">
-          <img
-            :class="$style.image"
-            :src="session.thumbnail"
-            :alt="session.title"
-          />
+        <button
+          :class="$style.modalButton"
+          @click="openModal(session.youtube)"
+          aria-label="Abrir video"
+        >
+          <img :class="$style.image" :src="session.thumbnail" alt="" />
         </button>
         <article :class="$style.details">
           <h2 :class="$style.title">
@@ -104,7 +104,6 @@ export default {
 
       this.controlsOffset =
         document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
-      console.log(this.$style.controls);
     },
   },
   mounted() {
@@ -125,6 +124,7 @@ export default {
 .wrapper {
   display: flex;
   gap: 1.5rem;
+  padding-top: fn.to-rem(260);
   position: relative;
   transition: transform 0.5s 0.5s;
   z-index: 1;
@@ -132,10 +132,9 @@ export default {
 
 .slide {
   @media (min-width: 400px) {
-    padding-top: fn.to-rem(260);
-    transition: padding-top 0.3s 0.7s ease-in-out;
+    transition: transform 0.3s 0.7s ease-in-out;
     &.active {
-      padding-top: fn.to-rem(200);
+      transform: translateY(-50px);
       .details {
         opacity: 1;
       }
@@ -156,9 +155,8 @@ export default {
 .details {
   background: rgba(18, 18, 18, 0.56);
   opacity: 0;
-  min-height: fn.to-rem(260);
   margin: auto;
-  padding: fn.to-rem(34) fn.to-rem(29) fn.to-rem(30);
+  padding: fn.to-rem(24) fn.to-rem(28);
   transition: opacity 0.3s 0.7s;
   .title {
     text-align: start;
@@ -176,7 +174,10 @@ export default {
     list-style: none;
     text-align: start;
     li {
-      font: fn.to-rem(14) / 160% var(--montserrat);
+      font: fn.to-rem(12) / 160% var(--montserrat);
+      @media (min-width: 1920px) {
+        font-size: fn.to-rem(14);
+      }
     }
   }
 }
@@ -190,6 +191,7 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
+  display: block;
   outline: none;
 }
 </style>
