@@ -8,6 +8,7 @@
     <Television />
     <Albums />
     <Sesiones />
+    <Teatro />
   </div>
 </template>
 
@@ -18,10 +19,19 @@ import Cine from "@/components/cine/Cine";
 import Television from "@/components/tv/Television";
 import Albums from "@/components/albums/Albums";
 import Sesiones from "@/components/sesiones/Sesiones";
+import Teatro from "@/components/teatro/Teatro";
 
 export default {
   name: "Home",
-  components: { Sesiones, Albums, Television, Cine, Welcome, AldeaMain },
+  components: {
+    Teatro,
+    Sesiones,
+    Albums,
+    Television,
+    Cine,
+    Welcome,
+    AldeaMain,
+  },
 };
 </script>
 
