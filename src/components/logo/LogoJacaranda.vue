@@ -29,11 +29,14 @@ export default {
   color: white;
   display: flex;
   font-family: var(--bebas), arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 0.75rem;
   margin-left: fn.to-proportion-width(36, 1440);
   margin-top: fn.to-proportion-height(18, 900);
   overflow: hidden;
   text-align: start;
+  @media (min-width: 768px) {
+    font-size: fn.to-proportion-width(14, 1440);
+  }
   &::before {
     background-image: url("../../assets/img/logo/arbol.png");
     background-repeat: no-repeat;
@@ -43,8 +46,6 @@ export default {
     height: fn.to-proportion-width(62, 1440);
     min-height: 42px;
     min-width: 42px;
-    max-height: 62px;
-    max-width: 62px;
     width: fn.to-proportion-width(62, 1440);
   }
 }
