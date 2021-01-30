@@ -6,10 +6,15 @@
         $emit('move');
         $emit('move-prev');
       "
+      :style="{ backgroundColor }"
     >
       <span class="sr-only">Anterior</span>
     </button>
-    <div v-if="showNumbers" :class="$style.numbers">
+    <div
+      v-if="showNumbers"
+      :class="$style.numbers"
+      :style="{ backgroundColor }"
+    >
       {{ current }}/{{ length }}
     </div>
     <button
@@ -18,6 +23,7 @@
         $emit('move');
         $emit('move-next');
       "
+      :style="{ backgroundColor }"
     >
       <span class="sr-only">Siguiente</span>
     </button>
@@ -28,6 +34,7 @@
 export default {
   name: "CarouselControls",
   props: {
+    backgroundColor: String,
     current: Number,
     length: Number,
     showNumbers: Boolean,
@@ -76,9 +83,13 @@ export default {
 }
 .numbers {
   align-items: center;
+  color: white;
   display: flex;
   font: fn.to-rem(18) var(--montserrat);
   justify-content: center;
+  @media (min-width: 1920px) {
+    font-size: fn.to-proportion-width(18, 1440);
+  }
 }
 .next {
   transform: rotate(180deg);

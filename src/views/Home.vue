@@ -9,6 +9,7 @@
     <Albums />
     <Sesiones />
     <Teatro />
+    <Contenido />
   </div>
 </template>
 
@@ -20,10 +21,12 @@ import Television from "@/components/tv/Television";
 import Albums from "@/components/albums/Albums";
 import Sesiones from "@/components/sesiones/Sesiones";
 import Teatro from "@/components/teatro/Teatro";
+import Contenido from "@/components/contenido/Contenido";
 
 export default {
   name: "Home",
   components: {
+    Contenido,
     Teatro,
     Sesiones,
     Albums,
