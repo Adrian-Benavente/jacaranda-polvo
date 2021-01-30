@@ -44,8 +44,8 @@ export default {
     content: "";
     display: block;
     height: fn.to-proportion-width(62, 1440);
-    min-height: 42px;
-    min-width: 42px;
+    min-height: 62px;
+    min-width: 62px;
     width: fn.to-proportion-width(62, 1440);
   }
 }
