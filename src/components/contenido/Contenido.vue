@@ -13,7 +13,11 @@
       <div :class="$style.content">
         <div :class="$style.carousel">
           <div :class="$style.item">
-            <iframe :src="current.video" allowfullscreen></iframe>
+            <iframe
+              :class="$style.video"
+              :src="current.video"
+              allowfullscreen
+            ></iframe>
           </div>
           <div :class="$style.details">
             <div :class="$style.info">
@@ -22,7 +26,7 @@
                 <div v-html="current.details"></div>
               </dl>
             </div>
-            <div>
+            <div :class="$style.controlsOuter">
               <CarouselControls
                 @move-prev="movePrev"
                 @move-next="moveNext"
@@ -30,7 +34,6 @@
                 :current="active + 1"
                 :length="contenido.length"
                 :show-numbers="true"
-                :class="$style.controls"
               />
             </div>
           </div>
@@ -74,6 +77,7 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
       onShown: () => {
         setTimeout(() => (this.titleAppears = true), 500);
       },
@@ -105,7 +109,7 @@ export default {
   left: -5.5%;
 }
 .content {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   height: 100%;
   justify-content: flex-end;
@@ -113,19 +117,19 @@ export default {
 .carousel {
   height: fn.to-proportion-width(653, 1440);
   margin-bottom: fn.to-proportion-width(30, 1440);
-  width: fn.to-proportion-width(864, 1440);
+  max-width: fn.to-proportion-width(1102, 1440);
 }
 .item {
   display: block;
   height: fn.to-proportion-width(486, 1440);
   max-width: 100%;
-  iframe {
-    border: 0;
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
+  overflow: hidden;
+}
+.video {
+  border: 0;
+  display: block;
+  height: fn.to-proportion-width(616, 1440);
+  width: fn.to-proportion-width(1102, 1440);
 }
 .details {
   align-items: center;
@@ -133,15 +137,22 @@ export default {
   display: flex;
   height: fn.to-proportion-width(170, 1440);
   justify-content: space-between;
-}
-.controls {
-  align-items: center;
-  display: flex;
   position: relative;
+}
+.controlsOuter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  height: 3rem;
+  @media (min-width: 768px) {
+    height: fn.to-proportion-width(91, 1440);
+  }
 }
 .info {
   color: white;
-  padding: fn.to-proportion-width(28, 1440) 0 fn.to-proportion-width(20, 1440)
+  padding: fn.to-proportion-width(20, 1440) 0 fn.to-proportion-width(20, 1440)
     fn.to-proportion-width(60, 1440);
   text-align: start;
   width: fn.to-proportion-width(500, 1440);

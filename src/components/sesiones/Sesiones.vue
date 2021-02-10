@@ -31,6 +31,7 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
       onShown: () => {
         setTimeout(() => (this.titleAppears = true), 500);
       },

@@ -98,6 +98,7 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
       onShown: () => {
         this.preloadImages();
         setTimeout(() => (this.titleAppears = true), 500);

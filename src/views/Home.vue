@@ -10,6 +10,8 @@
     <Sesiones />
     <Teatro />
     <Contenido />
+    <Contacto />
+    <VideoArena />
   </div>
 </template>
 
@@ -22,10 +24,14 @@ import Albums from "@/components/albums/Albums";
 import Sesiones from "@/components/sesiones/Sesiones";
 import Teatro from "@/components/teatro/Teatro";
 import Contenido from "@/components/contenido/Contenido";
+import Contacto from "@/components/contacto/Contacto";
+import VideoArena from "@/components/video-arena/VideoArena";
 
 export default {
   name: "Home",
   components: {
+    VideoArena,
+    Contacto,
     Contenido,
     Teatro,
     Sesiones,

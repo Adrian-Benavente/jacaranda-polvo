@@ -90,6 +90,7 @@ export default {
     this.hoverImgPreview();
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
       onShown: () => {
         setTimeout(() => (this.titleAppears = true), 500);
       },
@@ -128,7 +129,7 @@ export default {
   justify-items: end;
   .list {
     margin-top: 3rem;
-    max-width: 1800px;
+    max-width: fn.to-proportion-width(1102, 1440);
     text-align: start;
     width: 80%;
     .listGroup {

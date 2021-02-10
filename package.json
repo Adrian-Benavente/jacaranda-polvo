@@ -15,7 +15,7 @@
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-dragscroll": "^2.1.0",
-    "vue-kinesis": "^1.1.5",
+    "vue-kinesis": "1.2.3",
     "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {

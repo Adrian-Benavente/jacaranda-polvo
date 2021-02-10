@@ -84,6 +84,7 @@ export default {
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
       onShown: () => {
         this.preloadImages();
         setTimeout(() => (this.titleAppears = true), 500);
@@ -108,6 +109,7 @@ export default {
   position: relative;
   display: grid;
   align-items: end;
+  justify-items: end;
 }
 .scrollOutContainer {
   height: 100%;
@@ -116,16 +118,19 @@ export default {
   left: -2.5%;
 }
 .grid {
+  align-content: end;
   color: white;
   display: grid;
   font-family: var(--bebas);
   grid-template-columns: 1fr 2fr;
   height: 100%;
+  margin: auto;
   text-align: start;
+  width: fn.to-proportion-width(1102, 1440);
 }
 .left {
   align-self: end;
-  padding: 7rem;
+  padding: 7rem 0;
 }
 .right {
   justify-self: end;
@@ -142,12 +147,9 @@ export default {
   transition: background-image 0.5s;
   width: fn.to-proportion-width(134, 360);
   @media (min-width: 768px) {
-    height: fn.to-proportion-width(741, 1440);
-    width: fn.to-proportion-width(741, 1440);
+    height: fn.to-proportion-width(700, 1440);
+    width: fn.to-proportion-width(700, 1440);
   }
-}
-.info {
-  margin-left: 7vw;
 }
 .infoArtist,
 .infoTitle,
@@ -176,7 +178,7 @@ export default {
 }
 .infoLink {
   align-items: center;
-  color: var(--color-links);
+  color: var(--color-hero);
   display: flex;
   font: fn.to-rem(18) var(--montserrat);
   margin-top: 1rem;

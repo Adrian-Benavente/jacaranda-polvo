@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ScrollOut from 'scroll-out';
+import ScrollOut from "scroll-out";
 
 export default {
   name: "Welcome",
@@ -49,6 +49,7 @@ export default {
     });
     this.so = ScrollOut({
       scope: this.$el,
+      once: true,
     });
   },
   destroyed() {
