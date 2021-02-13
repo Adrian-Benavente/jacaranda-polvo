@@ -234,16 +234,21 @@ export default {
   .group {
     align-items: center;
     display: flex;
+    height: 50px;
+    @media (min-width: 768px) {
+      height: fn.to-proportion-width(50, 1440);
+    }
   }
   dt {
     margin-right: 18px;
   }
   dd {
-    color: white;
-    font: 600 15px/50px var(--montserrat);
-    @media (min-width: 768px) {
-      font: 600 fn.to-proportion-width(15, 1440) /
-        fn.to-proportion-width(50, 1440) var(--montserrat);
+    a {
+      font: 600 15px/50px var(--montserrat);
+      @media (min-width: 768px) {
+        font: 600 fn.to-proportion-width(15, 1440) /
+          fn.to-proportion-width(18, 1440) var(--montserrat);
+      }
     }
   }
 }

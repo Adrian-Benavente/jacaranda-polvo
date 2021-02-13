@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.container">
-    <video :class="$style.video" loop muted autoplay data-scroll>
+    <video :class="$style.video" muted autoplay data-scroll>
       <source src="../../assets/video/video-arena.webm" type="video/webm" />
       <source src="../../assets/video/video-arena.mp4" type="video/mp4" />
       Sorry, your browser doesn't support embedded videos.
@@ -14,14 +14,13 @@ export default {
   name: "VideoArena",
   mounted() {
     const video = document.querySelector(`.${this.$style.video}`);
-    console.log(video.paused);
     this.so = ScrollOut({
       scope: this.$el,
       onShown: () => {
-        video.paused && video.play();
+        video.play();
       },
       onHidden: () => {
-        !video.paused && video.pause();
+        video.pause();
       },
     });
   },
