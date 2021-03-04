@@ -3,43 +3,49 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-      <kinesis-element
-        class="aldea__pyramid"
-        aria-hidden="true"
-      ></kinesis-element>
+      <div @click="toggleSound" @mouseover="playSound('piramide')">
+        <kinesis-element
+          :class="[
+            'aldea__pyramid',
+            sound && 'aldea__pyramid--sound-on',
+            visible && 'visible',
+          ]"
+          aria-hidden="true"
+        ></kinesis-element>
+      </div>
       <nav>
         <ul>
-          <li class="aldea__item tv">
+          <li class="aldea__item tv" @mouseover="playSound('tv')">
             <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text">Tv</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item teatro">
+          <li class="aldea__item teatro" @mouseover="playSound('teatro')">
             <kinesis-element :strength="15" tag="a" href="#section-teatro"
               ><span class="aldea__item-text">Teatro</span></kinesis-element
             >
           </li>
-          <li class="aldea__item contenido">
+          <li class="aldea__item contenido" @mouseover="playSound('contenido')">
             <kinesis-element :strength="40" tag="a" href="#section-contenido"
               ><span class="aldea__item-text">Contenido</span></kinesis-element
             >
           </li>
-          <li class="aldea__item albums">
+          <li class="aldea__item albums" @mouseover="playSound('albums')">
             <kinesis-element :strength="80" tag="a" href="#section-albums"
               ><span class="aldea__item-text">Albums</span></kinesis-element
             >
           </li>
-          <li class="aldea__item contacto">
+          <li class="aldea__item contacto" @mouseover="playSound('contacto')">
             <kinesis-element :strength="15" tag="a" href="#section-contacto"
               ><span class="aldea__item-text">Contacto</span></kinesis-element
             >
           </li>
-          <li class="aldea__item sesiones">
+          <li class="aldea__item sesiones" @mouseover="playSound('sesiones')">
             <kinesis-element :strength="30" tag="a" href="#section-sesiones"
               ><span class="aldea__item-text">Sesiones</span></kinesis-element
             >
           </li>
-          <li class="aldea__item cine">
+          <li class="aldea__item cine" @mouseover="playSound('cine')">
             <kinesis-element :strength="70" tag="a" href="#section-cine"
               ><span class="aldea__item-text">Cine</span></kinesis-element
             >
@@ -51,15 +57,54 @@
 </template>
 
 <script>
-import { KinesisContainer, KinesisElement } from 'vue-kinesis';
+import { KinesisContainer, KinesisElement } from "vue-kinesis";
 
 export default {
   name: "AldeaMain",
   components: { KinesisContainer, KinesisElement },
+  data: () => ({
+    sound: false,
+    visible: false,
+  }),
+  methods: {
+    playSound(glyph) {
+      if (this.sound) {
+        const audio = new Audio();
+        if (glyph === "piramide") {
+          audio.src = require("@/assets/audio/aldea/piramide.mp3");
+        }
+        if (glyph === "tv") {
+          audio.src = require("@/assets/audio/aldea/rayo.mp3");
+        }
+        if (glyph === "teatro") {
+          audio.src = require("@/assets/audio/aldea/constelacion.mp3");
+        }
+        if (glyph === "contenido") {
+          audio.src = require("@/assets/audio/aldea/agua.mp3");
+        }
+        if (glyph === "albums") {
+          audio.src = require("@/assets/audio/aldea/cristales.mp3");
+        }
+        if (glyph === "contacto") {
+          audio.src = require("@/assets/audio/aldea/contacto.mp3");
+        }
+        if (glyph === "sesiones") {
+          audio.src = require("@/assets/audio/aldea/fuego.mp3");
+        }
+        if (glyph === "cine") {
+          audio.src = require("@/assets/audio/aldea/luna.mp3");
+        }
+        audio.play();
+      }
+    },
+    toggleSound() {
+      this.sound = !this.sound;
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       setTimeout(() => {
-        document.querySelector(".aldea__pyramid").classList.add("visible");
+        this.visible = true;
       }, 1000);
       setTimeout(() => {
         document.querySelector(".aldea__menu").classList.add("explode");
@@ -72,6 +117,18 @@ export default {
 <style lang="scss" scoped>
 @use "../../assets/scss/functions" as fn;
 @use "../../assets/scss/placeholders";
+
+@mixin glow-animation($color) {
+  animation: glow 1s alternate infinite;
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 13px #{$color});
+    }
+    100% {
+      filter: drop-shadow(0 0 3px #{$color});
+    }
+  }
+}
 
 @media (max-width: 400px) {
   * {
@@ -279,11 +336,14 @@ export default {
     width: 100%;
   }
   &__pyramid {
+    --glow-color: white;
     @extend %middle;
+    @include glow-animation(var(--glow-color));
     background-image: url("../../assets/img/aldea/piramide.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: url("../../assets/img/lib/blueprint_cry.svg"), auto;
     height: 0;
     opacity: 0;
     transition: opacity 1.5s linear, transform 1s cubic-bezier(0.23, 1, 0.32, 1) !important;
@@ -294,6 +354,11 @@ export default {
       min-width: 300px;
       opacity: 1;
       width: fn.to-proportion-width(440.72, 1440);
+      z-index: 1;
+    }
+    &--sound-on {
+      --glow-color: gold;
+      cursor: url("../../assets/img/lib/blueprint_blaze.svg"), auto;
     }
   }
 }

@@ -135,7 +135,6 @@ export default {
   align-items: center;
   background-color: #070707;
   display: flex;
-  height: fn.to-proportion-width(170, 1440);
   justify-content: space-between;
   position: relative;
 }
@@ -155,7 +154,7 @@ export default {
   padding: fn.to-proportion-width(20, 1440) 0 fn.to-proportion-width(20, 1440)
     fn.to-proportion-width(60, 1440);
   text-align: start;
-  width: fn.to-proportion-width(500, 1440);
+  width: max-content;
   dt {
     font: normal 400 fn.to-rem(36) / 150% var(--bebas);
     letter-spacing: fn.to-rem(0.48);

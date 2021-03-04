@@ -72,11 +72,32 @@ export default {
         item.addEventListener("mousemove", (e) => {
           const video = item.querySelector("video");
           gsap.to(video, {
+            visibility: "visible",
             x: e.clientX - video.offsetWidth * 0.5,
             y: e.clientY - video.offsetHeight * 0.5,
           });
+          document.addEventListener(
+            "scroll",
+            () => {
+              gsap.to(video, {
+                visibility: "hidden",
+              });
+            },
+            { passive: true }
+          );
         });
       });
+    },
+    isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
     },
   },
   mounted() {

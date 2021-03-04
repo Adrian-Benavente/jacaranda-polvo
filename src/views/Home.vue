@@ -30,16 +30,16 @@ import VideoArena from "@/components/video-arena/VideoArena";
 export default {
   name: "Home",
   components: {
-    VideoArena,
-    Contacto,
-    Contenido,
-    Teatro,
-    Sesiones,
-    Albums,
-    Television,
-    Cine,
-    Welcome,
     AldeaMain,
+    Welcome,
+    Cine,
+    Television,
+    Albums,
+    Sesiones,
+    Teatro,
+    Contenido,
+    Contacto,
+    VideoArena,
   },
 };
 </script>

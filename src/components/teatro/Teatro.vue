@@ -56,7 +56,7 @@ export default {
       },
       {
         id: 1,
-        title: "Shatzi",
+        title: "Schatzi",
         slug: "schatzi",
         synopsis: `<p>Armado de Música de Sala para la Obra <br>Schatzi (2013) de Matías Nan.</p>`,
         file: require("../../assets/img/teatro/02-schatzi.jpg"),
@@ -77,13 +77,34 @@ export default {
       ];
       arrItems.forEach((item) => {
         item.addEventListener("mousemove", (e) => {
-          const video = item.querySelector(`.${this.$style.imgPreview}`);
-          gsap.to(video, {
-            x: e.clientX - video.offsetWidth * 0.5,
-            y: e.clientY - video.offsetHeight * 0.5,
+          const image = item.querySelector(`.${this.$style.imgPreview}`);
+          gsap.to(image, {
+            visibility: "visible",
+            x: e.clientX - image.offsetWidth * 0.5,
+            y: e.clientY - image.offsetHeight * 0.5,
           });
+          document.addEventListener(
+            "scroll",
+            () => {
+              gsap.to(image, {
+                visibility: "hidden",
+              });
+            },
+            { passive: true }
+          );
         });
       });
+    },
+    isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
     },
   },
   mounted() {
