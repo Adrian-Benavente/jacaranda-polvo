@@ -41,7 +41,7 @@
       v-if="modalOpen"
       @close="modalOpen = false"
       :modal-open="modalOpen"
-      :url="youtubeUrl"
+      :url="sound ? youtubeUrl : `${youtubeUrl}?rel=0&amp;mute=1`"
     />
   </div>
 </template>
@@ -66,6 +66,11 @@ export default {
     translateValue: null,
     youtubeUrl: null,
   }),
+  computed: {
+    sound() {
+      return this.$store.state.sound;
+    },
+  },
   methods: {
     moveLeft() {
       if (this.active > 0) {

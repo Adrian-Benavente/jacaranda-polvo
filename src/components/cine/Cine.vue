@@ -38,7 +38,7 @@ export default {
         id: 0,
         title: "La tierra que arde",
         slug: "la-tierra-que-arde",
-        overlay: true,
+        overlay: false,
       },
       {
         id: 1,
@@ -133,7 +133,7 @@ export default {
     size: cover;
   }
   height: 100%;
-  transition: background-image 0.3s;
+  transition: background-image 0.5s ease-in-out;
   width: 100%;
 }
 .la-tierra-que-arde {

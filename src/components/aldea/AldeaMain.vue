@@ -62,13 +62,16 @@ import { KinesisContainer, KinesisElement } from "vue-kinesis";
 export default {
   name: "AldeaMain",
   components: { KinesisContainer, KinesisElement },
-  data: () => ({
-    sound: false,
-    visible: false,
-  }),
+  data() {
+    return {
+      sound: false,
+      store: this.$store,
+      visible: false,
+    };
+  },
   methods: {
     playSound(glyph) {
-      if (this.sound) {
+      if (this.sound && this.store.state.sound) {
         const audio = new Audio();
         if (glyph === "piramide") {
           audio.src = require("@/assets/audio/aldea/piramide.mp3");

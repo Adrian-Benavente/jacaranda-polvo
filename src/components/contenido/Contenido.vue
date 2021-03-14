@@ -15,7 +15,7 @@
           <div :class="$style.item">
             <iframe
               :class="$style.video"
-              :src="current.video"
+              :src="sound ? current.video : `${current.video}?muted=1`"
               allowfullscreen
             ></iframe>
           </div>
@@ -60,6 +60,9 @@ export default {
   computed: {
     current() {
       return this.contenido.find(({ id }) => id === this.active);
+    },
+    sound() {
+      return this.$store.state.sound;
     },
   },
   methods: {

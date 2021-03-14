@@ -1,6 +1,6 @@
 <template>
   <button :class="$style.button" @click="toggleSound">
-    <span :class="[$style.loader, muted && $style.muted]">
+    <span :class="[$style.loader, !store.state.sound && $style.muted]">
       <span :class="$style.stroke"></span>
       <span :class="$style.stroke"></span>
       <span :class="$style.stroke"></span>
@@ -9,20 +9,27 @@
       <span :class="$style.stroke"></span>
       <span :class="$style.stroke"></span>
     </span>
-    <span :class="$style.statusText">Sound {{ muted ? "off" : "on" }}</span>
+    <span :class="$style.statusText">
+      Sound {{ store.state.sound ? "on" : "off" }}
+    </span>
   </button>
 </template>
 
 <script>
 export default {
   name: "SoundWave",
-  data: () => ({
-    muted: false,
-  }),
+  data() {
+    return {
+      store: this.$store,
+    };
+  },
   methods: {
     toggleSound() {
-      this.muted = !this.muted;
+      this.store.state.sound = !this.store.state.sound;
     },
+  },
+  mounted() {
+    console.log(this.$store);
   },
 };
 </script>

@@ -9,3 +9,9 @@
     opacity: 0;
   }
 }
+@mixin line-clamp($nth-of-lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $nth-of-lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

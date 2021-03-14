@@ -199,7 +199,7 @@ export default {
         transition: color 0.3s;
         z-index: 2;
         .workLink:hover {
-          color: var(--color-links);
+          color: var(--color-hero);
         }
         @media (min-width: 1920px) {
           font-size: fn.to-proportion-width(14, 1440);

@@ -83,16 +83,6 @@ export const contenido = [
   },
   {
     id: 8,
-    title: "CAPRESE DE LA HUERTA",
-    details: `
-    <dd>Música Original en Recetas de Cocina para <b>Elvira Me Gusta</b> (<a href="https://vimeo.com/elviramegusta">https://vimeo.com/elviramegusta</a>)</dd>
-    <dd>Producción: Gerardo Rissotti</dd>
-  `,
-    image: require("../../assets/img/contenido/09-caprese.jpg"),
-    video: "https://player.vimeo.com/video/164428161",
-  },
-  {
-    id: 9,
     title: "RCP FUTBOL ",
     details: `
     <dd>Sonido Directo y Drone en campaña RCP para la Asociación de Anestesia.</dd>
