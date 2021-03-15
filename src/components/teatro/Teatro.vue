@@ -44,32 +44,34 @@ import gsap from "gsap";
 export default {
   name: "Teatro",
   components: { SectionTitle },
-  data: () => ({
-    titleAppears: false,
-    works: [
-      {
-        id: 0,
-        title: "Encajado",
-        slug: "encajado",
-        synopsis: `<p>Música Original de Sala y Jingle <br>para la Obra Encajado (2020) de Damián Travaglia.</p>`,
-        file: require("../../assets/img/teatro/01-encajado.jpg"),
-      },
-      {
-        id: 1,
-        title: "Schatzi",
-        slug: "schatzi",
-        synopsis: `<p>Armado de Música de Sala para la Obra <br>Schatzi (2013) de Matías Nan.</p>`,
-        file: require("../../assets/img/teatro/02-schatzi.jpg"),
-      },
-      {
-        id: 2,
-        title: "Cosmorodante",
-        slug: "cosmorodante",
-        synopsis: `<p>Producción de álbum musical para niñes, <br>Mezcla y Mastering (2017) para Cosmorodante.</p>`,
-        file: require("../../assets/img/teatro/03-cosmorodante.jpg"),
-      },
-    ],
-  }),
+  data() {
+    return {
+      titleAppears: false,
+      works: [
+        {
+          id: 0,
+          title: "Encajado",
+          slug: "encajado",
+          synopsis: `<p>Música Original de Sala y Jingle <br>para la Obra Encajado (2020) de Damián Travaglia.</p>`,
+          file: require("../../assets/img/teatro/01-encajado.jpg"),
+        },
+        {
+          id: 1,
+          title: "Schatzi",
+          slug: "schatzi",
+          synopsis: `<p>Armado de Música de Sala para la Obra <br>Schatzi (2013) de Matías Nan.</p>`,
+          file: require("../../assets/img/teatro/02-schatzi.jpg"),
+        },
+        {
+          id: 2,
+          title: "Cosmorodante",
+          slug: "cosmorodante",
+          synopsis: `<p>Producción de álbum musical para niñes, <br>Mezcla y Mastering (2017) para Cosmorodante.</p>`,
+          file: require("../../assets/img/teatro/03-cosmorodante.jpg"),
+        },
+      ],
+    };
+  },
   methods: {
     hoverImgPreview() {
       const arrItems = [

@@ -13,7 +13,6 @@ export default {
   }),
   mounted() {
     this.webp = document.documentElement.classList.contains("webp");
-    console.log(this.webp);
     window.addEventListener("scroll", () => {
       this.wrap = window.pageYOffset >= window.innerHeight;
     });

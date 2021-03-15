@@ -53,11 +53,14 @@ import { albumList } from "@/components/albums/data-albums";
 export default {
   name: "Albums",
   components: { CarouselControls, SectionTitle },
-  data: () => ({
-    albumList,
-    titleAppears: false,
-    active: 0,
-  }),
+  data() {
+    return {
+      active: 0,
+      albumList,
+      store: this.$store,
+      titleAppears: false,
+    };
+  },
   computed: {
     currentAlbum() {
       return this.albumList.find(({ id }) => id === this.active);

@@ -31,31 +31,33 @@ import CarouselControls from "@/components/lib/CarouselControls";
 export default {
   name: "Cine",
   components: { CarouselControls, SectionTitle },
-  data: () => ({
-    titleAppears: false,
-    movies: [
-      {
-        id: 0,
-        title: "La tierra que arde",
-        slug: "la-tierra-que-arde",
-        overlay: false,
-      },
-      {
-        id: 1,
-        title: "Chacabuco",
-        slug: "chacabuco",
-        overlay: false,
-      },
-      {
-        id: 2,
-        title: "El atentado",
-        slug: "el-atentado",
-        overlay: false,
-      },
-    ],
-    active: 0,
-    interval: null,
-  }),
+  data() {
+    return {
+      active: 0,
+      interval: null,
+      movies: [
+        {
+          id: 0,
+          title: "La tierra que arde",
+          slug: "la-tierra-que-arde",
+          overlay: false,
+        },
+        {
+          id: 1,
+          title: "Chacabuco",
+          slug: "chacabuco",
+          overlay: false,
+        },
+        {
+          id: 2,
+          title: "El atentado",
+          slug: "el-atentado",
+          overlay: false,
+        },
+      ],
+      titleAppears: false,
+    };
+  },
   computed: {
     currentMovie() {
       return this.movies.find((el) => el.id === this.active);

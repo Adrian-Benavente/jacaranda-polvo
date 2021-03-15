@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <LoadingScreen />
     <TheHeader />
     <Home />
   </div>
@@ -8,10 +9,12 @@
 <script>
 import Home from "@/views/Home";
 import TheHeader from "@/components/header/TheHeader";
+import LoadingScreen from "@/components/global/LoadingScreen";
 
 export default {
   name: "App",
   components: {
+    LoadingScreen,
     TheHeader,
     Home,
   },

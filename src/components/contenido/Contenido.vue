@@ -52,11 +52,13 @@ import { contenido } from "@/components/contenido/data-contenido";
 export default {
   name: "Contenido",
   components: { CarouselControls, SectionTitle },
-  data: () => ({
-    active: 0,
-    contenido,
-    titleAppears: false,
-  }),
+  data() {
+    return {
+      active: 0,
+      contenido,
+      titleAppears: false,
+    };
+  },
   computed: {
     current() {
       return this.contenido.find(({ id }) => id === this.active);

@@ -37,32 +37,34 @@ import gsap from "gsap";
 export default {
   name: "Television",
   components: { SectionTitle },
-  data: () => ({
-    titleAppears: false,
-    videos: [
-      {
-        id: 0,
-        title: "Post producción de sonido",
-        slug: "post-produccion-sonido",
-        synopsis: `<p>Musicalización, Edición y Post producción de sonido en ProTools.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
-        file: require("../../assets/video/tv/01-post-produccion-sonido.mp4"),
-      },
-      {
-        id: 1,
-        title: "Música Original para TV",
-        slug: "musica-original-tv",
-        synopsis: `<p>Composición y Grabación de canciones originales.</p><p>Registro en SADAIC / DNDA / AADI.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
-        file: require("../../assets/video/tv/02-musica-original-tv.mp4"),
-      },
-      {
-        id: 2,
-        title: "Sonido directo",
-        slug: "sonido-directo",
-        synopsis: `<p>Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales. Edición y Post Producción. </p><p>Remax Encuesta, Argentina.</p>`,
-        file: require("../../assets/video/tv/03-sonido-directo.mp4"),
-      },
-    ],
-  }),
+  data() {
+    return {
+      titleAppears: false,
+      videos: [
+        {
+          id: 0,
+          title: "Post producción de sonido",
+          slug: "post-produccion-sonido",
+          synopsis: `<p>Musicalización, Edición y Post producción de sonido en ProTools.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
+          file: require("../../assets/video/tv/01-post-produccion-sonido.mp4"),
+        },
+        {
+          id: 1,
+          title: "Música Original para TV",
+          slug: "musica-original-tv",
+          synopsis: `<p>Composición y Grabación de canciones originales.</p><p>Registro en SADAIC / DNDA / AADI.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
+          file: require("../../assets/video/tv/02-musica-original-tv.mp4"),
+        },
+        {
+          id: 2,
+          title: "Sonido directo",
+          slug: "sonido-directo",
+          synopsis: `<p>Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales. Edición y Post Producción. </p><p>Remax Encuesta, Argentina.</p>`,
+          file: require("../../assets/video/tv/03-sonido-directo.mp4"),
+        },
+      ],
+    };
+  },
   methods: {
     hoverVideo() {
       const arrItems = [

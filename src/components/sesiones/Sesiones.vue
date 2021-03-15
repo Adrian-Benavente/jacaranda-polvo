@@ -25,9 +25,11 @@ import SesionesCarousel from "@/components/sesiones/carousel/SesionesCarousel";
 export default {
   name: "Sesiones",
   components: { SesionesCarousel, SectionTitle },
-  data: () => ({
-    titleAppears: false,
-  }),
+  data() {
+    return {
+      titleAppears: false,
+    };
+  },
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,

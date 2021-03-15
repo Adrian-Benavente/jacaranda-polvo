@@ -96,7 +96,11 @@ import SectionTitle from "@/components/lib/SectionTitle";
 export default {
   name: "Contacto",
   components: { SectionTitle },
-  data: () => ({ titleAppears: false }),
+  data() {
+    return {
+      titleAppears: false,
+    };
+  },
   mounted() {
     this.so = ScrollOut({
       scope: this.$el,

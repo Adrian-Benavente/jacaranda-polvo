@@ -27,11 +27,13 @@ import ScrollOut from "scroll-out";
 
 export default {
   name: "Welcome",
-  data: () => ({
-    fixed: false,
-    letter: "x",
-    arrLetters: ["x", "a", "o", "e"],
-  }),
+  data() {
+    return {
+      arrLetters: ["x", "a", "o", "e"],
+      fixed: false,
+      letter: "x",
+    };
+  },
   methods: {
     iterateLetters() {
       let index = 0;

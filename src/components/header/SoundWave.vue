@@ -28,9 +28,6 @@ export default {
       this.store.state.sound = !this.store.state.sound;
     },
   },
-  mounted() {
-    console.log(this.$store);
-  },
 };
 </script>
 
