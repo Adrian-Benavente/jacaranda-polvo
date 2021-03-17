@@ -78,9 +78,7 @@ export default Vue.extend({
   top: 0;
   width: fn.to-proportion-width(230, 1440);
   &.webp {
-    &::before {
-      background-image: url("../../assets/img/logo/arbol-solo.webp");
-    }
+    background-image: url("../../assets/img/logo/arbol-solo.webp");
   }
 }
 .logo {
