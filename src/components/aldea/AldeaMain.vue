@@ -3,7 +3,7 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-      <div @click="toggleSound" @mouseover="playSound($event, 'piramide')">
+      <div @click="toggleSound" @mouseover="playSound('piramide')">
         <kinesis-element
           :class="[
             'aldea__pyramid',
@@ -15,52 +15,37 @@
       </div>
       <nav>
         <ul>
-          <li class="aldea__item tv" @mouseover="playSound($event, 'tv')">
+          <li class="aldea__item tv" @mouseover="playSound('tv')">
             <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text"> Tv </span>
             </kinesis-element>
           </li>
-          <li
-            class="aldea__item teatro"
-            @mouseover="playSound($event, 'teatro')"
-          >
+          <li class="aldea__item teatro" @mouseover="playSound('teatro')">
             <kinesis-element :strength="15" tag="a" href="#section-teatro">
               <span class="aldea__item-text">Teatro</span>
             </kinesis-element>
           </li>
-          <li
-            class="aldea__item contenido"
-            @mouseover="playSound($event, 'contenido')"
-          >
+          <li class="aldea__item contenido" @mouseover="playSound('contenido')">
             <kinesis-element :strength="40" tag="a" href="#section-contenido">
               <span class="aldea__item-text">Contenido</span>
             </kinesis-element>
           </li>
-          <li
-            class="aldea__item albums"
-            @mouseover="playSound($event, 'albums')"
-          >
+          <li class="aldea__item albums" @mouseover="playSound('albums')">
             <kinesis-element :strength="80" tag="a" href="#section-albums">
               <span class="aldea__item-text">Albums</span>
             </kinesis-element>
           </li>
-          <li
-            class="aldea__item contacto"
-            @mouseover="playSound($event, 'contacto')"
-          >
+          <li class="aldea__item contacto" @mouseover="playSound('contacto')">
             <kinesis-element :strength="15" tag="a" href="#section-contacto">
               <span class="aldea__item-text">Contacto</span>
             </kinesis-element>
           </li>
-          <li
-            class="aldea__item sesiones"
-            @mouseover="playSound($event, 'sesiones')"
-          >
+          <li class="aldea__item sesiones" @mouseover="playSound('sesiones')">
             <kinesis-element :strength="30" tag="a" href="#section-sesiones">
               <span class="aldea__item-text">Sesiones</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item cine" @mouseover="playSound($event, 'cine')">
+          <li class="aldea__item cine" @mouseover="playSound('cine')">
             <kinesis-element :strength="70" tag="a" href="#section-cine">
               <span class="aldea__item-text">Cine</span>
             </kinesis-element>
@@ -85,7 +70,7 @@ export default {
     };
   },
   methods: {
-    playSound(evt, glyph) {
+    playSound(glyph) {
       if (this.sound && this.store.state.sound) {
         const audio = new Audio();
         if (glyph === "piramide") {
