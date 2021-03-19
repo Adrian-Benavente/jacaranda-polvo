@@ -32,7 +32,9 @@ export default {
   margin-left: fn.to-proportion-width(36, 1440);
   margin-top: fn.to-proportion-height(18, 900);
   overflow: hidden;
+  position: relative;
   text-align: start;
+  z-index: 10001;
   @media (min-width: 768px) {
     font-size: fn.to-proportion-width(14, 1440);
   }
