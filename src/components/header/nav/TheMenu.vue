@@ -26,6 +26,12 @@
       </ul>
     </nav>
     <div :class="[$style.cell, $style[symbol], symbol && $style.fadeIn]"></div>
+    <a
+      href="https://www.youtube.com/channel/UCNx1Vq9fdjNUaccmjXYdg5w"
+      :class="$style.youtube"
+    >
+      Youtube
+    </a>
   </div>
 </template>
 
@@ -61,12 +67,19 @@ export default {
   .cell {
     display: none;
   }
+  .youtube {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.4s;
+  }
   &.open {
     animation: unRoundEdges 0.5s ease-in backwards;
     opacity: 1;
     top: 0;
     .cell {
       display: block;
+    }
+    .youtube {
+      opacity: 1;
     }
   }
 }
@@ -137,6 +150,26 @@ export default {
     height: fn.to-proportion-width(188, 1440);
     right: -1.5%;
     width: fn.to-proportion-width(313.22, 1440);
+  }
+}
+.youtube {
+  align-items: center;
+  bottom: fn.to-proportion-width(33, 1440);
+  color: white;
+  display: flex;
+  font: normal 400 fn.to-proportion-width(10, 1440) var(--bebas);
+  flex-direction: column;
+  position: absolute;
+  right: fn.to-proportion-width(88, 1440);
+  text-transform: uppercase;
+  &::before {
+    background: url("../../../assets/img/lib/youtube.svg") no-repeat
+      center/contain;
+    content: "";
+    display: block;
+    height: fn.to-proportion-width(17.33, 1440);
+    margin-bottom: 0.35rem;
+    width: fn.to-proportion-width(26, 1440);
   }
 }
 @keyframes unRoundEdges {
