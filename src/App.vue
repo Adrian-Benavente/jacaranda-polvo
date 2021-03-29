@@ -2,12 +2,11 @@
   <div id="app">
     <LoadingScreen />
     <TheHeader />
-    <Home />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from "@/views/Home";
 import TheHeader from "@/components/header/TheHeader";
 import LoadingScreen from "@/components/global/LoadingScreen";
 
@@ -16,7 +15,6 @@ export default {
   components: {
     LoadingScreen,
     TheHeader,
-    Home,
   },
 };
 </script>
@@ -94,6 +92,7 @@ export default {
 
   --color-hero: #efbb53;
   --color-links: #4e00ff;
+  --grey: #101010;
 }
 
 * {

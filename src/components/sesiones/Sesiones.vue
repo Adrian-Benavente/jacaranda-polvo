@@ -64,6 +64,6 @@ export default {
 }
 .title {
   left: -3.9%;
-  z-index: 9999;
+  z-index: 2;
 }
 </style>

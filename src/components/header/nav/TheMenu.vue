@@ -3,31 +3,103 @@
     <nav>
       <ul @mouseout="symbol = null">
         <li :class="$style.item" @mouseover="symbol = 'cine'">
-          <a @click="$emit('close')" href="#section-cine">Cine</a>
+          <router-link to="/#section-cine" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('cine', 'menu')"
+              >Cine
+            </a>
+          </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'tv'">
-          <a @click="$emit('close')" href="#section-tv">Tv</a>
-        </li>
-        <li :class="$style.item" @mouseover="symbol = 'sesiones'">
-          <a @click="$emit('close')" href="#section-sesiones">Sesiones</a>
+          <router-link to="/#section-tv" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('tv', 'menu')"
+              >Tv
+            </a>
+          </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'albums'">
-          <a @click="$emit('close')" href="#section-albums">Albums</a>
+          <router-link to="/#section-albums" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('albums', 'menu')"
+              >Albums
+            </a>
+          </router-link>
+        </li>
+        <li :class="$style.item" @mouseover="symbol = 'sesiones'">
+          <router-link to="/#section-sesiones" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('sesiones', 'menu')"
+              >Sesiones
+            </a>
+          </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'teatro'">
-          <a @click="$emit('close')" href="#section-teatro">Teatro</a>
+          <router-link to="/#section-teatro" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('teatro', 'menu')"
+              >Teatro
+            </a>
+          </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'contenido'">
-          <a @click="$emit('close')" href="#section-contenido"> Contenido </a>
+          <router-link to="/#section-contenido" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('contenido', 'menu')"
+            >
+              Contenido
+            </a>
+          </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'contacto'">
-          <a @click="$emit('close')" href="#section-contacto">Contacto</a>
+          <router-link to="/#section-contacto" v-slot="{ href, navigate }">
+            <a
+              :href="href"
+              @click="
+                navigate;
+                $emit('close');
+              "
+              @mouseover="playSound('contacto', 'menu')"
+              >Contacto
+            </a>
+          </router-link>
         </li>
       </ul>
     </nav>
     <div :class="[$style.cell, $style[symbol], symbol && $style.fadeIn]"></div>
     <a
       href="https://www.youtube.com/channel/UCNx1Vq9fdjNUaccmjXYdg5w"
+      target="_blank"
       :class="$style.youtube"
     >
       Youtube
@@ -36,8 +108,11 @@
 </template>
 
 <script>
+import Sound from "@/mixins/sound";
+
 export default {
   name: "TheMenu",
+  mixins: [Sound],
   props: {
     open: Boolean,
   },
@@ -88,8 +163,11 @@ export default {
   text-transform: uppercase;
   a {
     color: white;
+    display: block;
     font: normal 400 fn.to-rem(30) / fn.to-rem(70) var(--montserrat);
+    height: 100%;
     transition: color 0.5s;
+    width: 100%;
     &:hover {
       color: var(--color-hero);
       font-family: var(--montserrat-bold);
@@ -173,18 +251,18 @@ export default {
   }
 }
 @keyframes unRoundEdges {
-  from {
-    border-radius: 0 0 1000% 1000%;
+  0% {
+    border-radius: 0 0 100% 100%;
   }
-  to {
+  100% {
     border-radius: 0 0 0 0;
   }
 }
 @keyframes fadeOut {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }

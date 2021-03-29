@@ -3,7 +3,10 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-      <div @click="toggleSound" @mouseover="playSound('piramide')">
+      <div
+        @click="toggleSound"
+        @mouseover="sound && playSound('piramide', 'aldea')"
+      >
         <kinesis-element
           :class="[
             'aldea__pyramid',
@@ -15,37 +18,58 @@
       </div>
       <nav>
         <ul>
-          <li class="aldea__item tv" @mouseover="playSound('tv')">
+          <li
+            class="aldea__item tv"
+            @mouseover="sound && playSound('tv', 'aldea')"
+          >
             <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text"> Tv </span>
             </kinesis-element>
           </li>
-          <li class="aldea__item teatro" @mouseover="playSound('teatro')">
+          <li
+            class="aldea__item teatro"
+            @mouseover="sound && playSound('teatro', 'aldea')"
+          >
             <kinesis-element :strength="15" tag="a" href="#section-teatro">
               <span class="aldea__item-text">Teatro</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item contenido" @mouseover="playSound('contenido')">
+          <li
+            class="aldea__item contenido"
+            @mouseover="sound && playSound('contenido', 'aldea')"
+          >
             <kinesis-element :strength="40" tag="a" href="#section-contenido">
               <span class="aldea__item-text">Contenido</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item albums" @mouseover="playSound('albums')">
+          <li
+            class="aldea__item albums"
+            @mouseover="sound && playSound('albums', 'aldea')"
+          >
             <kinesis-element :strength="80" tag="a" href="#section-albums">
               <span class="aldea__item-text">Albums</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item contacto" @mouseover="playSound('contacto')">
+          <li
+            class="aldea__item contacto"
+            @mouseover="sound && playSound('contacto', 'aldea')"
+          >
             <kinesis-element :strength="15" tag="a" href="#section-contacto">
               <span class="aldea__item-text">Contacto</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item sesiones" @mouseover="playSound('sesiones')">
+          <li
+            class="aldea__item sesiones"
+            @mouseover="sound && playSound('sesiones', 'aldea')"
+          >
             <kinesis-element :strength="30" tag="a" href="#section-sesiones">
               <span class="aldea__item-text">Sesiones</span>
             </kinesis-element>
           </li>
-          <li class="aldea__item cine" @mouseover="playSound('cine')">
+          <li
+            class="aldea__item cine"
+            @mouseover="sound && playSound('cine', 'aldea')"
+          >
             <kinesis-element :strength="70" tag="a" href="#section-cine">
               <span class="aldea__item-text">Cine</span>
             </kinesis-element>
@@ -58,10 +82,12 @@
 
 <script>
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import Sound from "@/mixins/sound";
 
 export default {
   name: "AldeaMain",
   components: { KinesisContainer, KinesisElement },
+  mixins: [Sound],
   data() {
     return {
       sound: false,
@@ -70,36 +96,6 @@ export default {
     };
   },
   methods: {
-    playSound(glyph) {
-      if (this.sound && this.store.state.sound) {
-        const audio = new Audio();
-        if (glyph === "piramide") {
-          audio.src = require("@/assets/audio/aldea/piramide.mp3");
-        }
-        if (glyph === "tv") {
-          audio.src = require("@/assets/audio/aldea/rayo.mp3");
-        }
-        if (glyph === "teatro") {
-          audio.src = require("@/assets/audio/aldea/constelacion.mp3");
-        }
-        if (glyph === "contenido") {
-          audio.src = require("@/assets/audio/aldea/agua.mp3");
-        }
-        if (glyph === "albums") {
-          audio.src = require("@/assets/audio/aldea/cristales.mp3");
-        }
-        if (glyph === "contacto") {
-          audio.src = require("@/assets/audio/aldea/contacto.mp3");
-        }
-        if (glyph === "sesiones") {
-          audio.src = require("@/assets/audio/aldea/fuego.mp3");
-        }
-        if (glyph === "cine") {
-          audio.src = require("@/assets/audio/aldea/luna.mp3");
-        }
-        audio.play();
-      }
-    },
     toggleSound() {
       this.sound = !this.sound;
     },

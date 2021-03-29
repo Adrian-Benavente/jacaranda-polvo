@@ -7,9 +7,8 @@
         currentMovie.overlay && $style.overlay,
       ]"
     ></div>
-    <a
-      :href="`/cine/${currentMovie.slug}`"
-      target="_blank"
+    <router-link
+      :to="`/cine/${currentMovie.slug}`"
       :class="$style.link"
       data-scroll
     >
@@ -17,7 +16,7 @@
         <span :class="$style.linkTitle">{{ currentMovie.title }}</span>
         <span :class="$style.viewMore">Ver más</span>
       </div>
-    </a>
+    </router-link>
     <SectionTitle :title-text="'cine'" :title-appears="titleAppears" />
     <CarouselControls @move-prev="movePrev" @move-next="moveNext" />
   </section>
