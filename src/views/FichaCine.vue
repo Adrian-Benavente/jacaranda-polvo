@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.container">
+  <div :class="$style.container">
     <header :class="[$style.header, $style[`${slug}`]]">
       <div :class="$style.inner">
         <h2 :class="$style.title">{{ fichaData.title }}</h2>
@@ -41,11 +41,17 @@
           <div>
             <h3 :class="$style.title">Sobre el proyecto</h3>
             <p :class="[$style.text, $style.short]">
-              <strong>{{ fichaData.about.short }}</strong>
+              <strong v-html="fichaData.about.short"></strong>
             </p>
-            <p :class="$style.text">{{ fichaData.about.description }}</p>
+            <p :class="$style.text" v-html="fichaData.about.description"></p>
+            <a
+              :class="$style.fullMovie"
+              :href="fichaData.fullMovie"
+              target="_blank"
+              >Película completa</a
+            >
           </div>
-          <div :class="$style.poster">
+          <div v-if="fichaData.poster" :class="$style.poster">
             <figure>
               <img
                 :class="$style.image"
@@ -55,10 +61,52 @@
             </figure>
           </div>
         </div>
-        <div :class="$style.ficha"></div>
+        <div :class="$style.ficha">
+          <h4 :class="$style.title">Ficha técnica</h4>
+          <ul :class="$style.list">
+            <li
+              :class="$style.item"
+              v-for="({ item }, idx) in fichaData.participantes"
+              :key="`participants-${idx}`"
+              v-html="item"
+            ></li>
+          </ul>
+        </div>
       </section>
     </main>
-  </section>
+    <aside :class="$style.navigateToProject">
+      <ul :class="$style.list">
+        <li>
+          <router-link
+            :to="getPreviousOne(fichaData.id)"
+            v-slot="{ href, navigate }"
+          >
+            <a
+              :class="[$style.item, $style.prev]"
+              :href="href"
+              @click="navigate"
+            >
+              Anterior proyecto
+            </a>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="getNextOne(fichaData.id)"
+            v-slot="{ href, navigate }"
+          >
+            <a
+              :class="[$style.item, $style.next]"
+              :href="href"
+              @click="navigate"
+            >
+              Siguiente proyecto
+            </a>
+          </router-link>
+        </li>
+      </ul>
+    </aside>
+  </div>
 </template>
 
 <script>
@@ -88,6 +136,22 @@ export default {
         this.selected++;
       }
     },
+    getNextOne(currId) {
+      if (currId < this.fichasCine.length) {
+        const slug = this.fichasCine.find(({ id }) => id === currId + 1).slug;
+        return `/cine/${slug}`;
+      } else {
+        return "";
+      }
+    },
+    getPreviousOne(currId) {
+      if (currId > 1) {
+        const slug = this.fichasCine.find(({ id }) => id === currId - 1).slug;
+        return `/cine/${slug}`;
+      } else {
+        return "";
+      }
+    },
   },
 };
 </script>
@@ -99,7 +163,7 @@ export default {
 }
 .header {
   align-items: center;
-  background: fixed bottom/cover;
+  background: fixed top/100% no-repeat;
   display: flex;
   flex-direction: column;
   height: fn.to-proportion-width(453, 1440);
@@ -132,6 +196,12 @@ export default {
 }
 .la-tierra-que-arde {
   background-image: url("../assets/img/cine/la-tierra-que-arde/header.jpg");
+}
+.chacabuco {
+  background-image: url("../assets/img/cine/chacabuco/header.jpg");
+}
+.el-atentado {
+  background-image: url("../assets/img/cine/el-atentado/header.jpg");
 }
 .video {
   padding: fn.to-proportion-width(143, 1440) 0;
@@ -171,11 +241,12 @@ export default {
   padding: fn.to-proportion-width(72, 1440) 0;
   .about {
     align-items: center;
-    display: flex;
-    gap: fn.to-proportion-width(258, 1440);
-    justify-content: space-between;
+    display: grid;
+    gap: fn.to-proportion-width(100, 1440);
+    justify-items: self-end;
     margin: auto;
     max-width: fn.to-proportion-width(1192, 1440);
+    grid-template-columns: 1fr 1fr;
     .title {
       color: var(--color-hero);
       font: normal 400 fn.to-rem(35) / fn.to-rem(35) var(--bebas);
@@ -184,10 +255,34 @@ export default {
     }
     .text {
       color: white;
-      font: normal 400 fn.to-rem(20) / fn.to-rem(30) var(--montserrat);
+      font: normal 400 1rem / 200% var(--montserrat);
       text-align: start;
       &.short {
         margin-bottom: 1em;
+      }
+    }
+    .fullMovie {
+      color: white;
+      display: block;
+      font: normal 400 fn.to-rem(15) / fn.to-rem(35) var(--bebas);
+      margin-top: 1em;
+      text-align: start;
+      &::after {
+        background: url("../assets/img/lib/arrow-right.svg") center / contain
+          no-repeat;
+        content: "";
+        display: inline-block;
+        filter: grayscale(100%);
+        height: fn.to-rem(17);
+        margin-left: 0.5rem;
+        transition: margin-left 0.3s ease-in-out;
+        vertical-align: middle;
+        width: fn.to-rem(17);
+      }
+      &:hover {
+        &::after {
+          margin-left: 0.75rem;
+        }
       }
     }
     .poster {
@@ -208,6 +303,71 @@ export default {
       width: fn.to-proportion-width(367, 1440);
       position: relative;
       z-index: 1;
+    }
+  }
+}
+.ficha {
+  margin: auto;
+  max-width: fn.to-proportion-width(1192, 1440);
+  padding: fn.to-proportion-width(111, 1440) 0;
+  text-align: start;
+  .title {
+    color: var(--color-hero);
+    font: normal 400 fn.to-rem(20) / fn.to-rem(35) var(--bebas);
+    margin-bottom: 1em;
+  }
+  .list {
+    column-count: 2;
+    list-style: none;
+    .item {
+      color: white;
+      margin-bottom: 1em;
+    }
+    .item,
+    .item a {
+      font: normal 400 1rem / fn.to-rem(23) var(--montserrat);
+    }
+  }
+}
+.navigateToProject {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: fn.to-proportion-width(103, 1440) 0;
+  .list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: fn.to-proportion-width(596, 1440);
+    .item {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      &::before {
+        background: no-repeat center/contain;
+        content: "";
+        display: block;
+        height: fn.to-proportion-width(18.94, 1440);
+        margin-bottom: fn.to-proportion-width(28, 1440);
+        width: fn.to-proportion-width(9.7, 1440);
+      }
+      &.prev {
+        &::before {
+          background-image: url("../assets/img/lib/chevron.svg");
+        }
+      }
+      &.next {
+        &::before {
+          background-image: url("../assets/img/lib/chevron.svg");
+          transform: scaleX(-1);
+        }
+      }
+    }
+    .item,
+    .item a {
+      color: white;
+      font: normal 400 fn.to-rem(25) / fn.to-rem(25) var(--bebas);
     }
   }
 }

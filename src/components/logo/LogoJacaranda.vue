@@ -1,6 +1,16 @@
 <template>
-  <h1 :class="[$style.logo, webp && $style.webp]" id="logo">
-    <span :class="[$style.text, wrap && $style.wrapped]">Jacarandá Polvo</span>
+  <h1 id="logo">
+    <router-link to="/#aldea" v-slot="{ href, navigate }">
+      <a
+        :class="[$style.logo, webp && $style.webp]"
+        :href="href"
+        @click="navigate"
+      >
+        <span :class="[$style.text, wrap && $style.wrapped]">
+          Jacarandá Polvo
+        </span>
+      </a>
+    </router-link>
   </h1>
 </template>
 
@@ -51,6 +61,7 @@ export default {
   }
 }
 .text {
+  color: white;
   padding-left: 1rem;
   opacity: 1;
   overflow: hidden;
