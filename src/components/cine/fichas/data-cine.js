@@ -6,12 +6,32 @@ export const fichasCine = [
     year: "2017",
     videos: [
       {
+        id: "E89_AXad6Z0",
         title: "Viento del sur",
-        url: "https://www.youtube.com/embed/E89_AXad6Z0",
       },
       {
+        id: "aj4SbdK87LU",
+        title: "Árbol muerto",
+      },
+      {
+        id: "caUhFeXUTqo",
         title: "Línea de fuego",
-        url: "https://www.youtube.com/embed/caUhFeXUTqo",
+      },
+      {
+        id: "rX3GVoUGzZ8",
+        title: "Cenizas",
+      },
+      {
+        id: "oR6gzCwmxyg",
+        title: "Mineras",
+      },
+      {
+        id: "FS3f3u7K3-s",
+        title: "Reflexiones",
+      },
+      {
+        id: "iPSxd1f0bmI",
+        title: "Ave fénix",
       },
     ],
     playlist:
@@ -24,7 +44,7 @@ export const fichasCine = [
     fullMovie: "https://play.cine.ar/INCAA/produccion/4798",
     participantes: [
       {
-        item: `Dirección: <a href="vimeo.com/pablopfiedler" target="_blank">Pablo Perez Fiedler</a>`,
+        item: `Dirección: <a href="https://vimeo.com/pablopfiedler" target="_blank">Pablo Perez Fiedler</a>`,
       },
       {
         item: "Dirección de Fotografía: Diego Alejandro Suarez",
@@ -33,19 +53,19 @@ export const fichasCine = [
         item: `Música Original: Facundo Rissotti - Santiago Jhones<br>Hernán Rupolo - Sebastián Benegas`,
       },
       {
-        item: "Montaje: Ezequiel Yofre, PAblo Pérez Fiedler",
+        item: "Montaje: Ezequiel Yofre, Pablo Pérez Fiedler",
       },
       {
         item: "Productor: Pablo Pérez Fiedler",
       },
       {
-        item: "Productos Ejecutivo: Daniel Guzmán",
+        item: "Productor Ejecutivo: Daniel Guzmán",
       },
       {
-        item: "Colorista PEdro Razzari",
+        item: "Colorista: Pedro Razzari",
       },
       {
-        item: `Casa Productora: La Fábrica Films + La Granja<br><a href="www.lafabricafilms.com.ar" target="_blank">www.lafabricafilms.com.ar</a>`,
+        item: `Casa Productora: La Fábrica Films + La Granja<br><a href="https://www.lafabricafilms.com.ar" target="_blank">www.lafabricafilms.com.ar</a>`,
       },
     ],
   },
@@ -56,8 +76,8 @@ export const fichasCine = [
     year: "2015",
     videos: [
       {
+        id: "4LGMPj8bpVU",
         title: "Chacabuco",
-        url: "https://www.youtube.com/embed/rp_Fmy-F3FU",
       },
     ],
     poster: require("@/assets/img/cine/chacabuco/poster.jpg"),
@@ -115,8 +135,8 @@ export const fichasCine = [
     year: "2020",
     videos: [
       {
+        id: "Y4t6sGwAVDc",
         title: "El atentado",
-        url: "https://www.youtube.com/embed/Y4t6sGwAVDc",
       },
     ],
     about: {
@@ -137,10 +157,9 @@ export const fichasCine = [
         la historiografía del arte.
         `,
     },
-    fullMovie: "https://youtu.be/Y4t6sGwAVDc",
     participantes: [
       {
-        item: "Dirección: Guillermo Figoli / Romina D´Andrea",
+        item: "Dirección: Guillermo Figoli / Romina D' Andrea",
       },
       {
         item: "Producción: Josefina García Mason, Mar Joppich",

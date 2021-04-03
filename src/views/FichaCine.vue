@@ -11,7 +11,11 @@
         <div :class="$style.inner">
           <div :class="$style.player">
             <iframe
-              :src="fichaData.videos[selected].url"
+              :src="`https://www.youtube.com/embed/${
+                sound
+                  ? fichaData.videos[selected].id
+                  : `${fichaData.videos[selected].id}?mute=1`
+              }`"
               :title="fichaData.videos[selected].title"
               :class="$style.iframe"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -45,11 +49,13 @@
             </p>
             <p :class="$style.text" v-html="fichaData.about.description"></p>
             <a
+              v-if="fichaData.fullMovie"
               :class="$style.fullMovie"
               :href="fichaData.fullMovie"
               target="_blank"
-              >Película completa</a
             >
+              Película completa
+            </a>
           </div>
           <div v-if="fichaData.poster" :class="$style.poster">
             <figure>
@@ -125,6 +131,9 @@ export default {
   computed: {
     fichaData() {
       return this.fichasCine.find(({ slug }) => slug === this.slug);
+    },
+    sound() {
+      return this.$store.state.sound;
     },
   },
   methods: {
