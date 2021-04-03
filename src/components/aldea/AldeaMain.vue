@@ -342,7 +342,7 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    cursor: url("../../assets/img/lib/blueprint_cry.svg"), auto;
+    cursor: url("../../assets/img/lib/soundwaves-enabled.svg"), auto;
     height: 0;
     opacity: 0;
     transition: opacity 1.5s linear, transform 1s cubic-bezier(0.23, 1, 0.32, 1) !important;
@@ -357,7 +357,7 @@ export default {
     }
     &--sound-on {
       --glow-color: gold;
-      cursor: url("../../assets/img/lib/blueprint_blaze.svg"), auto;
+      cursor: url("../../assets/img/lib/soundwaves-disabled.svg"), auto;
     }
   }
 }
