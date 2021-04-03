@@ -12,12 +12,16 @@
       />
       <div :class="$style.content">
         <div :class="$style.inner">
-          <form :class="$style.form" @submit.prevent>
+          <form
+            :class="$style.form"
+            action="https://formspree.io/f/mwkakvvg"
+            method="POST"
+          >
             <div>
               <input
                 :class="[$style.input, $style.oneLine, $style.font]"
                 type="text"
-                name="nombre"
+                name="name"
                 placeholder="Nombre"
                 aria-label="Nombre"
                 required
@@ -27,7 +31,7 @@
               <input
                 :class="[$style.input, $style.oneLine, $style.font]"
                 type="email"
-                name="email"
+                name="_replyto"
                 placeholder="Email"
                 aria-label="Email"
                 required
@@ -39,7 +43,7 @@
               >
               <textarea
                 :class="[$style.textarea, $style.font]"
-                name="mensaje"
+                name="message"
                 id="mensaje"
                 cols="30"
                 rows="10"
