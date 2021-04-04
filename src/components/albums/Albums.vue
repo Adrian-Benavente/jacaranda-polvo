@@ -16,24 +16,37 @@
             <h3 :class="$style.infoArtist">{{ currentAlbum.artist }}</h3>
             <p :class="$style.infoTitle">{{ currentAlbum.title }}</p>
             <p :class="$style.infoYear">{{ currentAlbum.year }}</p>
-            <a :class="$style.infoLink" href="#">
-              Ver album <span :class="$style.arrowRight"></span>
-            </a>
+            <router-link
+              :to="`/albums/${currentAlbum.id}/${currentAlbum.slug.artist}/${currentAlbum.slug.title}`"
+              v-slot="{ href, navigate }"
+              custom
+            >
+              <a :class="$style.infoLink" :href="href" @click="navigate">
+                Ver album <span :class="$style.arrowRight"></span>
+              </a>
+            </router-link>
           </div>
         </div>
         <div :class="$style.right">
           <div :class="$style.carouselContent">
-            <a
-              href="#"
-              :class="$style.carouselLink"
-              :style="{ backgroundImage: `url('${currentAlbum.cover}')` }"
+            <router-link
+              :to="`/albums/${currentAlbum.id}/${currentAlbum.slug.artist}/${currentAlbum.slug.title}`"
+              v-slot="{ href, navigate }"
+              custom
             >
-              <span class="sr-only">{{ currentAlbum.title }}</span>
-            </a>
+              <a
+                :href="href"
+                :class="$style.carouselLink"
+                :style="{ backgroundImage: `url('${currentAlbum.cover}')` }"
+                @click="navigate"
+              >
+                <span class="sr-only">{{ currentAlbum.title }}</span>
+              </a>
+            </router-link>
             <CarouselControls
               @move-prev="movePrev"
               @move-next="moveNext"
-              :current="active + 1"
+              :current="active"
               :length="albumList.length"
               :show-numbers="true"
             />
@@ -55,7 +68,7 @@ export default {
   components: { CarouselControls, SectionTitle },
   data() {
     return {
-      active: 0,
+      active: 1,
       albumList,
       store: this.$store,
       titleAppears: false,
@@ -63,19 +76,15 @@ export default {
   },
   computed: {
     currentAlbum() {
-      return this.albumList.find(({ id }) => id === this.active);
+      return this.albumList.find(({ id }) => parseInt(id) === this.active);
     },
   },
   methods: {
     movePrev() {
-      this.active > 0
-        ? this.active--
-        : (this.active = this.albumList.length - 1);
+      this.active > 1 ? this.active-- : (this.active = this.albumList.length);
     },
     moveNext() {
-      this.active < this.albumList.length - 1
-        ? this.active++
-        : (this.active = 0);
+      this.active < this.albumList.length ? this.active++ : (this.active = 1);
     },
     preloadImages() {
       this.albumList.forEach(({ cover }) => {
@@ -85,6 +94,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.currentAlbum);
     this.so = ScrollOut({
       scope: this.$el,
       once: true,

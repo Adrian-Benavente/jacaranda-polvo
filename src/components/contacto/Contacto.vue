@@ -38,9 +38,9 @@
               />
             </div>
             <div>
-              <label :class="[$style.label, $style.font]" for="mensaje"
-                >Mensaje</label
-              >
+              <label :class="[$style.label, $style.font]" for="mensaje">
+                Mensaje
+              </label>
               <textarea
                 :class="[$style.textarea, $style.font]"
                 name="message"
