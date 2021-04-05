@@ -43,7 +43,15 @@ export const albumList = [
     },
     year: 2013,
     cover: require("@/assets/img/albums/polvo/pueblo-chico-infierno-grande/cover.jpg"),
-    artwork: ["cover.jpg", "back.jpg", "book.jpg", "inner.jpg"],
+    artwork: [
+      "cover.jpg",
+      "back.jpg",
+      "book.jpg",
+      "inner.jpg",
+      "charango.jpg",
+      "puente.jpg",
+      "sofi-y-facu.jpg",
+    ],
     spotifyId: "0OjZ66pSQWiE8eRoeBxZo8",
     about:
       "Grabado entre 2011 y 2012 en Taganga, Colombia y Buenos Aires, Argentina.",
@@ -81,7 +89,7 @@ export const albumList = [
     },
     year: 2019,
     cover: require("@/assets/img/albums/gordo/gordo/cover.jpg"),
-    artwork: ["front.jpg"],
+    artwork: ["front.jpg", "single.jpg", "formacion.jpg", "vivo.jpg"],
     spotifyId: "1Cw2RUYcycUVQf2Q2utGR4",
     about: "Grabado entre 2018 y 2019 en Buenos Aires.",
     details: [
@@ -113,7 +121,13 @@ export const albumList = [
     },
     year: 2020,
     cover: require("@/assets/img/albums/mar-joppich/remolinos/cover.jpg"),
-    artwork: ["cover.jpg"],
+    artwork: [
+      "cover.jpg",
+      "cover-0.jpg",
+      "cover-1.jpg",
+      "cover-2.jpg",
+      "cover-3.jpg",
+    ],
     spotifyId: "7umvHyhiuitbaMmgkzLQrl",
     about:
       "Grabado entre Septiembre y Diciembre de 2019 en Saavedra, Buenos Aires.",
@@ -416,7 +430,7 @@ export const albumList = [
     },
     year: 2013,
     cover: require("@/assets/img/albums/fran-villaveiran/a-raul-leiva/cover.jpg"),
-    artwork: ["front.jpg", "cd.jpg", "back.jpg"],
+    artwork: ["front.jpg", "cd.jpg", "back.jpg", "yavi-indio.jpg"],
     youtubePlaylistId: "PLundnWmdl9_-48u7TB9JZ_vVS53SkRtGb",
     about:
       "Interpretado en el mes de Febrero de 2013\n" +
