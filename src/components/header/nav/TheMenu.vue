@@ -10,7 +10,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('cine', 'menu')"
+              @mouseover="open && playSound('cine', 'menu')"
               >Cine
             </a>
           </router-link>
@@ -23,7 +23,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('tv', 'menu')"
+              @mouseover="open && playSound('tv', 'menu')"
               >Tv
             </a>
           </router-link>
@@ -36,7 +36,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('albums', 'menu')"
+              @mouseover="open && playSound('albums', 'menu')"
               >Albums
             </a>
           </router-link>
@@ -49,7 +49,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('sesiones', 'menu')"
+              @mouseover="open && playSound('sesiones', 'menu')"
               >Sesiones
             </a>
           </router-link>
@@ -62,7 +62,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('teatro', 'menu')"
+              @mouseover="open && playSound('teatro', 'menu')"
               >Teatro
             </a>
           </router-link>
@@ -75,7 +75,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('contenido', 'menu')"
+              @mouseover="open && playSound('contenido', 'menu')"
             >
               Contenido
             </a>
@@ -89,7 +89,7 @@
                 navigate;
                 $emit('close');
               "
-              @mouseover="playSound('contacto', 'menu')"
+              @mouseover="open && playSound('contacto', 'menu')"
               >Contacto
             </a>
           </router-link>
