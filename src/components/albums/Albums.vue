@@ -76,7 +76,7 @@ export default {
   },
   computed: {
     currentAlbum() {
-      return this.albumList.find(({ id }) => parseInt(id) === this.active);
+      return this.albumList.find(({ id }) => id === this.active);
     },
   },
   methods: {

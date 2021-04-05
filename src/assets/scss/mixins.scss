@@ -1,3 +1,4 @@
+@use "functions" as fn;
 @mixin fade-in-out {
   [data-scroll] {
     transition: opacity 1s;
@@ -14,4 +15,56 @@
   -webkit-line-clamp: $nth-of-lines;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+@mixin navigate-project-arrows {
+  .navigateToProject {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: fn.to-proportion-width(103, 1440) 0;
+    .list {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      width: fn.to-proportion-width(596, 1440);
+      .item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        &::before {
+          background: no-repeat center/contain;
+          content: "";
+          display: block;
+          height: fn.to-proportion-width(18.94, 1440);
+          margin-bottom: fn.to-proportion-width(28, 1440);
+          width: fn.to-proportion-width(9.7, 1440);
+        }
+        &.prev {
+          &::before {
+            background-image: url("../assets/img/lib/chevron.svg");
+          }
+        }
+        &.next {
+          &::before {
+            background-image: url("../assets/img/lib/chevron.svg");
+            transform: scaleX(-1);
+          }
+        }
+      }
+      .item,
+      .item a {
+        color: white;
+        font: normal 400 fn.to-rem(25) / fn.to-rem(25) var(--bebas);
+      }
+    }
+  }
+  .arrowRight {
+    background: url("/assets/img/lib/arrow-right.svg") center / contain
+    no-repeat;
+    display: inline-block;
+    height: fn.to-rem(17);
+    margin-left: fn.to-rem(13);
+    width: fn.to-rem(17);
+  }
 }

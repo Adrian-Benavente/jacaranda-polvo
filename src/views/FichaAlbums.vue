@@ -5,7 +5,12 @@
       <span :class="$style.albumTitle">{{ album.title }}</span>
     </h2>
     <main :class="$style.main">
-      <section :class="$style.albumWrapper">
+      <section
+        :class="[
+          $style.albumWrapper,
+          hasMoreThanOneArtwork && $style.extraPadding,
+        ]"
+      >
         <div :class="$style.albumArtwork">
           <figure>
             <img
@@ -16,7 +21,7 @@
               :alt="`${album.title} por ${album.artist}`"
             />
           </figure>
-          <div :class="$style.controls">
+          <div :class="$style.controls" v-if="hasMoreThanOneArtwork">
             <CarouselControls
               :current="selectedArtwork + 1"
               :length="album.artwork.length"
@@ -25,7 +30,12 @@
             />
           </div>
         </div>
-        <div :class="$style.albumPlayer">
+        <div
+          :class="[
+            $style.albumPlayer,
+            hasMoreThanOneArtwork && $style.extraSpace,
+          ]"
+        >
           <div v-if="album.spotifyId" :class="$style.spotify">
             <iframe
               :class="$style.playlist"
@@ -34,10 +44,19 @@
               allow="encrypted-media"
             ></iframe>
           </div>
-          <div v-if="album.youTubeId" :class="$style.youtube">
+          <div v-if="album.youtubePlaylistId" :class="$style.youtube">
             <iframe
               :class="$style.playlist"
-              :src="`https://www.youtube.com/embed/${album.youTubeId}`"
+              :src="`https://www.youtube.com/embed/?listType=playlist&list=${album.youtubePlaylistId}`"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div v-if="album.youtubeSingleId" :class="$style.youtube">
+            <iframe
+              :class="$style.playlist"
+              :src="`https://www.youtube.com/embed/${album.youtubeSingleId}`"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -46,7 +65,51 @@
         </div>
       </section>
       <section :aria-labelledby="$style.aboutTitle" :class="$style.about">
-        <h3 :class="$style.title" :id="$style.aboutTitle">Sobre el proyecto</h3>
+        <div :class="$style.top">
+          <div>
+            <h3 :class="$style.title" :id="$style.aboutTitle">
+              Sobre el proyecto
+            </h3>
+            <p :class="$style.text">{{ album.about }}</p>
+            <ul :class="[$style.list, $style.listSocial]">
+              <li
+                v-if="album.links && album.links.spotify"
+                :class="[$style.item, $style.social, $style.spotify]"
+              >
+                <a
+                  :class="$style.link"
+                  :href="album.links.spotify"
+                  target="_blank"
+                  >Escuchar en Spotify</a
+                >
+              </li>
+              <li
+                v-if="album.links && album.links.youTube"
+                :class="[$style.item, $style.social, $style.youTube]"
+              >
+                <a
+                  :class="$style.link"
+                  :href="album.links.youTube"
+                  target="_blank"
+                  >Escuchar en Youtube</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div v-if="album.extra">
+            <h3 :class="$style.title" :id="$style.aboutTitle">
+              {{ album.extra.title }}
+            </h3>
+            <p
+              :class="$style.text"
+              v-for="(extra, idx) in album.extra.details"
+              :key="`extra-${idx}`"
+            >
+              {{ extra }}
+            </p>
+          </div>
+        </div>
+        <h3 :class="$style.title" :id="$style.aboutTitle">Ficha tecnica</h3>
         <ul :class="$style.list">
           <li
             :class="$style.item"
@@ -55,25 +118,47 @@
           >
             {{ detail }}
           </li>
-          <li
-            v-if="album.links && album.links.spotify"
-            :class="[$style.item, $style.social, $style.spotify]"
-          >
-            <a :class="$style.link" :href="album.links.spotify" target="_blank"
-              >Escuchar en Spotify</a
-            >
-          </li>
-          <li
-            v-if="album.links && album.links.youTube"
-            :class="[$style.item, $style.social, $style.youTube]"
-          >
-            <a :class="$style.link" :href="album.links.youTube" target="_blank"
-              >Escuchar en Youtube</a
-            >
-          </li>
         </ul>
       </section>
     </main>
+    <aside :class="$style.navigateToProject">
+      <ul :class="$style.list">
+        <li>
+          <template v-if="getPreviousOne(album.id)">
+            <router-link
+              :to="getPreviousOne(album.id)"
+              v-slot="{ href, navigate }"
+              custom
+            >
+              <a
+                :class="[$style.item, $style.prev]"
+                :href="href"
+                @click="navigate"
+              >
+                Anterior proyecto
+              </a>
+            </router-link>
+          </template>
+        </li>
+        <li>
+          <template v-if="getNextOne(album.id)">
+            <router-link
+              :to="getNextOne(album.id)"
+              v-slot="{ href, navigate }"
+              custom
+            >
+              <a
+                :class="[$style.item, $style.next]"
+                :href="href"
+                @click="navigate"
+              >
+                Siguiente proyecto
+              </a>
+            </router-link>
+          </template>
+        </li>
+      </ul>
+    </aside>
   </div>
 </template>
 
@@ -88,7 +173,7 @@ export default {
     return {
       albumList,
       artist: this.$route.params.artist,
-      id: this.$route.params.id,
+      id: parseInt(this.$route.params.id),
       selectedArtwork: 0,
       title: this.$route.params.title,
     };
@@ -100,8 +185,34 @@ export default {
           id === this.id && artist === this.artist && title === this.title
       );
     },
+    hasMoreThanOneArtwork() {
+      return this.album.artwork.length > 1;
+    },
+    sound() {
+      return this.$store.state.sound;
+    },
   },
   methods: {
+    getNextOne(currId) {
+      if (currId < this.albumList.length) {
+        const { artist, title } = this.albumList.find(
+          ({ id }) => id === currId + 1
+        ).slug;
+        return `/albums/${currId + 1}/${artist}/${title}`;
+      } else {
+        return false;
+      }
+    },
+    getPreviousOne(currId) {
+      if (currId > 1) {
+        const { artist, title } = this.albumList.find(
+          ({ id }) => id === currId - 1
+        ).slug;
+        return `/albums/${currId - 1}/${artist}/${title}`;
+      } else {
+        return false;
+      }
+    },
     move(dir) {
       if (dir === "prev" && this.selectedArtwork > 0) {
         this.selectedArtwork--;
@@ -122,6 +233,7 @@ export default {
 
 <style lang="scss" module>
 @use "../assets/scss/functions" as fn;
+@use "../assets/scss/mixins" as mx;
 
 $gap: fn.to-proportion-width(110, 1440);
 $max-width: fn.to-proportion-width(1186, 1440);
@@ -139,6 +251,7 @@ $max-width: fn.to-proportion-width(1186, 1440);
     color: var(--color-hero);
   }
   &Wrapper {
+    --extra-padding: #{fn.to-proportion-width(77, 1440)};
     border: 1px solid #ffffff;
     display: grid;
     grid-auto-flow: column;
@@ -147,20 +260,26 @@ $max-width: fn.to-proportion-width(1186, 1440);
     margin: auto;
     max-width: $max-width;
     padding: fn.to-proportion-width(41, 1440) fn.to-proportion-width(82, 1440)
-      fn.to-proportion-width(169, 1440);
+      var(--extra-padding);
     width: 100%;
+    &.extraPadding {
+      --extra-padding: #{fn.to-proportion-width(169, 1440)};
+    }
   }
   &Artwork {
     &Img {
       display: block;
       height: fn.to-proportion-width(489, 1440);
       object-fit: cover;
-      width: 100%;
+      width: fn.to-proportion-width(489, 1440);
     }
   }
   &Player {
-    --extra-space: #{fn.to-proportion-width(45.5, 1440)};
+    --extra-space: 0px;
     height: calc(100% + var(--extra-space));
+    &.extraSpace {
+      --extra-space: #{fn.to-proportion-width(45.5, 1440)};
+    }
     .spotify,
     .youtube {
       height: inherit;
@@ -186,17 +305,29 @@ $max-width: fn.to-proportion-width(1186, 1440);
 .about {
   margin: auto;
   max-width: $max-width;
-  padding: fn.to-proportion-width(200, 1440) 0;
   text-align: start;
+  .top {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: 1fr 1fr;
+  }
   .title {
     color: var(--color-hero);
     font: normal 400 fn.to-rem(24) / fn.to-rem(35) var(--bebas);
     margin-bottom: fn.to-rem(27);
+    margin-top: fn.to-proportion-width(100, 1440);
+  }
+  .text {
+    color: white;
+    font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
+    margin-bottom: fn.to-rem(27);
   }
   .list {
+    list-style: none;
+  }
+  .list:not(.listSocial) {
     column-count: 2;
     column-gap: $gap;
-    list-style: none;
   }
   .item {
     color: white;
@@ -232,4 +363,7 @@ $max-width: fn.to-proportion-width(1186, 1440);
     }
   }
 }
+.highlight {
+}
+@include mx.navigate-project-arrows;
 </style>

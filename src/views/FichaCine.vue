@@ -83,32 +83,38 @@
     <aside :class="$style.navigateToProject">
       <ul :class="$style.list">
         <li>
-          <router-link
-            :to="getPreviousOne(fichaData.id)"
-            v-slot="{ href, navigate }"
-          >
-            <a
-              :class="[$style.item, $style.prev]"
-              :href="href"
-              @click="navigate"
+          <template v-if="getPreviousOne(fichaData.id)">
+            <router-link
+              :to="getPreviousOne(fichaData.id)"
+              v-slot="{ href, navigate }"
+              custom
             >
-              Anterior proyecto
-            </a>
-          </router-link>
+              <a
+                :class="[$style.item, $style.prev]"
+                :href="href"
+                @click="navigate"
+              >
+                Anterior proyecto
+              </a>
+            </router-link>
+          </template>
         </li>
         <li>
-          <router-link
-            :to="getNextOne(fichaData.id)"
-            v-slot="{ href, navigate }"
-          >
-            <a
-              :class="[$style.item, $style.next]"
-              :href="href"
-              @click="navigate"
+          <template v-if="getNextOne(fichaData.id)">
+            <router-link
+              :to="getNextOne(fichaData.id)"
+              v-slot="{ href, navigate }"
+              custom
             >
-              Siguiente proyecto
-            </a>
-          </router-link>
+              <a
+                :class="[$style.item, $style.next]"
+                :href="href"
+                @click="navigate"
+              >
+                Siguiente proyecto
+              </a>
+            </router-link>
+          </template>
         </li>
       </ul>
     </aside>
@@ -150,7 +156,7 @@ export default {
         const slug = this.fichasCine.find(({ id }) => id === currId + 1).slug;
         return `/cine/${slug}`;
       } else {
-        return "";
+        return false;
       }
     },
     getPreviousOne(currId) {
@@ -158,7 +164,7 @@ export default {
         const slug = this.fichasCine.find(({ id }) => id === currId - 1).slug;
         return `/cine/${slug}`;
       } else {
-        return "";
+        return false;
       }
     },
   },
@@ -167,6 +173,8 @@ export default {
 
 <style lang="scss" module>
 @use "../assets/scss/functions" as fn;
+@use "../assets/scss/mixins" as mx;
+
 .container {
   background-color: black;
 }
@@ -338,54 +346,5 @@ export default {
     }
   }
 }
-.navigateToProject {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  padding: fn.to-proportion-width(103, 1440) 0;
-  .list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: fn.to-proportion-width(596, 1440);
-    .item {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      &::before {
-        background: no-repeat center/contain;
-        content: "";
-        display: block;
-        height: fn.to-proportion-width(18.94, 1440);
-        margin-bottom: fn.to-proportion-width(28, 1440);
-        width: fn.to-proportion-width(9.7, 1440);
-      }
-      &.prev {
-        &::before {
-          background-image: url("../assets/img/lib/chevron.svg");
-        }
-      }
-      &.next {
-        &::before {
-          background-image: url("../assets/img/lib/chevron.svg");
-          transform: scaleX(-1);
-        }
-      }
-    }
-    .item,
-    .item a {
-      color: white;
-      font: normal 400 fn.to-rem(25) / fn.to-rem(25) var(--bebas);
-    }
-  }
-}
-.arrowRight {
-  background: url("../assets/img/lib/arrow-right.svg") center / contain
-    no-repeat;
-  display: inline-block;
-  height: fn.to-rem(17);
-  margin-left: fn.to-rem(13);
-  width: fn.to-rem(17);
-}
+@include mx.navigate-project-arrows;
 </style>
