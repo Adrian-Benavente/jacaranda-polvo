@@ -156,7 +156,7 @@ export const albumList = [
     },
     year: 2010,
     cover: require("@/assets/img/albums/facundo-rissotti/paisajes/cover.jpg"),
-    artwork: ["cover.jpg", "back.jpg", "cd.jpg", "inner.jpg"],
+    artwork: ["cover.jpg", "back.jpg", "cd.jpg", "inner.jpg", "yavi-indio.jpg"],
     spotifyId: "1hukLPIwKAAnyImBsbkQoj",
     about: "Grabado entre Octubre de 2007 y Noviembre de 2010 en Buenos Aires.",
     details: [
@@ -430,7 +430,7 @@ export const albumList = [
     },
     year: 2013,
     cover: require("@/assets/img/albums/fran-villaveiran/a-raul-leiva/cover.jpg"),
-    artwork: ["front.jpg", "cd.jpg", "back.jpg", "yavi-indio.jpg"],
+    artwork: ["front.jpg", "cd.jpg", "back.jpg"],
     youtubePlaylistId: "PLundnWmdl9_-48u7TB9JZ_vVS53SkRtGb",
     about:
       "Interpretado en el mes de Febrero de 2013\n" +
