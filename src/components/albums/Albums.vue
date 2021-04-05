@@ -195,6 +195,9 @@ export default {
   display: flex;
   font: fn.to-rem(18) var(--montserrat);
   margin-top: 1rem;
+  &:hover .arrowRight {
+    margin-left: 1.2rem;
+  }
   @media (min-width: 1920px) {
     font-size: fn.to-proportion-width(18, 1440);
   }
@@ -205,6 +208,7 @@ export default {
   display: inline-block;
   height: fn.to-rem(17);
   margin-left: fn.to-rem(13);
+  transition: margin-left 0.3s ease-in-out;
   width: fn.to-rem(17);
 }
 @keyframes fadeIn {
