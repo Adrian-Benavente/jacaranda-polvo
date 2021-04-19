@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -21,6 +22,7 @@
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^1.0.0",
     "@kazupon/vue-i18n-loader": "^0.5.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -34,6 +36,7 @@
     "prettier": "^2.1.2",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
+    "vue-cli-plugin-i18n": "~2.1.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -1,21 +1,32 @@
 <template>
   <div :class="$style.language">
-    <button
-      aria-label="Select Spanish language"
-      :class="[$style.button, selectedLanguage === 'es' && $style.highlight]"
-      @click="selectedLanguage = 'es'"
+    <label
+      :class="[$style.option, selectedLanguage === 'es' && $style.highlight]"
     >
+      <input
+        :class="$style.input"
+        name="lang"
+        type="radio"
+        aria-label="Español"
+        value="es"
+        v-model="selectedLanguage"
+      />
       ES
-    </button>
-    /
-    <button
-      aria-label="Seleccionar idioma español"
-      :class="[$style.button, selectedLanguage === 'en' && $style.highlight]"
-      @click="selectedLanguage = 'en'"
+    </label>
+    <span :class="$style.septarator">/</span>
+    <label
+      :class="[$style.option, selectedLanguage === 'en' && $style.highlight]"
     >
+      <input
+        :class="$style.input"
+        name="lang"
+        type="radio"
+        aria-label="English"
+        value="en"
+        v-model="selectedLanguage"
+      />
       EN
-    </button>
-    <pre>{{ selectedLanguage }}</pre>
+    </label>
   </div>
 </template>
 
@@ -29,6 +40,8 @@ export default {
       },
       set(newVal) {
         this.$i18n.locale = newVal;
+        localStorage.setItem("lang", this.selectedLanguage);
+        document.documentElement.lang = localStorage.getItem("lang") || "es";
       },
     },
   },
@@ -36,11 +49,10 @@ export default {
 </script>
 
 <style lang="scss" module>
-@use "../../assets/scss/functions" as fn;
 .language {
   color: white;
 }
-.button {
+.option {
   background: none;
   border: none;
   color: white;
@@ -49,11 +61,17 @@ export default {
   font-size: 0.875rem;
   text-decoration: none;
   text-transform: uppercase;
+  &.highlight {
+    color: var(--color-hero);
+  }
   &:focus {
     outline: none;
   }
 }
-.highlight {
-  color: var(--color-hero);
+.input {
+  appearance: none;
+}
+.septarator {
+  margin: 0 0.25rem;
 }
 </style>

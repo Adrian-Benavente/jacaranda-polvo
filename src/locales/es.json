@@ -1,0 +1,74 @@
+{
+  "albums": {
+    "see_album": "Ver álbum"
+  },
+  "global": {
+    "see_more": "Ver más",
+    "sound": "sonido"
+  },
+  "sections": {
+    "tv": "tv",
+    "theater": "teatro",
+    "content": "contenido",
+    "albums": "álbumes",
+    "contact": "contacto",
+    "sessions": "sesiones",
+    "cine": "cine"
+  },
+  "sessions": {
+    "delta": {
+      "details": {
+        "item_1": {
+          "key": "Producción General",
+          "val": "Facu Dial"
+        },
+        "item_2": {
+          "key": "Dirección",
+          "val": "Arnaldo Diaz"
+        },
+        "item_3": {
+          "key": "Sonido Directo y Mezcla",
+          "val": "Facu Rissotti"
+        },
+        "item_4": {
+          "key": "Producción",
+          "val": "iz Guevara, Buquino Cabrera"
+        },
+        "item_5": {
+          "key": "Ubicación",
+          "val": "Delta del Tigre, Argentina. 2018"
+        }
+      }
+    }
+  },
+  "tv": {
+    "post_production": {
+      "title": "Post producción de sonido",
+      "synopsis": {
+        "chunk_1": "Musicalización, Edición y Post producción de sonido en ProTools.",
+        "chunk_2": "El Festival del Bien Público, Televisión Pública Argentina."
+      }
+    },
+    "original_music": {
+      "title": "Música Original para TV",
+      "synopsis": {
+        "chunk_1": "Composición y Grabación de canciones originales con registro en SADAIC / DNDA / AADI.",
+        "chunk_2": "El Festival del Bien Público, Televisión Pública Argentina."
+      }
+    },
+    "direct_sound": {
+      "title": "Sonido directo",
+      "synopsis": {
+        "chunk_1": "Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales.",
+        "chunk_2": "Edición y Post Producción",
+        "chunk_3": "Remax Encuesta, Argentina."
+      }
+    }
+  },
+  "welcome": {
+    "chunk_1": "Desde 2010 en Jacarandá Polvo nos dedicamos a la producción musical para artistas y proyectos en diversas plataformas.",
+    "chunk_2": "Componemos, grabamos y editamos música para Cine, Tv y Teatro. Realizamos contenido audiovisual original.",
+    "chunk_3": "Si tenés una idea o un proyecto no dudes en consultarnos.",
+    "chunk_4": "Bienvenid{x}"
+  }
+}

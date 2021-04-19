@@ -8,4 +8,13 @@ module.exports = {
       .loader("@kazupon/vue-i18n-loader")
       .end();
   },
+
+  pluginOptions: {
+    i18n: {
+      locale: "es",
+      fallbackLocale: "es",
+      localeDir: "locales",
+      enableInSFC: true,
+    },
+  },
 };

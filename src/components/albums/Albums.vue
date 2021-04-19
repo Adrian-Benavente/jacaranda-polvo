@@ -1,13 +1,13 @@
 <template>
   <section
     id="section-albums"
-    :class="$style.container"
-    aria-labelledby="albums"
+    :class="[$style.container, $style[`${$i18n.locale}`]]"
+    :aria-labelledby="$t('sections.albums')"
   >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'albums'"
+        :title-text="$t('sections.albums')"
         :title-appears="titleAppears"
       />
       <div :class="$style.grid">
@@ -22,7 +22,8 @@
               custom
             >
               <a :class="$style.infoLink" :href="href" @click="navigate">
-                Ver album <span :class="$style.arrowRight"></span>
+                {{ $t("albums.see_album") }}
+                <span :class="$style.arrowRight"></span>
               </a>
             </router-link>
           </div>
@@ -94,7 +95,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.currentAlbum);
     this.so = ScrollOut({
       scope: this.$el,
       once: true,
@@ -123,12 +123,19 @@ export default {
   display: grid;
   align-items: end;
   justify-items: end;
+  &.en {
+    .title {
+      left: -2.5%;
+    }
+  }
+  &.es {
+    .title {
+      left: -3.7%;
+    }
+  }
 }
 .scrollOutContainer {
   height: 100%;
-}
-.title {
-  left: -2.5%;
 }
 .grid {
   align-content: end;

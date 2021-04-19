@@ -2,21 +2,19 @@
   <section :class="$style.container">
     <div data-scroll>
       <p :class="$style.text">
-        Desde 2010 en Jacarandá Polvo nos dedicamos a la producción musical para
-        artistas y proyectos en diversas plataformas.
+        {{ $t("welcome.chunk_1") }}
       </p>
       <p :class="$style.text">
-        Componemos, grabamos y editamos música para Cine, Tv y Teatro.
-        Realizamos contenido audiovisual original.
+        {{ $t("welcome.chunk_2") }}
       </p>
       <p :class="$style.text">
-        Si tenés una idea o un proyecto no dudes en consultarnos.
+        {{ $t("welcome.chunk_3") }}
       </p>
       <p
         :class="[$style.text, $style.bold, $style.welcome]"
         aria-label="Bienvenide"
       >
-        Bienvenid<span>{{ letter }}</span>
+        {{ $t("welcome.chunk_4", { x: letter }) }}
       </p>
     </div>
   </section>

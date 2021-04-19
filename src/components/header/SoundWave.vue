@@ -10,7 +10,7 @@
       <span :class="$style.stroke"></span>
     </span>
     <span :class="$style.statusText">
-      Sound {{ store.state.sound ? "on" : "off" }}
+      {{ $t("global.sound") }} {{ store.state.sound ? "on" : "off" }}
     </span>
   </button>
 </template>
@@ -93,6 +93,7 @@ export default {
   font-size: 0.75rem;
   letter-spacing: fn.to-rem(0.75);
   text-align: center;
+  text-transform: capitalize;
   width: 5.5em;
 }
 

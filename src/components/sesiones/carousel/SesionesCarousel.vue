@@ -9,7 +9,7 @@
     >
       <div
         :class="[$style.slide, active === session.id && $style.active]"
-        v-for="session in sesiones"
+        v-for="session in sessions"
         :key="session.id"
       >
         <button
@@ -47,12 +47,13 @@
 </template>
 
 <script>
-import { sesiones } from "@/components/sesiones/data-sesiones";
 import CarouselControls from "@/components/lib/CarouselControls";
 import VideoModal from "@/components/lib/VideoModal";
+import { sessions } from "@/components/sesiones/data-sesiones";
 
 export default {
   name: "SesionesCarousel",
+  mixins: [sessions],
   components: { VideoModal, CarouselControls },
   data: () => ({
     active: null,
@@ -60,7 +61,6 @@ export default {
     controlsOffset: null,
     modalOpen: false,
     rem: null,
-    sesiones,
     slideOffset: null,
     slideWidth: null,
     translateValue: null,

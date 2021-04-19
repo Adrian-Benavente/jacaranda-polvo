@@ -1,28 +1,32 @@
 <template>
-  <section id="section-tv" :class="$style.container" aria-labelledby="tv">
+  <section
+    id="section-tv"
+    :class="$style.container"
+    :aria-labelledby="$t('sections.tv')"
+  >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'tv'"
+        :title-text="$t('sections.tv')"
         :title-appears="titleAppears"
       />
       <div :class="$style.workList">
         <dl :class="$style.list">
-          <a
-            v-for="video in videos"
-            :key="video.id"
+          <router-link
+            v-for="{ file, id, slug, synopsis, title } in television"
+            :key="id"
             :class="$style.listGroup"
-            :href="`/tv/${video.slug}`"
+            :to="`/tv/${slug}`"
           >
             <dt>
               <span :class="$style.slash" aria-hidden="true">/</span>
-              {{ video.title }}
+              {{ title }}
             </dt>
             <dd>
-              <span v-html="video.synopsis"></span>
-              <video muted autoplay loop :src="video.file"></video>
+              <span v-html="synopsis"></span>
+              <video muted autoplay loop :src="file"></video>
             </dd>
-          </a>
+          </router-link>
         </dl>
       </div>
     </div>
@@ -40,30 +44,41 @@ export default {
   data() {
     return {
       titleAppears: false,
-      videos: [
+    };
+  },
+  computed: {
+    television() {
+      const $t = this.$t.bind(this);
+      return [
         {
           id: 0,
-          title: "Post producción de sonido",
+          title: $t("tv.post_production.title"),
           slug: "post-produccion-sonido",
-          synopsis: `<p>Musicalización, Edición y Post producción de sonido en ProTools.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
+          synopsis: `<p>${$t("tv.post_production.synopsis.chunk_1")}</p><p>${$t(
+            "tv.post_production.synopsis.chunk_2"
+          )}</p>`,
           file: require("../../assets/video/tv/01-post-produccion-sonido.mp4"),
         },
         {
           id: 1,
-          title: "Música Original para TV",
+          title: $t("tv.original_music.title"),
           slug: "musica-original-tv",
-          synopsis: `<p>Composición y Grabación de canciones originales.</p><p>Registro en SADAIC / DNDA / AADI.</p><p>El Festival del Bien Público, Televisión Pública Argentina.</p>`,
+          synopsis: `<p>${$t("tv.original_music.synopsis.chunk_1")}</p><p>${$t(
+            "tv.original_music.synopsis.chunk_2"
+          )}</p>`,
           file: require("../../assets/video/tv/02-musica-original-tv.mp4"),
         },
         {
           id: 2,
-          title: "Sonido directo",
+          title: $t("tv.direct_sound.title"),
           slug: "sonido-directo",
-          synopsis: `<p>Grabación de sonido de campo para Publicidades y Proyectos Audiovisuales. Edición y Post Producción. </p><p>Remax Encuesta, Argentina.</p>`,
+          synopsis: `<p>${$t("tv.direct_sound.synopsis.chunk_1")}</p><p>${$t(
+            "tv.direct_sound.synopsis.chunk_2"
+          )}</p><p>${$t("tv.direct_sound.synopsis.chunk_3")}</p>`,
           file: require("../../assets/video/tv/03-sonido-directo.mp4"),
         },
-      ],
-    };
+      ];
+    },
   },
   methods: {
     hoverVideo() {

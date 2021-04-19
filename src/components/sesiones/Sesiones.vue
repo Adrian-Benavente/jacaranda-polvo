@@ -2,12 +2,12 @@
   <section
     id="section-sesiones"
     :class="$style.container"
-    aria-labelledby="albums"
+    :aria-labelledby="$t('sections.sessions')"
   >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'sesiones'"
+        :title-text="$t('sections.sessions')"
         :title-appears="titleAppears"
       />
       <div :class="$style.carouselContainer">

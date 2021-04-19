@@ -23,7 +23,7 @@
             @mouseover="sound && playSound('tv', 'aldea')"
           >
             <kinesis-element :strength="30" tag="a" href="#section-tv">
-              <span class="aldea__item-text"> Tv </span>
+              <span class="aldea__item-text">{{ $t("sections.tv") }}</span>
             </kinesis-element>
           </li>
           <li
@@ -31,7 +31,7 @@
             @mouseover="sound && playSound('teatro', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-teatro">
-              <span class="aldea__item-text">Teatro</span>
+              <span class="aldea__item-text">{{ $t("sections.theater") }}</span>
             </kinesis-element>
           </li>
           <li
@@ -39,7 +39,7 @@
             @mouseover="sound && playSound('contenido', 'aldea')"
           >
             <kinesis-element :strength="40" tag="a" href="#section-contenido">
-              <span class="aldea__item-text">Contenido</span>
+              <span class="aldea__item-text">{{ $t("sections.content") }}</span>
             </kinesis-element>
           </li>
           <li
@@ -47,7 +47,7 @@
             @mouseover="sound && playSound('albums', 'aldea')"
           >
             <kinesis-element :strength="80" tag="a" href="#section-albums">
-              <span class="aldea__item-text">Albums</span>
+              <span class="aldea__item-text">{{ $t("sections.albums") }}</span>
             </kinesis-element>
           </li>
           <li
@@ -55,7 +55,7 @@
             @mouseover="sound && playSound('contacto', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-contacto">
-              <span class="aldea__item-text">Contacto</span>
+              <span class="aldea__item-text">{{ $t("sections.contact") }}</span>
             </kinesis-element>
           </li>
           <li
@@ -63,7 +63,9 @@
             @mouseover="sound && playSound('sesiones', 'aldea')"
           >
             <kinesis-element :strength="30" tag="a" href="#section-sesiones">
-              <span class="aldea__item-text">Sesiones</span>
+              <span class="aldea__item-text">{{
+                $t("sections.sessions")
+              }}</span>
             </kinesis-element>
           </li>
           <li
@@ -71,7 +73,7 @@
             @mouseover="sound && playSound('cine', 'aldea')"
           >
             <kinesis-element :strength="70" tag="a" href="#section-cine">
-              <span class="aldea__item-text">Cine</span>
+              <span class="aldea__item-text">{{ $t("sections.cine") }}</span>
             </kinesis-element>
           </li>
         </ul>
