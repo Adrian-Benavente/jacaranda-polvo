@@ -15,22 +15,20 @@
     >
       EN
     </button>
+    <pre>{{ selectedLanguage }}</pre>
   </div>
 </template>
 
 <script>
 export default {
   name: "LanguageSwitch",
-  data: () => ({
-    language: "es",
-  }),
   computed: {
     selectedLanguage: {
       get() {
-        return this.language;
+        return this.$i18n.locale;
       },
       set(newVal) {
-        this.language = newVal;
+        this.$i18n.locale = newVal;
       },
     },
   },
