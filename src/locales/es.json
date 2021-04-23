@@ -3,6 +3,7 @@
     "see_album": "Ver álbum"
   },
   "global": {
+    "musicians": "músicos",
     "see_more": "Ver más",
     "sound": "sonido"
   },
@@ -18,26 +19,98 @@
   "sessions": {
     "delta": {
       "details": {
-        "item_1": {
-          "key": "Producción General",
-          "val": "Facu Dial"
-        },
-        "item_2": {
-          "key": "Dirección",
-          "val": "Arnaldo Diaz"
-        },
-        "item_3": {
-          "key": "Sonido Directo y Mezcla",
-          "val": "Facu Rissotti"
-        },
-        "item_4": {
-          "key": "Producción",
-          "val": "iz Guevara, Buquino Cabrera"
-        },
-        "item_5": {
-          "key": "Ubicación",
-          "val": "Delta del Tigre, Argentina. 2018"
+        "item_1": "Producción General",
+        "item_2": "Dirección",
+        "item_3": "Sonido Directo y Mezcla",
+        "item_4": "Producción",
+        "item_5": "Ubicación"
+      }
+    },
+    "delta_trailer": {
+      "details": {
+        "item_1": "Producción General",
+        "item_2": "Dirección",
+        "item_3": "Sonido Directo y Mezcla",
+        "item_4": "Producción",
+        "item_5": "Ubicación"
+      }
+    },
+    "despierta": {
+      "details": {
+        "item_1": "Cámara y edición de video",
+        "item_2": "Voz y composición",
+        "item_3": "Músicos",
+        "item_4": "Grabación y Mixtering",
+        "item_5": "Ubicación"
+      }
+    },
+    "el_espiritu_del_valle": {
+      "details": {
+        "item_1": "Guitarra y Voz",
+        "item_2": "Cámaras",
+        "item_3": "Producción General + Mixtering",
+        "item_4": "Ubicación"
+      }
+    },
+    "estudio_mcl": {
+      "details": {
+        "item_1": "Dirección, Cámara y Edición",
+        "item_2": "CDU",
+        "item_3": "Guitar Tech",
+        "item_4": "Mezcla y Mastering",
+        "item_5": "Ubicación"
+      }
+    },
+    "herencia": {
+      "details": {
+        "item_1": "Poema",
+        "item_2": "Música",
+        "item_3": "Cámara",
+        "item_4": "Grabación, Producción y Mezcla",
+        "item_5": "Ubicación"
+      }
+    },
+    "pueblo_chico": {
+      "sofia": {
+        "details": {
+          "item_1": "Producción General",
+          "item_2": "Dirección y Realización",
+          "item_3": "Locación y Maquillaje",
+          "item_4": "Cámara Salta",
+          "item_5": "Ubicación"
         }
+      },
+      "matraka": {
+        "details": {
+          "item_1": "Drag Queen y Producción",
+          "item_2": "Cámara",
+          "item_3": "Músicxs",
+          "item_4": "Ubicación"
+        }
+      }
+    },
+    "remolinos": {
+      "details": {
+        "item_1": "Composición, Guitarras, Arte y Video",
+        "item_2": "Grabación, Producción y Mezcla",
+        "item_3": "Co producción + Mastering",
+        "item_4": "Ubicación"
+      }
+    },
+    "vidala_para_mi_sombra": {
+      "details": {
+        "item_1": "Cámara y edición de video",
+        "item_2": "Músicxs",
+        "item_3": "Grabación y Mixtering",
+        "item_4": "Ubicación"
+      }
+    },
+    "vuelta_al_sol": {
+      "details": {
+        "item_1": "Guitarra y Voz",
+        "item_2": "Cámaras",
+        "item_3": "Producción General + Mixtering",
+        "item_4": "Ubicación"
       }
     }
   },

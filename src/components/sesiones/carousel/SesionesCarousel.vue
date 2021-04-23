@@ -79,7 +79,7 @@ export default {
       }
     },
     moveRight() {
-      if (this.active < this.sesiones.length - 1) {
+      if (this.active < this.sessions.length - 1) {
         this.translateValue -= this.slideWidth;
         this.active++;
       } else {
