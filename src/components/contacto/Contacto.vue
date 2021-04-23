@@ -1,13 +1,13 @@
 <template>
   <section
     id="section-contacto"
-    :class="$style.container"
-    aria-labelledby="contacto"
+    :class="[$style.container, $style[`${$i18n.locale}`]]"
+    :aria-labelledby="$t('sections.contact')"
   >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'contacto'"
+        :title-text="$t('sections.contact')"
         :title-appears="titleAppears"
       />
       <div :class="$style.content">
@@ -22,8 +22,8 @@
                 :class="[$style.input, $style.oneLine, $style.font]"
                 type="text"
                 name="name"
-                placeholder="Nombre"
-                aria-label="Nombre"
+                :placeholder="$t('contact.name')"
+                :aria-label="$t('contact.name')"
                 required
               />
             </div>
@@ -39,7 +39,7 @@
             </div>
             <div>
               <label :class="[$style.label, $style.font]" for="mensaje">
-                Mensaje
+                {{ $t("contact.message") }}
               </label>
               <textarea
                 :class="[$style.textarea, $style.font]"
@@ -54,13 +54,13 @@
             <div>
               <input
                 type="submit"
-                value="Enviar"
+                :value="$t('contact.send')"
                 :class="[$style.input, $style.send, $style.font]"
               />
             </div>
           </form>
           <div :class="$style.datos">
-            <h3 :class="$style.hablemos">Hablemos</h3>
+            <h3 :class="$style.hablemos">{{ $t("contact.lets_talk") }}</h3>
             <dl :class="$style.contactInfo">
               <div :class="$style.group">
                 <dt :class="$style.email">
@@ -74,7 +74,7 @@
               </div>
               <div :class="$style.group">
                 <dt :class="$style.phone">
-                  <span class="sr-only">Teléfono:</span>
+                  <span class="sr-only">Whatsapp:</span>
                 </dt>
                 <dd>
                   <a
@@ -141,6 +141,9 @@ export default {
 }
 .title {
   left: -4.7%;
+}
+.en .title {
+  left: -3.45%;
 }
 .content {
   position: relative;

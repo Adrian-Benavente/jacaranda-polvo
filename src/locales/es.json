@@ -2,6 +2,12 @@
   "albums": {
     "see_album": "Ver álbum"
   },
+  "contact": {
+    "name": "Nombre",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "lets_talk": "Hablemos"
+  },
   "content": {
     "vx_drones": {
       "title": "VX DRONES REEL",
