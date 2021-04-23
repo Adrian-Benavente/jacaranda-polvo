@@ -1,13 +1,13 @@
 <template>
   <section
     id="section-teatro"
-    :class="$style.container"
-    aria-labelledby="teatro"
+    :class="[$style.container, $style[`${$i18n.locale}`]]"
+    :aria-labelledby="$t('sections.theater')"
   >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'teatro'"
+        :title-text="$t('sections.theater')"
         :title-appears="titleAppears"
       />
       <div :class="$style.workList">
@@ -47,30 +47,40 @@ export default {
   data() {
     return {
       titleAppears: false,
-      works: [
+    };
+  },
+  computed: {
+    works() {
+      return [
         {
           id: 0,
           title: "Encajado",
           slug: "encajado",
-          synopsis: `<p>Música Original de Sala y Jingle <br>para la Obra Encajado (2020) de Damián Travaglia.</p>`,
+          synopsis: `<p>${this.$t("theater.encajado.line_1")}<br>${this.$t(
+            "theater.encajado.line_2"
+          )}</p>`,
           file: require("../../assets/img/teatro/01-encajado.jpg"),
         },
         {
           id: 1,
           title: "Schatzi",
           slug: "schatzi",
-          synopsis: `<p>Armado de Música de Sala para la Obra <br>Schatzi (2013) de Matías Nan.</p>`,
+          synopsis: `<p>${this.$t("theater.schatzi.line_1")}<br>${this.$t(
+            "theater.schatzi.line_2"
+          )}</p>`,
           file: require("../../assets/img/teatro/02-schatzi.jpg"),
         },
         {
           id: 2,
           title: "Cosmorodante",
           slug: "cosmorodante",
-          synopsis: `<p>Producción de álbum musical para niñes, <br>Mezcla y Mastering (2017) para Cosmorodante.</p>`,
+          synopsis: `<p>${this.$t("theater.cosmorodante.line_1")}<br>${this.$t(
+            "theater.cosmorodante.line_2"
+          )}</p>`,
           file: require("../../assets/img/teatro/03-cosmorodante.jpg"),
         },
-      ],
-    };
+      ];
+    },
   },
   methods: {
     hoverImgPreview() {
@@ -142,7 +152,10 @@ export default {
   height: 100%;
 }
 .title {
-  left: -2%;
+  left: -2.1%;
+}
+.en .title {
+  left: -3.35%;
 }
 .workList {
   align-items: center;

@@ -1,13 +1,13 @@
 <template>
   <section
     id="section-contenido"
-    :class="$style.container"
-    aria-labelledby="contenido"
+    :class="[$style.container, $style[`${$i18n.locale}`]]"
+    :aria-labelledby="$t('sections.content')"
   >
     <div :class="$style.scrollOutContainer" data-scroll>
       <SectionTitle
         :class="$style.title"
-        :title-text="'contenido'"
+        :title-text="$t('sections.content')"
         :title-appears="titleAppears"
       />
       <div :class="$style.content">
@@ -52,10 +52,10 @@ import { contenido } from "@/components/contenido/data-contenido";
 export default {
   name: "Contenido",
   components: { CarouselControls, SectionTitle },
+  mixins: [contenido],
   data() {
     return {
       active: 0,
-      contenido,
       titleAppears: false,
     };
   },
@@ -112,6 +112,9 @@ export default {
 }
 .title {
   left: -5.5%;
+}
+.en .title {
+  left: -3.5%;
 }
 .content {
   align-items: center;

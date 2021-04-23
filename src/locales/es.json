@@ -2,6 +2,55 @@
   "albums": {
     "see_album": "Ver álbum"
   },
+  "content": {
+    "vx_drones": {
+      "title": "VX DRONES REEL",
+      "line_1": "Música Original, Drone y Edición para Vx Drones (IG: @vx.drones)",
+      "line_2": "Producción: Vx Drones / Videomix"
+    },
+    "cuarenta_mil": {
+      "title": "40.000",
+      "line_1": "Sonido Directo en campaña RCP para la Asociación de Anestesia (AAARBA)",
+      "line_2": "Producción: Videomix "
+    },
+    "videomix_covid": {
+      "title": "VIDEOMIX COVID19 ",
+      "line_1": "Grabación de canción adaptada y Drone\nRealización: Gerardo Rissotti",
+      "line_2": "Realización: Gerardo Rissotti",
+      "line_3": "Producción: Videomix"
+    },
+    "superdomo_rioja": {
+      "title": "SUPERDOMO LA RIOJA",
+      "line_1": "Música Original, Drone y Edición \npara Sergio Guerrera, Club Led",
+      "line_2": "Producción: Vx Drones / Jacarandá Polvo"
+    },
+    "gnocchi": {
+      "title": "GNOCCHI DEL TIGRE",
+      "line_1": "Música Original en Recetas de Cocina\npara Elvira Me Gusta",
+      "line_2": "Producción: Gerardo Rissotti"
+    },
+    "rcp_cancion": {
+      "title": "CANCIÓN DE LA REANIMACIÓN",
+      "line_1": "Grabación de canción y Edición de Video \nen Campaña RCP desde mi Cole para AAARBA",
+      "line_2": "Músicxs: Sofia Dellafiore + Facundo Rissotti + Coro de niñxs",
+      "line_3": "Producción: Jacarandá Polvo / Videomix"
+    },
+    "rcp_oficina": {
+      "title": "RCP OFICINA",
+      "line_1": "Sonido Directo en campaña RCP\npara la Asociación de Anestesia.",
+      "line_2": "Producción: Videomix"
+    },
+    "obras_ba": {
+      "title": "OBRAS BA",
+      "line_1": "Música Original, Drone y Edición \npara Vx Drones (IG: @vx.drones)",
+      "line_2": "Producción: Vx Drones / Jacarandá Polvo"
+    },
+    "rcp_futbol": {
+      "title": "RCP FUTBOL",
+      "line_1": "Sonido Directo y Drone en campaña RCP \npara la Asociación de Anestesia.",
+      "line_2": "Producción: Videomix"
+    }
+  },
   "global": {
     "musicians": "músicos",
     "see_more": "Ver más",
@@ -136,6 +185,20 @@
         "chunk_2": "Edición y Post Producción",
         "chunk_3": "Remax Encuesta, Argentina."
       }
+    }
+  },
+  "theater": {
+    "encajado": {
+      "line_1": "Música Original de Sala y Jingle",
+      "line_2": "para la Obra Encajado (2020) de Damián Travaglia."
+    },
+    "schatzi": {
+      "line_1": "Armado de Música de Sala",
+      "line_2": "para la Obra Schatzi (2013) de Matías Nan."
+    },
+    "cosmorodante": {
+      "line_1": "Producción de álbum musical para niñes, de Música de Sala",
+      "line_2": "Mezcla y Mastering (2017) para Cosmorodante."
     }
   },
   "welcome": {
