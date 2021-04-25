@@ -2,6 +2,152 @@
   "albums": {
     "see_album": "Ver álbum"
   },
+  "cine": {
+    "about_project": "About the project",
+    "full_movie": "Película completa",
+    "navigation": {
+      "next": "Siguiente proyecto",
+      "prev": "Anterior proyecto"
+    },
+    "projects": {
+      "chacabuco": {
+        "about": {
+          "title": {
+            "chunk_1": "Canción Original El Demonio de Chacabuco",
+            "chunk_2": "Letra y música: Matto Rios - Facundo Rissotti"
+          },
+          "description": "Chacabuco es la historia de Claudia, una adolescente que debe volver a convivir por un verano con su padre Marcelo después de quince años de vivir separados. La estadía transcurre en la casa de su abuelo, fallecido hace recientes días. La llegada a la casa de Pipo, el novio de Claudia y de Sara, la cuidadora del abuelo, ayudarán a la unión del vínculo central, entretejiéndolo con un recorrido por el despertar sexual en la adolescencia, y un viaje por la memoria, en donde el pasado juega un papel fundamental para el entendimiento y reconciliación con el presente."
+        },
+        "participants": {
+          "item_1": {
+            "key": "La Fábrica Films",
+            "val": "Florencia Tolchinsky y Lucía Rongo"
+          },
+          "item_2": {
+            "key": "Guión Original",
+            "val": "Florencia Tolchinsky y Lucía Rongo"
+          },
+          "item_3": {
+            "key": "Producción Ejecutiva",
+            "val": "Martina Sottile"
+          },
+          "item_4": {
+            "key": "Dirección de Fotografía",
+            "val": "Angelina Emanuele, Felipe Medina Tellez y Luciano Taccone"
+          },
+          "item_5": {
+            "key": "Montaje",
+            "val": "Ignacio Scaglione"
+          },
+          "item_6": {
+            "key": "Intérpretes",
+            "val": "Malena Villa, Pablo Flores Maini, Camilo Cuello Vitale y Lala Mendía"
+          },
+          "item_7": {
+            "key": "Sonido",
+            "val": "Martín Scaglia"
+          },
+          "item_8": {
+            "key": "Dirección de Arte",
+            "val": "Mercedes López"
+          },
+          "item_9": {
+            "key": "Asistente de Dirección",
+            "val": "Pierina Francia"
+          },
+          "item_10": {
+            "key": "Asistente de Arte",
+            "val": "Miranda Pauls y Florencia Pinto"
+          },
+          "item_11": {
+            "key": "Continuista",
+            "val": "Soledad Marcotte"
+          },
+          "item_12": {
+            "key": "Vestuario",
+            "val": "Jimena Gaona Luna y Catalina Mercuri"
+          },
+          "item_13": {
+            "key": "Maquillaje",
+            "val": "Julia Fernandez Cheron"
+          }
+        }
+      },
+      "el_atentado": {
+        "about": {
+          "title": {
+            "chunk_1": "Fragmento de Música Original y Post producción de Sonido",
+            "chunk_2": "para la película documental EL ATENTADO"
+          },
+          "description": "Vivo en la misma casa en la que vivieron mis abuelos y mi tío Eduardo, que estuvo en el exilio entre el 74 y el 83. Lo conocí a su regreso, y fortalecí nuestra relación con las clases de filosofía que me dio en los 90s, cuando yo estudiaba el profesorado de artes, en la Prilidiano Pueyrredón.  A pesar de ser un hombre taciturno, intelectual y sólido, mi tío nunca hablaba de su rol como artista en la escena argentina del 68,  ni de su militancia en el ERP y de su obra conocida como El Atentado, considerada hoy como una de las más importantes del arte político y conceptual de su tiempo. Encontré en un escondite de esta casa una fotografía que se ha vuelto un documento indispensable para comprender y testimoniar esos años turbulentos. El documental cuenta la historia de Eduardo y de su silencio, de esa obra efímera pero rotunda que pervivió durante décadas en la evocación de otros artistas, de la casa que durante medio siglo ocultó un documento clave para la historiografía del arte."
+        },
+        "participants": {
+          "item_1": {
+            "key": "Dirección",
+            "val": "Guillermo Figoli y Romina D´Andrea"
+          },
+          "item_2": {
+            "key": "Producción",
+            "val": "Josefina García Mason, Mar Joppich"
+          },
+          "item_3": {
+            "key": "Guión",
+            "val": "Santiago Ambao"
+          },
+          "item_4": {
+            "key": "Música Original",
+            "val": "Facundo Rissotti"
+          },
+          "item_5": {
+            "key": "Imágenes de archivo",
+            "val": "Guerra de Vietnam"
+          }
+        }
+      },
+      "la_tierra_que_arde": {
+        "about": {
+          "title": "Música original para Película Documental LA TIERRA QUE ARDE \uD83D\uDD25",
+          "description": "En el verano de 2015 más de 50.000 hectáreas de los bosques andino-patagónicos argentinos, se vieron arrasados por el poder del fuego. ¿Qué sospechas hay detrás de esta verdadera catástrofe medioambiental?"
+        },
+        "participants": {
+          "item_1": {
+            "key": "Dirección",
+            "val": "Pablo Perez Fiedler"
+          },
+          "item_2": {
+            "key": "Dirección de Fotografía",
+            "val": "Diego Alejandro Suarez"
+          },
+          "item_3": {
+            "key": "Música Original",
+            "val": "Facundo Rissotti - Santiago Jhones - Hernán Rupolo - Sebastián Benegas"
+          },
+          "item_4": {
+            "key": "Montaje",
+            "val": "Ezequiel Yofre, Pablo Perez Fiedler"
+          },
+          "item_5": {
+            "key": "Productor",
+            "val": "Pablo Perez Fiedler"
+          },
+          "item_6": {
+            "key": "Productor Ejecutivo",
+            "val": "Daniel Guzmán"
+          },
+          "item_7": {
+            "key": "Colorista",
+            "val": "Pedro Razzari"
+          },
+          "item_8": {
+            "key": "Casa Productora",
+            "val": "La Fábrica Films"
+          }
+        }
+      }
+    },
+    "staff": "Ficha técnica",
+    "watch_all_videos": "Ver todos los videos"
+  },
   "contact": {
     "name": "Nombre",
     "message": "Mensaje",

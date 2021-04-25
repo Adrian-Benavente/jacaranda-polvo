@@ -36,14 +36,14 @@
             :href="fichaData.playlist"
             target="_blank"
             :class="$style.playlist"
-            >Ver todos los videos <span :class="$style.arrowRight"></span
-          ></a>
+            >{{ $t("cine.watch_all_videos") }}</a
+          >
         </div>
       </section>
       <section :class="$style.info">
         <div :class="$style.about">
           <div>
-            <h3 :class="$style.title">Sobre el proyecto</h3>
+            <h3 :class="$style.title">{{ $t("cine.about_project") }}</h3>
             <p :class="[$style.text, $style.short]">
               <strong v-html="fichaData.about.short"></strong>
             </p>
@@ -54,7 +54,7 @@
               :href="fichaData.fullMovie"
               target="_blank"
             >
-              Película completa
+              {{ $t("cine.full_movie") }}
             </a>
           </div>
           <div v-if="fichaData.poster" :class="$style.poster">
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div :class="$style.ficha">
-          <h4 :class="$style.title">Ficha técnica</h4>
+          <h4 :class="$style.title">{{ $t("cine.staff") }}</h4>
           <ul :class="$style.list">
             <li
               :class="$style.item"
@@ -122,22 +122,19 @@
 </template>
 
 <script>
-import { fichasCine } from "@/components/cine/fichas/data-cine";
 import CarouselControls from "@/components/lib/CarouselControls";
+import { dataCine } from "@/components/cine/fichas/data-cine";
 export default {
   name: "FichaCine",
   components: { CarouselControls },
+  mixins: [dataCine],
   data() {
     return {
       slug: this.$route.params.slug,
-      fichasCine,
       selected: 0,
     };
   },
   computed: {
-    fichaData() {
-      return this.fichasCine.find(({ slug }) => slug === this.slug);
-    },
     sound() {
       return this.$store.state.sound;
     },

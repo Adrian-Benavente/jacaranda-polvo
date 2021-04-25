@@ -1,178 +1,286 @@
-export const fichasCine = [
-  {
-    id: 1,
-    slug: "la-tierra-que-arde",
-    title: "La tierra que arde",
-    year: "2017",
-    videos: [
-      {
-        id: "E89_AXad6Z0",
-        title: "Viento del sur",
-      },
-      {
-        id: "aj4SbdK87LU",
-        title: "Árbol muerto",
-      },
-      {
-        id: "caUhFeXUTqo",
-        title: "Línea de fuego",
-      },
-      {
-        id: "rX3GVoUGzZ8",
-        title: "Cenizas",
-      },
-      {
-        id: "oR6gzCwmxyg",
-        title: "Mineras",
-      },
-      {
-        id: "FS3f3u7K3-s",
-        title: "Reflexiones",
-      },
-      {
-        id: "iPSxd1f0bmI",
-        title: "Ave fénix",
-      },
-    ],
-    playlist:
-      "https://www.youtube.com/playlist?list=PLundnWmdl9_9y27zBPe6n6ymI4Jm9GRtm",
-    poster: require("@/assets/img/cine/la-tierra-que-arde/poster.jpg"),
-    about: {
-      short: "Música original para Película Documental LA TIERRA QUE ARDE 🔥",
-      description: `En el verano de 2015 más de 50.000 hectáreas de los bosques andino-patagónicos argentinos, se vieron arrasados por el poder del fuego. ¿Qué sospechas hay detrás de esta verdadera catástrofe medioambiental?`,
+export const dataCine = {
+  computed: {
+    fichasCine() {
+      return [
+        {
+          id: 1,
+          slug: "la-tierra-que-arde",
+          title: "La tierra que arde",
+          year: "2017",
+          videos: [
+            {
+              id: "E89_AXad6Z0",
+              title: "Viento del sur",
+            },
+            {
+              id: "aj4SbdK87LU",
+              title: "Árbol muerto",
+            },
+            {
+              id: "caUhFeXUTqo",
+              title: "Línea de fuego",
+            },
+            {
+              id: "rX3GVoUGzZ8",
+              title: "Cenizas",
+            },
+            {
+              id: "oR6gzCwmxyg",
+              title: "Mineras",
+            },
+            {
+              id: "FS3f3u7K3-s",
+              title: "Reflexiones",
+            },
+            {
+              id: "iPSxd1f0bmI",
+              title: "Ave fénix",
+            },
+          ],
+          playlist:
+            "https://www.youtube.com/playlist?list=PLundnWmdl9_9y27zBPe6n6ymI4Jm9GRtm",
+          poster: require("@/assets/img/cine/la-tierra-que-arde/poster.jpg"),
+          about: {
+            short: `${this.$t("cine.projects.la_tierra_que_arde.about.title")}`,
+            description: `${this.$t(
+              "cine.projects.la_tierra_que_arde.about.description"
+            )}`,
+          },
+          fullMovie: "https://play.cine.ar/INCAA/produccion/4798",
+          participantes: [
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_1.key"
+              )}: <a href="https://vimeo.com/pablopfiedler" target="_blank">${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_1.val"
+              )}</a>`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_2.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_2.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_3.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_3.val.chunk_1"
+              )}<br>${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_3.val.chunk_2"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_4.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_4.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_5.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_5.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_6.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_6.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_7.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_7.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_8.key"
+              )}: ${this.$t(
+                "cine.projects.la_tierra_que_arde.participants.item_8.val"
+              )}<br><a href="https://www.lafabricafilms.com.ar" target="_blank">www.lafabricafilms.com.ar</a>`,
+            },
+          ],
+        },
+        {
+          id: 2,
+          slug: "chacabuco",
+          title: "Chacabuco",
+          year: "2015",
+          videos: [
+            {
+              id: "4LGMPj8bpVU",
+              title: "Chacabuco",
+            },
+          ],
+          poster: require("@/assets/img/cine/chacabuco/poster.jpg"),
+          about: {
+            short: `${this.$t(
+              "cine.projects.chacabuco.about.title.chunk_1"
+            )}<br>${this.$t("cine.projects.chacabuco.about.title.chunk_2")}`,
+            description: `${this.$t(
+              "cine.projects.chacabuco.about.description"
+            )}`,
+          },
+          fullMovie: "https://www.youtube.com/watch?v=rp_Fmy-F3FU",
+          participantes: [
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_1.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_1.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_2.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_2.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_3.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_3.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_4.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_4.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_5.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_5.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_6.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_6.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_7.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_7.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_8.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_8.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_9.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_9.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_10.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_10.val"
+              )} ${this.$t(
+                "cine.projects.chacabuco.participants.item_11.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_11.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_12.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_12.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.chacabuco.participants.item_13.key"
+              )}: ${this.$t(
+                "cine.projects.chacabuco.participants.item_13.val"
+              )}`,
+            },
+          ],
+        },
+        {
+          id: 3,
+          slug: "el-atentado",
+          title: "El atentado",
+          year: "2020",
+          videos: [
+            {
+              id: "Y4t6sGwAVDc",
+              title: "El atentado",
+            },
+          ],
+          about: {
+            short: `${this.$t(
+              "cine.projects.el_atentado.about.title.chunk_1"
+            )}<br>${this.$t("cine.projects.el_atentado.about.title.chunk_2")}`,
+            description: `${this.$t(
+              "cine.projects.el_atentado.about.description"
+            )}`,
+          },
+          participantes: [
+            {
+              item: `${this.$t(
+                "cine.projects.el_atentado.participants.item_1.key"
+              )}: ${this.$t(
+                "cine.projects.el_atentado.participants.item_1.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.el_atentado.participants.item_2.key"
+              )}: ${this.$t(
+                "cine.projects.el_atentado.participants.item_2.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.el_atentado.participants.item_3.key"
+              )}: ${this.$t(
+                "cine.projects.el_atentado.participants.item_3.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.el_atentado.participants.item_4.key"
+              )}: ${this.$t(
+                "cine.projects.el_atentado.participants.item_4.val"
+              )}`,
+            },
+            {
+              item: `${this.$t(
+                "cine.projects.el_atentado.participants.item_5.key"
+              )}: ${this.$t(
+                "cine.projects.el_atentado.participants.item_5.val"
+              )}`,
+            },
+          ],
+        },
+      ];
     },
-    fullMovie: "https://play.cine.ar/INCAA/produccion/4798",
-    participantes: [
-      {
-        item: `Dirección: <a href="https://vimeo.com/pablopfiedler" target="_blank">Pablo Perez Fiedler</a>`,
-      },
-      {
-        item: "Dirección de Fotografía: Diego Alejandro Suarez",
-      },
-      {
-        item: `Música Original: Facundo Rissotti - Santiago Jhones<br>Hernán Rupolo - Sebastián Benegas`,
-      },
-      {
-        item: "Montaje: Ezequiel Yofre, Pablo Pérez Fiedler",
-      },
-      {
-        item: "Productor: Pablo Pérez Fiedler",
-      },
-      {
-        item: "Productor Ejecutivo: Daniel Guzmán",
-      },
-      {
-        item: "Colorista: Pedro Razzari",
-      },
-      {
-        item: `Casa Productora: La Fábrica Films + La Granja<br><a href="https://www.lafabricafilms.com.ar" target="_blank">www.lafabricafilms.com.ar</a>`,
-      },
-    ],
-  },
-  {
-    id: 2,
-    slug: "chacabuco",
-    title: "Chacabuco",
-    year: "2015",
-    videos: [
-      {
-        id: "4LGMPj8bpVU",
-        title: "Chacabuco",
-      },
-    ],
-    poster: require("@/assets/img/cine/chacabuco/poster.jpg"),
-    about: {
-      short: `Canción Original El Demonio de Chacabuco<br>Letra y música: Matto Rios - Facundo Rissotti`,
-      description: `Chacabuco es la historia de Claudia, una adolescente que debe volver a convivir por un verano con su padre Marcelo después de quince años de vivir separados. La estadía transcurre en la casa de su abuelo, fallecido hace recientes días. La llegada a la casa de Pipo, el novio de Claudia y de Sara, la cuidadora del abuelo, ayudarán a la unión del vínculo central, entretejiéndolo con un recorrido por el despertar sexual en la adolescencia, y un viaje por la memoria, en donde el pasado juega un papel fundamental para el entendimiento y reconciliación con el presente.`,
+    fichaData() {
+      return this.fichasCine.find(({ slug }) => slug === this.slug);
     },
-    fullMovie: "https://www.youtube.com/watch?v=rp_Fmy-F3FU",
-    participantes: [
-      {
-        item: "Dirección: Florencia Tolchinsky y Lucía Rongo",
-      },
-      {
-        item: "Guión Original: Florencia Tolchinsky y Lucía Rongo",
-      },
-      {
-        item: "Producción Ejecutiva: Martina Sottile",
-      },
-      {
-        item:
-          "Dirección de Fotografía: Angelina Emanuele, Felipe Medina Tellez y Luciano Taccone",
-      },
-      {
-        item: "Montaje: Ignacio Scaglione",
-      },
-      {
-        item:
-          "Intérpretes: Malena Villa, Pablo Flores Maini, Camilo Cuello Vitale y Lala Mendía",
-      },
-      {
-        item: "Sonido: Martín Scaglia",
-      },
-      {
-        item: "Dirección de Arte: Mercedes López",
-      },
-      {
-        item: "Asistente de Dirección: Pierina Francia",
-      },
-      {
-        item:
-          "Asistente de Arte: Miranda Pauls y Florencia Pinto Continuista: Soledad Marcotte",
-      },
-      {
-        item: "Vestuario: Jimena Gaona Luna y Catalina Mercuri",
-      },
-      {
-        item: "Maquillaje: Julia Fernandez Cheron",
-      },
-    ],
   },
-  {
-    id: 3,
-    slug: "el-atentado",
-    title: "El atentado",
-    year: "2020",
-    videos: [
-      {
-        id: "Y4t6sGwAVDc",
-        title: "El atentado",
-      },
-    ],
-    about: {
-      short: `Fragmento de Música Original y Post producción de Sonido<br>para la película documental EL ATENTADO`,
-      description: `Vivo en la misma casa en la que vivieron mis abuelos y mi tío Eduardo,
-        que estuvo en el exilio entre el 74 y el 83. Lo conocí a su
-        regreso, y fortalecí nuestra relación con las clases de filosofía que me dio en
-        los 90s, cuando yo estudiaba el profesorado de artes, en la Prilidiano Pueyrredón. 
-        A pesar de ser un hombre taciturno, intelectual y sólido, mi tío
-        nunca hablaba de su rol como artista en la escena argentina del 68, 
-        ni de su militancia en el ERP y de su obra conocida como El Atentado, considerada hoy
-        como una de las más importantes del arte político y conceptual de su tiempo.
-        Encontré en un escondite de esta casa una fotografía que se ha vuelto un documento
-        indispensable para comprender y testimoniar esos años turbulentos. El
-        documental cuenta la historia de Eduardo y de su silencio, de esa obra
-        efímera pero rotunda que pervivió durante décadas en la evocación de otros
-        artistas, de la casa que durante medio siglo ocultó un documento clave para
-        la historiografía del arte.
-        `,
-    },
-    participantes: [
-      {
-        item: "Dirección: Guillermo Figoli / Romina D' Andrea",
-      },
-      {
-        item: "Producción: Josefina García Mason, Mar Joppich",
-      },
-      {
-        item: "Guión: Santiago Ambao",
-      },
-      {
-        item: "Música Original: Facundo Rissotti",
-      },
-      {
-        item: "Imagenes de archivo: Guerra de Vietnam",
-      },
-    ],
-  },
-];
+};
