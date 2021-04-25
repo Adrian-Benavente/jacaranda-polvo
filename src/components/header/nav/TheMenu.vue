@@ -11,7 +11,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('cine', 'menu')"
-              >Cine
+              >{{ $t("sections.cine") }}
             </a>
           </router-link>
         </li>
@@ -24,7 +24,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('tv', 'menu')"
-              >Tv
+              >{{ $t("sections.tv") }}
             </a>
           </router-link>
         </li>
@@ -37,7 +37,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('albums', 'menu')"
-              >Albums
+              >{{ $t("sections.albums") }}
             </a>
           </router-link>
         </li>
@@ -50,7 +50,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('sesiones', 'menu')"
-              >Sesiones
+              >{{ $t("sections.sessions") }}
             </a>
           </router-link>
         </li>
@@ -63,7 +63,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('teatro', 'menu')"
-              >Teatro
+              >{{ $t("sections.theater") }}
             </a>
           </router-link>
         </li>
@@ -77,7 +77,7 @@
               "
               @mouseover="open && playSound('contenido', 'menu')"
             >
-              Contenido
+              {{ $t("sections.content") }}
             </a>
           </router-link>
         </li>
@@ -90,7 +90,7 @@
                 $emit('close');
               "
               @mouseover="open && playSound('contacto', 'menu')"
-              >Contacto
+              >{{ $t("sections.contact") }}
             </a>
           </router-link>
         </li>
