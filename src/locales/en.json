@@ -1,0 +1,365 @@
+{
+  "albums": {
+    "see_album": "See album"
+  },
+  "cine": {
+    "about_project": "About the project",
+    "full_movie": "Full movie",
+    "navigation": {
+      "next": "Next project",
+      "prev": "Previous project"
+    },
+    "projects": {
+      "chacabuco": {
+        "about": {
+          "title": {
+            "chunk_1": "Original theme song Chacabuco´s Devil",
+            "chunk_2": "Music and Lyrics: Matto Rios - Facundo Rissotti"
+          },
+          "description": "Chacabuco is the story of Claudia, a teenager who must return to live for a summer with her father Marcelo after fifteen years of living apart. The stay takes place in the house of her grandfather, who died recently. The arrival at the house of Pipo, Claudia's boyfriend and Sara, the grandfather's caretaker, will help to unite the central bond, interweaving it with a journey through the sexual awakening in adolescence, and a journey through memory, where the past plays a fundamental role in understanding and reconciling with the present."
+        },
+        "participants": {
+          "item_1": {
+            "key": "Directors",
+            "val": "Florencia Tolchinsky and Lucía Rongo"
+          },
+          "item_2": {
+            "key": "Original Script",
+            "val": "Florencia Tolchinsky and Lucía Rongo"
+          },
+          "item_3": {
+            "key": "Executive Production",
+            "val": "Martina Sottile"
+          },
+          "item_4": {
+            "key": "Director of Photography",
+            "val": "Angelina Emanuele, Felipe Medina Tellez and Luciano Taccone"
+          },
+          "item_5": {
+            "key": "Editing",
+            "val": "Ignacio Scaglione"
+          },
+          "item_6": {
+            "key": "Performers",
+            "val": "Malena Villa, Pablo Flores Maini, Camilo Cuello Vitale and Lala Mendía"
+          },
+          "item_7": {
+            "key": "Sound",
+            "val": "Martin Scaglia"
+          },
+          "item_8": {
+            "key": "Art Direction",
+            "val": "Mercedes López"
+          },
+          "item_9": {
+            "key": "Assistant Director",
+            "val": "Pierina Francia"
+          },
+          "item_10": {
+            "key": "Art Assistant",
+            "val": "Miranda Pauls and Florencia Pinto"
+          },
+          "item_11": {
+            "key": "Continuist",
+            "val": "Soledad Marcotte"
+          },
+          "item_12": {
+            "key": "Costumes",
+            "val": "Jimena Gaona Luna and Catalina Mercuri"
+          },
+          "item_13": {
+            "key": "Makeup",
+            "val": "Julia Fernandez Cheron"
+          }
+        }
+      },
+      "el_atentado": {
+        "about": {
+          "title": {
+            "chunk_1": "Fragment of Original Music and Sound",
+            "chunk_2": "for the documentary film EL ATENTADO"
+          },
+          "description": "I live in the same house where my grandparents and my uncle Eduardo lived, who was in exile between 74 and 83. I met him at his return, and I strengthened our relationship with the philosophy classes he gave me at the 90s, when I was studying Art at Prilidiano Pueyrredón.  In spite of being a taciturn, intellectual and solid man, my uncle never talked about his role as an artist in the Argentine scene of 1968,  nor of his militancy in the ERP and his work known as The Attack, considered today as one of the most important of the political and conceptual art of its time. I found in a hiding place in this house a photograph that has become a document indispensable for understanding and witnessing those turbulent years. The documentary tells the story of Eduardo and his silence, of that work ephemeral but resounding that survived for decades in the evocation of other artists, from the house that for half a century hid a key document for the historiography of art."
+        },
+        "participants": {
+          "item_1": {
+            "key":  "Direction",
+            "val": "Guillermo Figoli and Romina D'Andrea"
+          },
+          "item_2": {
+            "key":  "Production",
+            "val": "Josefina García Mason, Mar Joppich"
+          },
+          "item_3": {
+            "key":  "Script",
+            "val": "Santiago Ambao"
+          },
+          "item_4": {
+            "key":  "Original Music",
+            "val": "Facundo Rissotti"
+          },
+          "item_5": {
+            "key":  "Archive images",
+            "val": "Vietnam War"
+          }
+        }
+      },
+      "la_tierra_que_arde": {
+        "about": {
+          "title": "Original music for the documentary film LA TIERRA QUE ARDE \uD83D\uDD25",
+          "description": "In the summer of 2015, more than 50,000 hectares of Argentina's Andean-Patagonian forests were destroyed by the power of fire. What are the suspicions behind this real environmental catastrophe?"
+        },
+        "participants": {
+          "item_1": {
+            "key": "Director",
+            "val": "Pablo Perez Fiedler"
+          },
+          "item_2": {
+            "key": "Director of Photography",
+            "val": "Diego Alejandro Suarez"
+          },
+          "item_3": {
+            "key": "Original Music",
+            "val": {
+              "chunk_1": "Facundo Rissotti - Santiago Jhones",
+              "chunk_2": "Hernán Rupolo - Sebastián Benegas"
+            }
+          },
+          "item_4": {
+            "key": "Editing",
+            "val": "Ezequiel Yofre, Pablo Perez Fiedler"
+          },
+          "item_5": {
+            "key": "Producer",
+            "val": "Pablo Perez Fiedler"
+          },
+          "item_6": {
+            "key": "Executive Producer",
+            "val": "Daniel Guzmán"
+          },
+          "item_7": {
+            "key": "Colorist",
+            "val": "Pedro Razzari"
+          },
+          "item_8": {
+            "key": "Production House",
+            "val": "La Fábrica Films"
+          }
+        }
+      }
+    },
+    "staff": "Staff",
+    "watch_all_videos": "Watch all videos"
+  },
+  "contact": {
+    "name": "Name",
+    "message": "Message",
+    "send": "Send",
+    "lets_talk": "Let's talk"
+  },
+  "content": {
+    "vx_drones": {
+      "title": "VX DRONES REEL",
+      "line_1": "Original music, Drone and Edition for Vx Drones (IG: @vx.drones)",
+      "line_2": "Produced by: Vx Drones / Videomix"
+    },
+    "cuarenta_mil": {
+      "title": "40.000",
+      "line_1": "Field Sound in CPR campaign for Anesthesia Association (AAARBA)",
+      "line_2": "Produced by: Videomix"
+    },
+    "videomix_covid": {
+      "title": "VIDEOMIX COVID19",
+      "line_1": "Adapted Song Recording and Drone",
+      "line_2": "Directed by: Gerardo Rissotti",
+      "line_3": "Producción: Videomix"
+    },
+    "superdomo_rioja": {
+      "title": "SUPERDOME LA RIOJA",
+      "line_1": "Original music, Drone and Edition for Sergio Guerrera, Club Led",
+      "line_2": "Produced by: Vx Drones / Jacarandá Polvo"
+    },
+    "gnocchi": {
+      "title": "TIGER´S GNOCCHI",
+      "line_1": "Original Music in Cooking Recipes for Elvira Me Gusta",
+      "line_2": "Produced by: Gerardo Rissotti"
+    },
+    "rcp_cancion": {
+      "title": "REANIMATION THEME SONG",
+      "line_1": "Song Recording and Video Editing  in CPR Campaign CPR from my School for AAARBA",
+      "line_2": "Performed by: Sofia Dellafiore + Facundo Rissotti + Children's choir",
+      "line_3": "Produced by: Jacarandá Polvo / Videomix"
+    },
+    "rcp_oficina": {
+      "title": "OFFICE CPR",
+      "line_1": "Field Sound in CPR campaign for Anesthesia Association (AAARBA)",
+      "line_2": "Produced by: Videomix"
+    },
+    "obras_ba": {
+      "title": "BA WORKS",
+      "line_1": "Original music, Drone and Edition for Vx Drones (IG: @vx.drones)",
+      "line_2": "Produced by: Vx Drones / Videomix"
+    },
+    "rcp_futbol": {
+      "title": "SOCCER CPR",
+      "line_1": "Field Sound and Drone in CPR campaign for Anesthesia Association (AAARBA)",
+      "line_2": "Produced by: Videomix"
+    }
+  },
+  "global": {
+    "musicians": "musicians",
+    "see_more": "See more",
+    "sound": "sound"
+  },
+  "sections": {
+    "tv": "tv",
+    "theater": "theater",
+    "content": "content",
+    "albums": "albums",
+    "contact": "contact",
+    "sessions": "sessions",
+    "cine": "cine"
+  },
+  "sessions": {
+    "delta": {
+      "details": {
+        "item_1": "Produced by",
+        "item_2": "Directed by",
+        "item_3": "Field Sound and Mixing",
+        "item_4": "Production",
+        "item_5": "Location"
+      }
+    },
+    "delta_trailer": {
+      "details": {
+        "item_1": "Produced by",
+        "item_2": "Directed by",
+        "item_3": "Field Sound and Mixing",
+        "item_4": "Production",
+        "item_5": "Location"
+      }
+    },
+    "despierta": {
+      "details": {
+        "item_1": "Camera and video editing",
+        "item_2": "Composition and Vocals",
+        "item_3": "Musicians",
+        "item_4": "Recording and Mixing",
+        "item_5": "Location"
+      }
+    },
+    "el_espiritu_del_valle": {
+      "details": {
+        "item_1": "Guitar and Vocals",
+        "item_2": "Cameras",
+        "item_3": "General Production + Mixing",
+        "item_4": "Location"
+      }
+    },
+    "estudio_mcl": {
+      "details": {
+        "item_1": "Direction, Camera and Edition",
+        "item_2": "CDU",
+        "item_3": "Guitar Tech",
+        "item_4": "Mixing and Mastering",
+        "item_5": "Location"
+      }
+    },
+    "herencia": {
+      "details": {
+        "item_1": "Poem",
+        "item_2": "Music",
+        "item_3": "Camera",
+        "item_4": "Recording, Production and Mixing",
+        "item_5": "Location"
+      }
+    },
+    "pueblo_chico": {
+      "sofia": {
+        "details": {
+          "item_1": "Produced by",
+          "item_2": "Directed by",
+          "item_3": "Location and Makeup",
+          "item_4": "Salta Province Camera",
+          "item_5": "Location"
+        }
+      },
+      "matraka": {
+        "details": {
+          "item_1": "Drag Queen and Production",
+          "item_2": "Camera",
+          "item_3": "Musicxs",
+          "item_4": "Location"
+        }
+      }
+    },
+    "remolinos": {
+      "details": {
+        "item_1": "Composition, Guitars, Art and Video",
+        "item_2": "Recording, Production and Mixing",
+        "item_3": "Co production + Mastering",
+        "item_4": "Location"
+      }
+    },
+    "vidala_para_mi_sombra": {
+      "details": {
+        "item_1": "Camera and Video Editing",
+        "item_2": "Musicians",
+        "item_3": "Recording and Mixing",
+        "item_4": "Location"
+      }
+    },
+    "vuelta_al_sol": {
+      "details": {
+        "item_1": "Guitar and Vocals",
+        "item_2": "Cameras",
+        "item_3": "General Production + Mixing",
+        "item_4": "Location"
+      }
+    }
+  },
+  "tv": {
+    "post_production": {
+      "title": "Sound Post production",
+      "synopsis": {
+        "chunk_1": "Musicalization, Edition and Post production of sound in Pro Tools.",
+        "chunk_2": "El Festival del Bien Público, Televisión Pública Argentina."
+      }
+    },
+    "original_music": {
+      "title": "Original music for TV",
+      "synopsis": {
+        "chunk_1": "Composition and recording of original songs with registration.",
+        "chunk_2": "El Festival del Bien Público, Televisión Pública Argentina."
+      }
+    },
+    "direct_sound": {
+      "title": "Direct Sound",
+      "synopsis": {
+        "chunk_1": "Field Sound Recording for Advertising and Audiovisual Projects.",
+        "chunk_2": "Editing and Post Production",
+        "chunk_3": "Remax Encuesta, Argentina."
+      }
+    }
+  },
+  "theater": {
+    "encajado": {
+      "line_1": "Jingle and Original Music for theater Room",
+      "line_2": "for Encajado (2020) by Damián Travaglia."
+    },
+    "schatzi": {
+      "line_1": "Edit Music for Theater Room",
+      "line_2": "for Schatzi (2013) by Matías Nan."
+    },
+    "cosmorodante": {
+      "line_1": "Music album production for children,",
+      "line_2": "Mixing and Mastering (2017) for Cosmorodante."
+    }
+  },
+  "welcome": {
+    "chunk_1": "Since 2010 at Jacarandá Polvo we have been dedicated to music production for artists and projects on various platforms.",
+    "chunk_2": "We compose, record and edit music for Cinema, TV and Theater. We make original audiovisual content.",
+    "chunk_3": "If you have an idea or a project, do not hesitate to contact us.",
+    "chunk_4": "Welc{x}me"
+  }
+}
