@@ -83,7 +83,7 @@
     <aside :class="$style.navigateToProject">
       <ul :class="$style.list">
         <li>
-          <template v-if="getPreviousOne(fichaData.id)">
+          <template>
             <router-link
               :to="getPreviousOne(fichaData.id)"
               v-slot="{ href, navigate }"
@@ -100,7 +100,7 @@
           </template>
         </li>
         <li>
-          <template v-if="getNextOne(fichaData.id)">
+          <template>
             <router-link
               :to="getNextOne(fichaData.id)"
               v-slot="{ href, navigate }"
@@ -152,20 +152,23 @@ export default {
       }
     },
     getNextOne(currId) {
+      let slug;
       if (currId < this.fichasCine.length) {
-        const slug = this.fichasCine.find(({ id }) => id === currId + 1).slug;
-        return `/cine/${slug}`;
+        slug = this.fichasCine.find(({ id }) => id === currId + 1).slug;
       } else {
-        return false;
+        slug = this.fichasCine[0].slug;
       }
+      return `/cine/${slug}`;
     },
     getPreviousOne(currId) {
+      let slug;
       if (currId > 1) {
-        const slug = this.fichasCine.find(({ id }) => id === currId - 1).slug;
-        return `/cine/${slug}`;
+        slug = this.fichasCine.find(({ id }) => id === currId - 1).slug;
       } else {
-        return false;
+        slug = this.fichasCine.find(({ id }) => id === this.fichasCine.length)
+          .slug;
       }
+      return `/cine/${slug}`;
     },
   },
 };

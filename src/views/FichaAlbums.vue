@@ -200,7 +200,8 @@ export default {
         ).slug;
         return `/albums/${currId + 1}/${artist}/${title}`;
       } else {
-        return false;
+        const { artist, title } = this.albumList[0].slug;
+        return `/albums/${currId + 1}/${artist}/${title}`;
       }
     },
     getPreviousOne(currId) {
@@ -210,7 +211,10 @@ export default {
         ).slug;
         return `/albums/${currId - 1}/${artist}/${title}`;
       } else {
-        return false;
+        const { artist, title } = this.albumList.find(
+          ({ id }) => id === this.albumList.length
+        ).slug;
+        return `/albums/${currId - 1}/${artist}/${title}`;
       }
     },
     move(dir) {
