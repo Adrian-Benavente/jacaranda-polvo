@@ -12,22 +12,28 @@
       />
       <div :class="$style.workList">
         <dl :class="$style.list">
-          <div v-for="work in works" :key="work.id" :class="$style.listGroup">
+          <div
+            v-for="{ file, id, link, synopsis, title } in works"
+            :key="id"
+            :class="$style.listGroup"
+          >
             <dt :class="$style.workTitle">
               <span :class="$style.slash" aria-hidden="true">/</span>
               <a
-                :href="`/tv/${work.slug}`"
-                v-html="work.title"
+                :href="`${link}`"
+                v-html="title"
                 :class="$style.workLink"
+                target="_blank"
               ></a>
             </dt>
             <dd :class="$style.workSynopsis">
               <a
-                :href="`/tv/${work.slug}`"
-                v-html="work.synopsis"
+                :href="`${link}`"
+                v-html="synopsis"
                 :class="$style.workLink"
+                target="_blank"
               ></a>
-              <img :class="$style.imgPreview" :src="work.file" alt="" />
+              <img :class="$style.imgPreview" :src="file" alt="" />
             </dd>
           </div>
         </dl>
@@ -56,6 +62,7 @@ export default {
           id: 0,
           title: "Encajado",
           slug: "encajado",
+          link: "https://youtu.be/5EYlAr9DXYU",
           synopsis: `<p>${this.$t("theater.encajado.line_1")}<br>${this.$t(
             "theater.encajado.line_2"
           )}</p>`,
@@ -65,6 +72,7 @@ export default {
           id: 1,
           title: "Schatzi",
           slug: "schatzi",
+          link: "https://youtu.be/usmjXq-ZEKQ",
           synopsis: `<p>${this.$t("theater.schatzi.line_1")}<br>${this.$t(
             "theater.schatzi.line_2"
           )}</p>`,
@@ -74,6 +82,7 @@ export default {
           id: 2,
           title: "Cosmorodante",
           slug: "cosmorodante",
+          link: "https://www.youtube.com/watch?v=MxtHyYIgUsA",
           synopsis: `<p>${this.$t("theater.cosmorodante.line_1")}<br>${this.$t(
             "theater.cosmorodante.line_2"
           )}</p>`,

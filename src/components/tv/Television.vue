@@ -12,21 +12,24 @@
       />
       <div :class="$style.workList">
         <dl :class="$style.list">
-          <router-link
-            v-for="{ file, id, slug, synopsis, title } in television"
+          <div
+            v-for="{ file, id, link, synopsis, title } in television"
             :key="id"
             :class="$style.listGroup"
-            :to="`/tv/${slug}`"
           >
             <dt>
-              <span :class="$style.slash" aria-hidden="true">/</span>
-              {{ title }}
+              <a :href="`${link}`" target="_blank"
+                ><span :class="$style.slash" aria-hidden="true">/</span>
+                {{ title }}</a
+              >
             </dt>
             <dd>
-              <span v-html="synopsis"></span>
+              <a :href="`${link}`" target="_blank"
+                ><span v-html="synopsis"></span
+              ></a>
               <video muted autoplay loop :src="file"></video>
             </dd>
-          </router-link>
+          </div>
         </dl>
       </div>
     </div>
@@ -54,6 +57,7 @@ export default {
           id: 0,
           title: $t("tv.post_production.title"),
           slug: "post-produccion-sonido",
+          link: "https://youtu.be/uFmepxvEXRA",
           synopsis: `<p>${$t("tv.post_production.synopsis.chunk_1")}</p><p>${$t(
             "tv.post_production.synopsis.chunk_2"
           )}</p>`,
@@ -63,6 +67,7 @@ export default {
           id: 1,
           title: $t("tv.original_music.title"),
           slug: "musica-original-tv",
+          link: "https://vimeo.com/468681530",
           synopsis: `<p>${$t("tv.original_music.synopsis.chunk_1")}</p><p>${$t(
             "tv.original_music.synopsis.chunk_2"
           )}</p>`,
@@ -72,6 +77,7 @@ export default {
           id: 2,
           title: $t("tv.direct_sound.title"),
           slug: "sonido-directo",
+          link: "https://vimeo.com/349908259",
           synopsis: `<p>${$t("tv.direct_sound.synopsis.chunk_1")}</p><p>${$t(
             "tv.direct_sound.synopsis.chunk_2"
           )}</p><p>${$t("tv.direct_sound.synopsis.chunk_3")}</p>`,
@@ -168,6 +174,12 @@ export default {
       display: grid;
       gap: 2rem;
       padding: fn.to-rem(60) 0;
+      a {
+        color: white;
+        &:hover {
+          color: var(--color-hero);
+        }
+      }
       &:not(:last-child) {
         border-bottom: 1px solid white;
       }
