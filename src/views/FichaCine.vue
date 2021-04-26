@@ -94,7 +94,7 @@
                 :href="href"
                 @click="navigate"
               >
-                Anterior proyecto
+                {{ $t("cine.navigation.prev") }}
               </a>
             </router-link>
           </template>
@@ -111,7 +111,7 @@
                 :href="href"
                 @click="navigate"
               >
-                Siguiente proyecto
+                {{ $t("cine.navigation.next") }}
               </a>
             </router-link>
           </template>

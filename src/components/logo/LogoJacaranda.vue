@@ -1,7 +1,7 @@
 <template>
   <h1 id="logo">
     <keep-alive>
-      <router-link :to="path" v-slot="{ href }">
+      <router-link to="/#aldea" v-slot="{ href }">
         <a
           :class="[$style.logo, webp && $style.webp]"
           :href="href"
@@ -24,11 +24,6 @@ export default {
       wrap: false,
       webp: false,
     };
-  },
-  computed: {
-    path() {
-      return this.$route.name === "home" ? "#aldea" : "/home";
-    },
   },
   mounted() {
     this.webp = document.documentElement.classList.contains("webp");

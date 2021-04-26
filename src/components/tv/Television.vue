@@ -18,7 +18,7 @@
             :class="$style.listGroup"
           >
             <dt>
-              <a :href="`${link}`" target="_blank"
+              <a :href="`${link}`" target="_blank" :class="$style.title"
                 ><span :class="$style.slash" aria-hidden="true">/</span>
                 {{ title }}</a
               >
@@ -176,7 +176,7 @@ export default {
       padding: fn.to-rem(60) 0;
       a {
         color: white;
-        &:hover {
+        &:not(.title):hover {
           color: var(--color-hero);
         }
       }
