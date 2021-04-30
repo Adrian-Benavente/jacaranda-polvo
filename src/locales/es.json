@@ -1,5 +1,192 @@
 {
   "albums": {
+    "about_project": "Sobre el proyecto",
+    "listen_on": "Escuchar en",
+    "personnel": "Ficha técnica",
+    "projects": {
+      "alas_de_guitarra": {
+        "about": "Todos los temas fueron interpretados por John Angelo Cardona en el mes de Mayo de 2011, en Taganga (Santa Marta), Colombia. Con un repertorio instrumental Iberoamericano, el Concertista de guitarra clásica John Angelo se abre paso en el silencio, dejándonos un puñado de clásicos de todos los tiempos.",
+        "personnel": {
+          "item_1": "Producción y Mixtering: Facundo Rissotti."
+        }
+      },
+      "cerebro_ep": {
+        "about": "Grabado en MCL Récords el 25 y 26 de Agosto de 2014.",
+        "personnel": {
+          "item_1": "Ingeniero de grabación, mezcla y mastering: Luciano Lucerna",
+          "item_2": "Asistente de grabación: Diego Trigo",
+          "item_3": "Guitar Tech: Hernán Rupolo",
+          "item_4": "Drum dr.: Guille Salort",
+          "item_5": "Diseño Gráfico: Ariel Zajac y Florencia Rissotti",
+          "item_6": "Video: Pablo Pérez Fiedler y Santiago Nealon",
+          "item_7": "Fotos: Ainara Murphy",
+          "item_8": "Matto Rios: Voz y Guitarras",
+          "item_9": "Santiago Jhones: Bajo",
+          "item_10": "Facundo Rissotti: Teclados y programación",
+          "item_11": "Alejandro González: Batería y Coros"
+        }
+      },
+      "espacial": {
+        "about": "Grabado en Jáchal, San Juan. Junio 2015.",
+        "personnel": {
+          "item_1": "Voz y Guitarra: Buquino Cabrera",
+          "item_2": "Teclados y Fx: Facundo Rissotti",
+          "item_3": "Apoyo: Facu Dial",
+          "item_4": "Producción: Facundo Rissotti",
+          "item_5": "Arte visual: Florencia Rissotti",
+          "item_6": "Todas las canciones pertenecen a Buquino Cabrera."
+        }
+      },
+      "facu_dial_ep": {
+        "about": "Grabado en Jáchal, San Juan. Junio 2015.",
+        "personnel": {
+          "item_1": "Voz, Guitarra y Ukelele: Facu Dial",
+          "item_2": "Teclados: Facundo Rissotti",
+          "item_3": "Coros: Matías Suarez",
+          "item_4": "Apoyo: Buquino Cabrera",
+          "item_5": "Arte visual: Florencia Rissotti",
+          "item_6": "Producción: Facundo Rissotti",
+          "item_7": "Todas las canciones pertenecen a Facu Dial."
+        }
+      },
+      "gordo": {
+        "about": "Grabado entre 2018 y 2019 en Buenos Aires.",
+        "personnel": {
+          "item_1": "Letra y música: Juan Manuel Colonna",
+          "item_2": "El destino de las casas Letra: Facundo Rissotti / Música: Juan Manuel Colonna",
+          "item_3": "Noruega Letra y música: Juan Manuel Colonna / Damián Chavez / Matías Suarez",
+          "item_4": "Voz, Guitarras, Teclados, y Composición: Juan Manuel Colonna",
+          "item_5": "Teclados: Facundo Rissotti",
+          "item_6": "Guitarras en Noruega: Damián Chavez / Matías Suarez",
+          "item_7": "Guitarra en Sigue dando vueltas en el aire: Juani Agüero",
+          "item_8": "Producción: Juan Manuel Colonna / Facundo Rissotti",
+          "item_9": "Mezcla, Producción y Mastering: Pato Almeyra",
+          "item_10": "Sello: Kucha Records",
+          "item_11": "Todas las canciones pertenecen a Juan Manuel Colonna"
+        }
+      },
+      "isla_negra": {
+        "about": "Grabado entre Febrero y Octubre de 2007 en Buenos Aires.",
+        "personnel": {
+          "item_1": "Todos los temas compuestos por Facundo Rissotti.",
+          "item_2": "Fragmentos de audios de Pablo Neruda de sus poemas 3, 7, 15, 16 y 18",
+          "item_3": "de “Veinte poemas de amor y una canción desesperada”.",
+          "item_4": "Matias Suarez: Guitarra en temas 5 y 9",
+          "item_5": "Fabricio Pereyra: Bajo Fretless en tema 10",
+          "item_6": "Florencia Rissotti: sonidos en 6 y 8",
+          "item_7": "Prod y Mixtering: Facundo Rissotti"
+        }
+      },
+      "la_naturaleza_y_el_hombre": {
+        "personnel": {
+          "item_1": "Francisco Villaveirán: Guitarra y arreglos",
+          "item_2": "Agostina Zito: Violín",
+          "item_3": "Matias Fiallo Montero: Acordeón y Bombo Legüero",
+          "item_4": "Diego Soldi: Contrabajo",
+          "item_5": "Producción General: Francisco Villaveirán ",
+          "item_6": "Producción y Mixtering: Facundo Rissotti",
+          "item_7": "Arte: Julieta San Gil"
+        }
+      },
+      "los_infelices": {
+        "about": "Grabado entre diciembre de 2012 y septiembre de 2013 en Cerebrito Recs.",
+        "personnel": {
+          "item_1": "Mezclado por Santiago Jhones / Facundo Rissotti en Cerebrito Recs",
+          "item_2": "Masterizado por Cristian A. Graziadei en Mastering Solis",
+          "item_3": "Fotografía de banda: Mariel Gomez",
+          "item_5": "Arte: Las Crema (Florencia Rissotti / Lucía Rongo)",
+          "item_4": "Matto Rios: Voz y guitarra",
+          "item_6": "Santiago Jhones: Bajo y coros",
+          "item_7": "Facundo Rissotti: Teclados, programaciones y coros",
+          "item_8": "Alejandro Gonzalez: Bateria y coros",
+          "item_9": "Marcos de Cristobal: Guitarras en temas 1,2,3,4,6,7,9.",
+          "item_10": "Mariano Fusaro: Didjeridoo en temas 1 y 9",
+          "item_11": "Gisela Kinki Orlandi: trompeta en tema 5",
+          "item_12": "Producido por Cerebro de Uva"
+        }
+      },
+      "paisajes": {
+        "about": "Grabado entre Octubre de 2007 y Noviembre de 2010 en Buenos Aires.",
+        "extra": {
+          "title": "Matías Suarez + Hernán Rupolo + Juan Manuel Colonna + Damián Chavez + Juan M. Soria + Santiago Jhones + Pato Toranza + Luli D´Ottavio + Juan Carlos Rissotti + Federico Scholland + Lux Raptor + Facundo Rissotti + Bic Bignone + Fran Villaveirán + Matías Sastre.",
+          "text": "Musicxs"
+        },
+        "personnel": {
+          "item_1": "Mezcla: Facu Rissotti",
+          "item_2": "Mastering: Santiago Jhones",
+          "item_3": "La Patria Grande producido por Damián Chávez y Facundo Rissotti.",
+          "item_4": "La Patria Grande y El reino animal contienen audios de \"Cinco siglos resistiendo\".",
+          "item_5": "Inclinado en las tardes contiene grabaciones de la voz de Pablo Neruda.",
+          "item_6": "Rosshalde, la casa del pintor, contiene un fragmento de \"Rosshalde\" (Hermann Hesse)",
+          "item_7": "Pintura de tapa y Arte Digital: Florencia Rissotti.",
+          "item_8": "Producido por: Facundo Rissotti"
+        }
+      },
+      "pueblo_chico": {
+        "about": "Grabado entre 2011 y 2012 en Taganga, Colombia y Buenos Aires, Argentina.",
+        "extra": {
+          "title": "Polvo fuimos",
+          "text": "Joaquin Carámbula + Damian Chavez + Facundo Rissotti + Santiago Jhones + Sofia Viola + Fran Villaveirán + Juan Colonna + Menta y Matto Broster + Marcos Soto + Juan M. Soria + Diego Belli + Sisto Tito Mattos + Mariano Fusaro + Matias Suarez + Gustavo Santangelo + Fred Rincón + Luli Luna Crook + César Canale + Muma Casares + Ana Manterola + Theo Peltzer + Matias Sastre + Juan Romano."
+        },
+        "personnel": {
+          "item_1": "Mezclado por: Theo Peltzer.",
+          "item_2": "Asistente: Gustavo Santangelo",
+          "item_3": "Mastering: El Tornado",
+          "item_4": "Producido por: Facundo Rissotti",
+          "item_5": "Todos los temas Letra y música: Facundo Rissotti",
+          "item_6": "Producción de banda en #3 Ay! Don Jorge: Damian Chavez",
+          "item_7": "Producción y arreglos en #8 Procesión de la Virgen: Gustavo Santangelo y Theo Peltzer.",
+          "item_8": "Dibujo original de tapa y arte digital: Florencia Rissotti",
+          "item_9": "Producción General: Facundo Rissotti"
+        },
+        "raul_leiva": {
+          "about": "Interpretado en el mes de Febrero de 2013 en Florida, Buenos Aires.\n\n",
+          "personnel": {
+            "item_1": "Francisco Villaveirán: Guitarra y charango",
+            "item_2": "Grabación y Mezcla: Facundo Rissotti",
+            "item_3": "Ilustraciones: Rocío Bottero"
+          }
+        },
+        "remolinos": {
+          "about": "Grabado entre Septiembre y Diciembre de 2019 en Saavedra, Buenos Aires.",
+          "personnel": {
+            "item_1": "Inhalo,",
+            "item_2": "Retengo,",
+            "item_3": "Exhalo,",
+            "item_4": "Composición y guitarras: Mar Joppich",
+            "item_5": "Pre producción, grabación, producción y Mezcla: Facu Rissotti",
+            "item_6": "Co producción en tema 1 y 3 + Mastering: Joa.wav",
+            "item_7": "Arte y video: Mar Joppich"
+          }
+        },
+        "rootstica": {
+          "personnel": {
+            "item_1": "Matto Rios: Voz y Guitarra",
+            "item_2": "Santiago Jhones: Bajo y coros",
+            "item_3": "Alejandro Gonzalez: Bateria",
+            "item_4": "Hernan Rupolo: Guitarra y coros",
+            "item_5": "Facundo Rissotti: Teclados y coros",
+            "item_6": "Grabado y mezclado en Cerebrito Recs en Octubre de 2009",
+            "item_7": "por Santiago Jhones.",
+            "item_8": "Fotografias: Eike “Atomhirsch” Kreibohm (Alemania)",
+            "item_9": "Fotografias de banda: Pablo Perez y Santiago Nealon",
+            "item_10": "El sistema Letra: Eduardo Galeano",
+            "item_11": "Revolución Letra: Santiago Jhones",
+            "item_12": "Todas las canciones Letra: Matto Rios / Música: Rootstica"
+          }
+        },
+        "somos_kollas": {
+          "about": "Grabado en Fiambalá, Catamarca. Julio 2015.",
+          "personnel": {
+            "item_1": "Interpretado por: Elbio Montoya",
+            "item_2": "Grabación y Mezcla: Facundo Rissotti",
+            "item_3": "Seis clásicos en clave norteña: Quena, Charango y Guitarra",
+            "item_4": "+ una canción original: Somos Kollas",
+            "item_5": "Producción: Facundo Rissotti"
+          }
+        }
+      }
+    },
     "see_album": "Ver álbum"
   },
   "cine": {

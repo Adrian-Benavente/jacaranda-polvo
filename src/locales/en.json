@@ -1,5 +1,193 @@
 {
   "albums": {
+    "about_project": "About the project",
+    "listen_on": "Listen on",
+    "personnel": "Personnel",
+    "projects": {
+      "alas_de_guitarra": {
+        "about": "All songs were performed by John Angelo Cardona in the month of May 2011, in Taganga (Santa Marta), Colombia. With a Latin American instrumental repertoire, the classical guitarist John Angelo makes his way in the silence, leaving us with a handful of all-time classics.",
+        "personnel": {
+          "item_1": "Production and Mixtering: Facundo Rissotti."
+        }
+      },
+      "cerebro_ep": {
+        "about": "Recorded at MCL Records on August 25 and 26, 2014.",
+        "personnel": {
+          "item_1": "Recording, mixing and mastering engineer: Luciano Lucerna",
+          "item_2": "Recording Assistant: Diego Trigo",
+          "item_3": "Guitar Tech: Hernán Rupolo",
+          "item_4": "Drum dr.: Guille Salort",
+          "item_5": "Graphic Design: Ariel Zajac and Florencia Rissotti",
+          "item_6": "Video: Pablo Pérez Fiedler and Santiago Nealon",
+          "item_7": "Photos: Ainara Murphy",
+          "item_8": "Matto Rios: Voice and Guitars",
+          "item_9": "Santiago Jhones: Bass",
+          "item_10": "Facundo Rissotti: Keyboards y programming",
+          "item_11": "Alejandro González: Drums and Choir"
+        }
+      },
+      "espacial": {
+        "about": "Recorded in Jáchal, San Juan. June 2015.",
+        "personnel": {
+          "item_1": "Voice and Guitar: Buquino Cabrera",
+          "item_2": "Keyboards and Fx: Facundo Rissotti",
+          "item_3": "Support: Facu Dial",
+          "item_4": "Production: Facundo Rissotti",
+          "item_5": "Visual art: Florencia Rissotti",
+          "item_6": "All songs belong to Buquino Cabrera."
+        }
+      },
+      "facu_dial_ep": {
+        "about": "Recorded in Jáchal, San Juan. June 2015.",
+        "personnel": {
+          "item_1": "Voice, Guitar and Ukulele: Facu Dial",
+          "item_2": "Keyboards: Facundo Rissotti",
+          "item_3": "Choirs: Matías Suarez",
+          "item_4": "Support: Buquino Cabrera",
+          "item_5": "Visual art: Florencia Rissotti",
+          "item_6": "Production: Facundo Rissotti",
+          "item_7": "All songs belong to Facu Dial."
+        }
+      },
+      "gordo": {
+        "about": "Recorded between 2018 and 2019 in Buenos Aires.",
+        "personnel": {
+          "item_1": "Music and Lyrics: Juan Manuel Colonna",
+          "item_2": "El destino de las casas Lyrics: Facundo Rissotti / Music: Juan Manuel Colonna",
+          "item_3": "Noruega Music and Lyrics: Juan Manuel Colonna / Damián Chavez / Matías Suarez",
+          "item_4": "Voice, Guitars, Keyboards, and Composition: Juan Manuel Colonna",
+          "item_5": "Keyboards: Facundo Rissotti",
+          "item_6": "Guitars in Noruega: Damián Chavez / Matías Suarez",
+          "item_7": "Guitar in Sigue dando vueltas en el aire: Juani Agüero",
+          "item_8": "Production: Juan Manuel Colonna / Facundo Rissotti",
+          "item_9": "Mixing, Production and Mastering: Pato Almeyra",
+          "item_10": "Label: Kucha Records",
+          "item_11": "All songs belong to Juan Manuel Colonna"
+        }
+      },
+      "isla_negra": {
+        "about": "Recorded between February and October 2007 in Buenos Aires.",
+        "personnel": {
+          "item_1": "All tracks composed by Facundo Rissotti.",
+          "item_2": "Audio fragments of Pablo Neruda from his poems 3, 7, 15, 16 and 18",
+          "item_3": "from \"Veinte poemas de amor y una canción desesperada\".",
+          "item_4": "Matias Suarez: Guitar on tracks 5 and 9",
+          "item_5": "Fabricio Pereyra: Fretless Bass on track 10",
+          "item_6": "Florencia Rissotti: sounds on 6 and 8",
+          "item_7": "Prod and Mixtering: Facundo Rissotti"
+        }
+      },
+      "la_naturaleza_y_el_hombre": {
+        "personnel": {
+          "item_1": "Francisco Villaveirán: Guitar and arrangements",
+          "item_2": "Agostina Zito: Violin",
+          "item_3": "Matias Fiallo Montero: Accordion and Bass Drum (Legüero)",
+          "item_4": "Diego Soldi: Double Bass",
+          "item_5": "General Production: Francisco Villaveirán ",
+          "item_6": "Production and Mixing: Facundo Rissotti",
+          "item_7": "Art: Julieta San Gil"
+        }
+      },
+      "los_infelices": {
+        "about": "Recorded between December 2012 and September 2013 at Cerebrito Recs",
+        "personnel": {
+          "item_1": "Mixed by Santiago Jhones / Facundo Rissotti in Cerebrito Recs",
+          "item_2": "Mastered by Cristian A. Graziadei in Mastering Solis",
+          "item_3": "Band Photography: Mariel Gomez",
+          "item_5": "Art: Las Crema (Florencia Rissotti / Lucía Rongo)",
+          "item_4": "Matto Rios: Voice and guitar",
+          "item_6": "Santiago Jhones: Bass guitar and choirs",
+          "item_7": "Facundo Rissotti: Keyboards, programming and choirs",
+          "item_8": "Alejandro Gonzalez: Drums and choirs",
+          "item_9": "Marcos de Cristobal: Guitars in tracks 1,2,3,4,6,7,9.",
+          "item_10": "Mariano Fusaro: Didjeridoo on tracks 1 and 9",
+          "item_11": "Gisela Kinki Orlandi: trumpet on tracks 5",
+          "item_12": "Produced by Cerebro de Uva"
+        }
+      },
+      "paisajes": {
+        "about": "Recorded between October 2007 and November 2010 in Buenos Aires.",
+        "extra": {
+          "title": "Musicians",
+          "text": "Matías Suarez + Hernán Rupolo + Juan Manuel Colonna + Damián Chavez + Juan M. Soria + Santiago Jhones + Pato Toranza + Luli D´Ottavio + Juan Carlos Rissotti + Federico Scholland + Lux Raptor + Facundo Rissotti + Bic Bignone + Fran Villaveirán + Matías Sastre."
+        },
+        "personnel": {
+          "item_1": "Mixing by Facu Rissotti",
+          "item_2": "Mastered by Santiago Jhones",
+          "item_3": "La Patria Grande produced by Damián Chávez and Facundo Rissotti.",
+          "item_4": "La Patria Grande and El reino animal contain audios of “Cinco siglos resistiendo\".",
+          "item_5": "Inclinado en las tardes contains recordings of Pablo Neruda's voice.",
+          "item_6": "Rosshalde, la casa del pintor contains a fragment of \"Rosshalde\" (Hermann Hesse)",
+          "item_7": "Cover Painting and Digital Art: Florencia Rissotti.",
+          "item_8": "Produced by: Facundo Rissotti"
+        }
+      },
+      "pueblo_chico": {
+        "about": "Recorded between 2011 and 2012 in Taganga, Colombia and Buenos Aires, Argentina.",
+        "extra": {
+          "title": "Polvo we were",
+          "text": "Joaquin Carámbula + Damian Chavez + Facundo Rissotti + Santiago Jhones + Sofia Viola + Fran Villaveirán + Juan Colonna + Menta y Matto Broster + Marcos Soto + Juan M. Soria + Diego Belli + Sisto Tito Mattos + Mariano Fusaro + Matias Suarez + Gustavo Santangelo + Fred Rincón + Luli Luna Crook + César Canale + Muma Casares + Ana Manterola + Theo Peltzer + Matias Sastre + Juan Romano."
+        },
+        "personnel": {
+          "item_1": "Mixed by: Theo Peltzer.",
+          "item_2": "Assistant: Gustavo Santangelo",
+          "item_3": "Mastering: The Tornado",
+          "item_4": "Produced by: Facundo Rissotti",
+          "item_5": "All themes Music and Lyrics: Facundo Rissotti",
+          "item_6": "Band Production in #3 Ay! Don Jorge: Damian Chavez",
+          "item_7": "Production and arrangements in #8 Procesión de la Virgen: Gustavo Santangelo and Theo Peltzer.",
+          "item_8": "Original cover drawing and digital art: Florencia Rissotti ",
+          "item_9": "General Production: Facundo Rissotti"
+        }
+      },
+      "raul_leiva": {
+        "about": "Performed in the month of February 2013 in Florida, Buenos Aires.",
+        "personnel": {
+          "item_1": "Francisco Villaveirán: Guitar and charango",
+          "item_2": "Recording and Mixing: Facundo Rissotti",
+          "item_3": "Illustrations: Rocío Bottero"
+        }
+      },
+      "remolinos": {
+        "about": "Recorded between September and December 2019 in Saavedra, Buenos Aires.",
+        "personnel": {
+          "item_1": "Inhalo,",
+          "item_2": "Retengo,",
+          "item_3": "Exhalo,",
+          "item_4": "Composition and guitars: Mar Joppich",
+          "item_5": "Pre-production, recording, production and mixing: Facu Rissotti",
+          "item_6": "Co production on track 1 and 3 + Mastering: Joa.wav",
+          "item_7": "Art and video: Mar Joppich"
+        }
+      },
+      "rootstica": {
+        "personnel": {
+          "item_1": "Matto Rios: Voice and Guitar",
+          "item_2": "Santiago Jhones: Bass guitar and choirs",
+          "item_3": "Alejandro Gonzalez: Drums",
+          "item_4": "Hernan Rupolo: Guitar and Choirs",
+          "item_5": "Facundo Rissotti: Keyboards and choirs",
+          "item_6": "Recorded and mixed at Cerebrito Recs in October 2009",
+          "item_7": "by Santiago Jhones.",
+          "item_8": "Photographs: Eike \"Atomhirsch\" Kreibohm (Germany)",
+          "item_9": "Band photographs: Pablo Perez and Santiago Nealon",
+          "item_10": "El sistema Lyrics: Eduardo Galeano",
+          "item_11": "Revolución Lyrics: Santiago Jhones",
+          "item_12": "All songs Lyrics: Matto Rios / Music: Rootstica"
+        }
+      },
+      "somos_kollas": {
+        "about": "Recorded in Fiambalá, Catamarca. July 2015.",
+        "personnel": {
+          "item_1": "Performed by: Elbio Montoya",
+          "item_2": "Recording and Mixing: Facundo Rissotti",
+          "item_3": "Six northern themes classics: Quena, Charango and Guitar",
+          "item_4": "+ an original song: Somos Kollas",
+          "item_5": "Production: Facundo Rissotti"
+        }
+      }
+
+    },
     "see_album": "See album"
   },
   "cine": {
@@ -13,7 +201,7 @@
       "chacabuco": {
         "about": {
           "title": {
-            "chunk_1": "Original theme song Chacabuco´s Devil",
+            "chunk_1": "Original theme song Chacabuco's Devil",
             "chunk_2": "Music and Lyrics: Matto Rios - Facundo Rissotti"
           },
           "description": "Chacabuco is the story of Claudia, a teenager who must return to live for a summer with her father Marcelo after fifteen years of living apart. The stay takes place in the house of her grandfather, who died recently. The arrival at the house of Pipo, Claudia's boyfriend and Sara, the grandfather's caretaker, will help to unite the central bond, interweaving it with a journey through the sexual awakening in adolescence, and a journey through memory, where the past plays a fundamental role in understanding and reconciling with the present."
@@ -83,23 +271,23 @@
         },
         "participants": {
           "item_1": {
-            "key":  "Direction",
+            "key": "Direction",
             "val": "Guillermo Figoli and Romina D'Andrea"
           },
           "item_2": {
-            "key":  "Production",
+            "key": "Production",
             "val": "Josefina García Mason, Mar Joppich"
           },
           "item_3": {
-            "key":  "Script",
+            "key": "Script",
             "val": "Santiago Ambao"
           },
           "item_4": {
-            "key":  "Original Music",
+            "key": "Original Music",
             "val": "Facundo Rissotti"
           },
           "item_5": {
-            "key":  "Archive images",
+            "key": "Archive images",
             "val": "Vietnam War"
           }
         }

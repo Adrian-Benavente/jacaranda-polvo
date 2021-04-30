@@ -68,7 +68,7 @@
         <div :class="$style.top">
           <div>
             <h3 :class="$style.title" :id="$style.aboutTitle">
-              Sobre el proyecto
+              {{ $t("albums.about_project") }}
             </h3>
             <p :class="$style.text">{{ album.about }}</p>
             <ul :class="[$style.list, $style.listSocial]">
@@ -80,7 +80,7 @@
                   :class="$style.link"
                   :href="album.links.spotify"
                   target="_blank"
-                  >Escuchar en Spotify</a
+                  >{{ $t("albums.listen_on") }} Spotify</a
                 >
               </li>
               <li
@@ -91,7 +91,7 @@
                   :class="$style.link"
                   :href="album.links.youTube"
                   target="_blank"
-                  >Escuchar en Youtube</a
+                  >{{ $t("albums.listen_on") }} Youtube</a
                 >
               </li>
             </ul>
@@ -109,7 +109,9 @@
             </p>
           </div>
         </div>
-        <h3 :class="$style.title" :id="$style.aboutTitle">Ficha tecnica</h3>
+        <h3 :class="$style.title" :id="$style.aboutTitle">
+          {{ $t("albums.personnel") }}
+        </h3>
         <ul :class="$style.list">
           <li
             :class="$style.item"
@@ -135,7 +137,7 @@
                 :href="href"
                 @click="navigate"
               >
-                Anterior proyecto
+                {{ $t("cine.navigation.prev") }}
               </a>
             </router-link>
           </template>
@@ -152,7 +154,7 @@
                 :href="href"
                 @click="navigate"
               >
-                Siguiente proyecto
+                {{ $t("cine.navigation.next") }}
               </a>
             </router-link>
           </template>
@@ -163,15 +165,15 @@
 </template>
 
 <script>
-import { albumList } from "@/components/albums/data-albums";
 import CarouselControls from "@/components/lib/CarouselControls";
+import { albums } from "@/components/albums/data-albums";
 
 export default {
   name: "FichaAlbums",
+  mixins: [albums],
   components: { CarouselControls },
   data() {
     return {
-      albumList,
       artist: this.$route.params.artist,
       id: parseInt(this.$route.params.id),
       selectedArtwork: 0,
@@ -201,7 +203,7 @@ export default {
         return `/albums/${currId + 1}/${artist}/${title}`;
       } else {
         const { artist, title } = this.albumList[0].slug;
-        return `/albums/${currId + 1}/${artist}/${title}`;
+        return `/albums/1/${artist}/${title}`;
       }
     },
     getPreviousOne(currId) {
@@ -214,7 +216,7 @@ export default {
         const { artist, title } = this.albumList.find(
           ({ id }) => id === this.albumList.length
         ).slug;
-        return `/albums/${currId - 1}/${artist}/${title}`;
+        return `/albums/${this.albumList.length}/${artist}/${title}`;
       }
     },
     move(dir) {
