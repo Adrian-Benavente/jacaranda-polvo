@@ -121,8 +121,8 @@ export default {
 @use "../../assets/scss/functions" as fn;
 @use "../../assets/scss/placeholders";
 
-@mixin glow-animation($color) {
-  animation: glow 1s alternate infinite;
+@mixin glow-animation($color, $speed: 1s) {
+  animation: glow #{$speed} alternate infinite;
   @keyframes glow {
     0% {
       filter: drop-shadow(0 0 13px #{$color});
@@ -361,6 +361,7 @@ export default {
     }
     &--sound-on {
       --glow-color: gold;
+      @include glow-animation(var(--glow-color), 0.5s);
       cursor: url("../../assets/img/lib/soundwaves-disabled.svg"), auto;
     }
   }

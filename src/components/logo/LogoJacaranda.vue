@@ -42,7 +42,7 @@ export default {
   color: white;
   display: flex;
   font-family: var(--bebas), arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   margin-left: fn.to-proportion-width(36, 1440);
   margin-top: fn.to-proportion-height(18, 900);
   overflow: hidden;

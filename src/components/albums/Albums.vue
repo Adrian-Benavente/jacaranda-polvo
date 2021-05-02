@@ -213,11 +213,17 @@ export default {
   background: url("../../assets/img/lib/arrow-right.svg") center / contain
     no-repeat;
   display: inline-block;
-  height: fn.to-rem(17);
-  margin-left: fn.to-rem(13);
+  height: 0.875rem;
+  margin-left: 0.5rem;
   transition: margin-left 0.3s ease-in-out;
-  width: fn.to-rem(17);
+  width: 0.875rem;
+  @media (min-width: 768px) {
+    height: fn.to-rem(17);
+    margin-left: fn.to-rem(13);
+    width: fn.to-rem(17);
+  }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

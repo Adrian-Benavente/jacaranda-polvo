@@ -29,7 +29,13 @@ export default {
     opacity: false,
   }),
   mounted() {
-    setTimeout(() => (this.opacity = true), 300);
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight) {
+        setTimeout(() => (this.opacity = true), 300);
+      } else {
+        setTimeout(() => (this.opacity = false), 300);
+      }
+    });
   },
 };
 </script>
@@ -49,12 +55,17 @@ export default {
 
 .widgets {
   align-items: center;
-  display: flex;
+  display: none;
   justify-content: space-between;
   margin-right: fn.to-proportion-width(30, 1440);
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   &.opacity {
+    animation: opaque 0.5s;
+    display: flex;
+    opacity: 1;
+  }
+  @media (min-width: 768px) {
+    display: flex;
     opacity: 1;
   }
 }
@@ -67,5 +78,20 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+@keyframes opaque {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  10% {
+    display: flex;
+  }
+  20% {
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

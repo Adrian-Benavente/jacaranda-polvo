@@ -18,16 +18,25 @@
             :class="$style.listGroup"
           >
             <dt>
-              <a :href="`${link}`" target="_blank" :class="$style.title"
-                ><span :class="$style.slash" aria-hidden="true">/</span>
-                {{ title }}</a
-              >
+              <a :href="`${link}`" target="_blank" :class="$style.title">
+                <span :class="$style.slash" aria-hidden="true">/</span>
+                {{ title }}
+              </a>
             </dt>
             <dd>
-              <a :href="`${link}`" target="_blank"
-                ><span v-html="synopsis"></span
-              ></a>
-              <video muted autoplay loop :src="file"></video>
+              <a :href="`${link}`" target="_blank">
+                <span v-html="synopsis"></span>
+              </a>
+              <a :class="$style.mobileLink" :href="`${link}`" target="_blank">
+                Ver video <span :class="$style.arrowRight"></span>
+              </a>
+              <video
+                :class="$style.video"
+                muted
+                autoplay
+                loop
+                :src="file"
+              ></video>
             </dd>
           </div>
         </dl>
@@ -155,9 +164,6 @@ export default {
 .scrollOutContainer {
   height: 100%;
 }
-.title {
-  left: 3%;
-}
 .workList {
   align-items: center;
   color: white;
@@ -166,26 +172,93 @@ export default {
   justify-items: end;
   .list {
     margin-top: 3rem;
-    max-width: fn.to-proportion-width(1102, 1440);
     text-align: start;
-    width: 80%;
+    width: 90%;
     .listGroup {
       align-items: center;
       display: grid;
-      gap: 2rem;
-      padding: fn.to-rem(60) 0;
+      gap: 1rem;
+      justify-items: end;
+      padding: 1.375rem 0;
+      .video {
+        display: none;
+      }
       a {
         color: white;
         &:not(.title):hover {
           color: var(--color-hero);
         }
+        &.mobileLink {
+          align-items: center;
+          display: flex;
+          color: var(--color-hero);
+          line-height: normal;
+          margin-top: 0.75rem;
+          .arrowRight {
+            background: url("../../assets/img/lib/arrow-right.svg") center /
+              contain no-repeat;
+            display: inline-block;
+            height: 0.875rem;
+            margin-left: 0.5rem;
+            transition: margin-left 0.3s ease-in-out;
+            width: 0.875rem;
+            @media (min-width: 768px) {
+              height: fn.to-rem(17);
+              margin-left: fn.to-rem(13);
+              width: fn.to-rem(17);
+            }
+          }
+        }
       }
       &:not(:last-child) {
         border-bottom: 1px solid white;
       }
+      dt {
+        color: white;
+        font: fn.to-rem(30) var(--bebas);
+        max-width: 85%;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 3;
+        width: 100%;
+        .slash {
+          display: inline-block;
+        }
+        @media (min-width: 768px) {
+          font-size: fn.to-proportion-width(30, 1440);
+          max-width: none;
+          width: initial;
+          .slash {
+            margin-right: 2rem;
+          }
+        }
+      }
+      dd {
+        font: fn.to-rem(14) / 150% var(--montserrat);
+        max-width: 85%;
+        padding-right: 1rem;
+        position: relative;
+        transition: color 0.3s;
+        z-index: 2;
+        &:not(:hover) {
+          color: white;
+        }
+        @media (min-width: 1920px) {
+          font-size: fn.to-proportion-width(14, 1440);
+          line-height: 130%;
+          padding-right: 3rem;
+          max-width: none;
+        }
+      }
       @media (min-width: 768px) {
+        gap: 2rem;
         grid-template-columns: 2fr 3fr;
-        video {
+        justify-items: initial;
+        padding: fn.to-rem(60) 0;
+        a.mobileLink {
+          display: none;
+        }
+        .video {
           display: none;
           height: 200px;
           left: 0;
@@ -195,38 +268,21 @@ export default {
           z-index: -1;
         }
         &:hover {
-          video {
+          .video {
             display: block;
           }
         }
       }
-      dt {
-        color: white;
-        font: fn.to-rem(30) var(--bebas);
-        position: relative;
-        text-transform: uppercase;
-        z-index: 3;
-        @media (min-width: 1920px) {
-          font-size: fn.to-proportion-width(30, 1440);
-        }
-        .slash {
-          margin-right: 2rem;
-        }
-      }
-      dd {
-        font: fn.to-rem(14) / 130% var(--montserrat);
-        padding-right: 3rem;
-        position: relative;
-        transition: color 0.3s;
-        z-index: 2;
-        &:not(:hover) {
-          color: white;
-        }
-        @media (min-width: 1920px) {
-          font-size: fn.to-proportion-width(14, 1440);
-        }
-      }
     }
+    @media (min-width: 768px) {
+      max-width: fn.to-proportion-width(1102, 1440);
+      width: 80%;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    left: 3%;
   }
 }
 </style>
