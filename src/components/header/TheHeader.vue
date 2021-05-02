@@ -1,13 +1,7 @@
 <template>
   <header :class="$style.header">
     <LogoJacaranda />
-    <div
-      :class="[
-        $style.widgets,
-        visible && $style.visible,
-        opacity && $style.opacity,
-      ]"
-    >
+    <div :class="[$style.widgets, opacity && $style.opacity]">
       <div :class="[$style.spacing, $style.centered]">
         <SoundWave />
       </div>
@@ -22,10 +16,10 @@
 </template>
 
 <script>
-import LogoJacaranda from '@/components/logo/LogoJacaranda';
-import SoundWave from '@/components/header/SoundWave';
-import LanguageSwitch from '@/components/header/LanguageSwitch';
-import MainMenu from '@/components/header/nav/MainMenu';
+import LogoJacaranda from "@/components/logo/LogoJacaranda";
+import SoundWave from "@/components/header/SoundWave";
+import LanguageSwitch from "@/components/header/LanguageSwitch";
+import MainMenu from "@/components/header/nav/MainMenu";
 
 export default {
   name: "TheHeader",
@@ -34,22 +28,8 @@ export default {
     visible: false,
     opacity: false,
   }),
-  methods: {
-    scrollPastHero() {
-      return window.pageYOffset >= window.innerHeight;
-    },
-  },
   mounted() {
-    this.visible = this.scrollPastHero();
-    window.addEventListener("scroll", () => {
-      if (this.scrollPastHero()) {
-        this.visible = this.scrollPastHero();
-        setTimeout(() => (this.opacity = this.scrollPastHero()), 300);
-      } else {
-        this.opacity = this.scrollPastHero();
-        setTimeout(() => (this.visible = this.scrollPastHero()), 300);
-      }
-    });
+    setTimeout(() => (this.opacity = true), 300);
   },
 };
 </script>
@@ -69,17 +49,13 @@ export default {
 
 .widgets {
   align-items: center;
-  display: none;
+  display: flex;
   justify-content: space-between;
   margin-right: fn.to-proportion-width(30, 1440);
   opacity: 0;
-  transition: opacity 0.5s;
-  &.visible {
-    display: flex;
-  }
+  transition: opacity 0.5s ease-in-out;
   &.opacity {
     opacity: 1;
-    transition: opacity 0.5s;
   }
 }
 

@@ -29,15 +29,21 @@ export default {
 <style lang="scss" module>
 @use "../../assets/scss/functions" as fn;
 .container {
-  bottom: 5vh;
   color: white;
   display: flex;
-  flex-direction: column;
-  font: 3rem var(--bebas-bold);
-  left: 0;
+  font: 2.5rem var(--bebas-bold);
   position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
   text-transform: uppercase;
-  transform: rotate(-90deg);
+  @media (min-width: 768px) {
+    bottom: 20vh;
+    flex-direction: column;
+    font-size: fn.to-proportion-width(60, 1440);
+    left: 1vw;
+    top: initial;
+    transform: rotate(-90deg);
+  }
   .title {
     line-height: 100%;
     text-align: left;
@@ -56,11 +62,6 @@ export default {
       transition: width 1.2s, opacity 1s;
       width: 1%;
     }
-  }
-  @media (min-width: 768px) {
-    bottom: 20vh;
-    font-size: fn.to-proportion-width(60, 1440);
-    left: 1vw;
   }
 }
 

@@ -62,15 +62,15 @@
 import ScrollOut from "scroll-out";
 import SectionTitle from "@/components/lib/SectionTitle";
 import CarouselControls from "@/components/lib/CarouselControls";
-import { albumList } from "@/components/albums/data-albums";
+import { albums } from "@/components/albums/data-albums";
 
 export default {
   name: "Albums",
+  mixins: [albums],
   components: { CarouselControls, SectionTitle },
   data() {
     return {
       active: 1,
-      albumList,
       store: this.$store,
       titleAppears: false,
     };

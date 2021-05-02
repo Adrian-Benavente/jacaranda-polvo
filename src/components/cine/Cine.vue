@@ -4,6 +4,10 @@
     :class="$style.container"
     :aria-labelledby="$t('sections.cine')"
   >
+    <SectionTitle
+      :title-text="$t('sections.cine')"
+      :title-appears="titleAppears"
+    />
     <div
       :class="[
         $style.background,
@@ -21,10 +25,6 @@
         <span :class="$style.viewMore">{{ $t("global.see_more") }}</span>
       </div>
     </router-link>
-    <SectionTitle
-      :title-text="$t('sections.cine')"
-      :title-appears="titleAppears"
-    />
     <CarouselControls @move-prev="movePrev" @move-next="moveNext" />
   </section>
 </template>
@@ -129,9 +129,12 @@ export default {
 @use "../../assets/scss/placeholders";
 
 .container {
+  height: fn.to-proportion-width(395, 360);
   position: relative;
-  height: 100vh;
   overflow: hidden;
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
 }
 .background {
   background: {
