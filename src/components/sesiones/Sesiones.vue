@@ -62,8 +62,10 @@ export default {
   display: grid;
   height: 100%;
 }
-.title {
-  left: -3.9%;
-  z-index: 2;
+@media (min-width: 768px) {
+  .title {
+    left: -3.9%;
+    z-index: 2;
+  }
 }
 </style>

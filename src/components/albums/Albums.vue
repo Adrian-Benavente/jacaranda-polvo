@@ -117,20 +117,26 @@ export default {
 @use "../../assets/scss/functions.scss" as fn;
 .container {
   background-color: black;
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
   display: grid;
-  align-items: end;
-  justify-items: end;
-  &.en {
-    .title {
-      left: -2.5%;
+  overflow: hidden;
+  padding-top: fn.to-proportion-width(100, 360);
+  position: relative;
+
+  @media (min-width: 768px) {
+    align-items: end;
+    justify-items: end;
+    min-height: 100vh;
+    padding-top: initial;
+
+    &.en {
+      .title {
+        left: -2.5%;
+      }
     }
-  }
-  &.es {
-    .title {
-      left: -3.7%;
+    &.es {
+      .title {
+        left: -3.7%;
+      }
     }
   }
 }
@@ -142,11 +148,19 @@ export default {
   color: white;
   display: grid;
   font-family: var(--bebas);
-  grid-template-columns: 1fr 2fr;
+  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
-  margin: auto;
+  margin: auto 1.5rem auto;
+  overflow: hidden;
   text-align: start;
-  width: fn.to-proportion-width(1102, 1440);
+  width: 100%;
+  @media (min-width: 768px) {
+    gap: initial;
+    grid-template-columns: 1fr 2fr;
+    overflow: initial;
+    width: fn.to-proportion-width(1102, 1440);
+  }
 }
 .left {
   align-self: end;
@@ -155,6 +169,10 @@ export default {
 .right {
   justify-self: end;
   align-self: center;
+  margin-right: -12.8em;
+  @media (min-width: 738px) {
+    margin-right: initial;
+  }
 }
 .carouselLink {
   background: {
@@ -163,9 +181,9 @@ export default {
     size: cover;
   }
   display: block;
-  height: fn.to-proportion-width(118, 360);
+  height: fn.to-proportion-width(354, 360);
   transition: background-image 0.5s;
-  width: fn.to-proportion-width(134, 360);
+  width: fn.to-proportion-width(364, 360);
   @media (min-width: 768px) {
     height: fn.to-proportion-width(700, 1440);
     width: fn.to-proportion-width(700, 1440);
@@ -178,7 +196,7 @@ export default {
 }
 .infoArtist {
   color: white;
-  font-size: fn.to-rem(35);
+  font-size: fn.to-rem(25);
   letter-spacing: fn.to-rem(1);
   margin-bottom: 1rem;
   @media (min-width: 1920px) {
@@ -186,12 +204,13 @@ export default {
   }
 }
 .infoTitle {
-  font-size: fn.to-rem(20);
+  font-size: fn.to-rem(18);
   @media (min-width: 1920px) {
     font-size: fn.to-proportion-width(20, 1440);
   }
 }
 .infoYear {
+  font-size: fn.to-rem(18);
   @media (min-width: 1920px) {
     font-size: fn.to-proportion-width(16, 1440);
   }
@@ -200,7 +219,7 @@ export default {
   align-items: center;
   color: var(--color-hero);
   display: flex;
-  font: fn.to-rem(18) var(--montserrat);
+  font: 0.875rem var(--montserrat);
   margin-top: 1rem;
   &:hover .arrowRight {
     margin-left: 1.2rem;

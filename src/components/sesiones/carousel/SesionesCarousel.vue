@@ -3,7 +3,7 @@
     <div
       :class="$style.wrapper"
       :style="{
-        paddingLeft: `${slideOffset}px`,
+        paddingLeft: `${slideOffset || 0}px`,
         transform: `translateX(${translateValue}px)`,
       }"
     >
@@ -96,19 +96,26 @@ export default {
       this.translateValue = 0;
 
       const compStyles = window.getComputedStyle(document.documentElement);
-      this.rem = parseInt(
+      this.rem = Number(
         compStyles.getPropertyValue("font-size").split("px")[0]
       );
 
-      this.container = document.querySelector(`.${this.$style.container}`);
       this.slideWidth =
         document.querySelector(`.${this.$style.slide}`).offsetWidth +
         this.rem +
         this.rem / 2;
-      this.slideOffset = this.slideWidth / 2;
 
-      this.controlsOffset =
-        document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        this.slideOffset = this.slideWidth / 2;
+        this.controlsOffset =
+          document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
+      } else {
+        this.slideOffset = this.slideWidth / 4;
+        this.controlsOffset =
+          document.querySelector(`.${this.$style.slide}`).offsetWidth -
+          document.querySelector(`.${this.$style.controls}`).offsetWidth * 1.6 -
+          this.translateValue;
+      }
     },
   },
   mounted() {
@@ -136,14 +143,16 @@ export default {
 }
 
 .slide {
-  @media (min-width: 400px) {
-    transition: transform 0.3s 0.7s ease-in-out;
-    &.active {
-      transform: translateY(-50px);
-      .details {
-        opacity: 1;
-      }
+  transition: transform 0.3s 0.7s ease-in-out;
+  width: fn.to-proportion-width(231, 360);
+  &.active {
+    transform: translateY(-50px);
+    .details {
+      opacity: 1;
     }
+  }
+  @media (min-width: 768px) {
+    width: initial;
   }
 }
 
@@ -188,7 +197,7 @@ export default {
 }
 .controls {
   display: flex;
-  z-index: 0;
+  z-index: 2;
 }
 .modalButton,
 .modalButton:active {
