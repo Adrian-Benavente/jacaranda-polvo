@@ -5,12 +5,12 @@
     <kinesis-container class="aldea__menu">
       <div
         @click="toggleSound"
-        @mouseover="sound && playSound('piramide', 'aldea')"
+        @mouseover="sound && pyramidSound && playSound('piramide', 'aldea')"
       >
         <kinesis-element
           :class="[
             'aldea__pyramid',
-            sound && 'aldea__pyramid--sound-on',
+            sound && pyramidSound && 'aldea__pyramid--sound-on',
             visible && 'visible',
           ]"
           aria-hidden="true"
@@ -20,7 +20,7 @@
         <ul>
           <li
             class="aldea__item tv"
-            @mouseover="sound && playSound('tv', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('tv', 'aldea')"
           >
             <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text">{{ $t("sections.tv") }}</span>
@@ -28,7 +28,7 @@
           </li>
           <li
             class="aldea__item teatro"
-            @mouseover="sound && playSound('teatro', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('teatro', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-teatro">
               <span class="aldea__item-text">{{ $t("sections.theater") }}</span>
@@ -36,7 +36,9 @@
           </li>
           <li
             class="aldea__item contenido"
-            @mouseover="sound && playSound('contenido', 'aldea')"
+            @mouseover="
+              sound && pyramidSound && playSound('contenido', 'aldea')
+            "
           >
             <kinesis-element :strength="40" tag="a" href="#section-contenido">
               <span class="aldea__item-text">{{ $t("sections.content") }}</span>
@@ -44,7 +46,7 @@
           </li>
           <li
             class="aldea__item albums"
-            @mouseover="sound && playSound('albums', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('albums', 'aldea')"
           >
             <kinesis-element :strength="80" tag="a" href="#section-albums">
               <span class="aldea__item-text">{{ $t("sections.albums") }}</span>
@@ -52,7 +54,7 @@
           </li>
           <li
             class="aldea__item contacto"
-            @mouseover="sound && playSound('contacto', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('contacto', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-contacto">
               <span class="aldea__item-text">{{ $t("sections.contact") }}</span>
@@ -60,7 +62,7 @@
           </li>
           <li
             class="aldea__item sesiones"
-            @mouseover="sound && playSound('sesiones', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('sesiones', 'aldea')"
           >
             <kinesis-element :strength="30" tag="a" href="#section-sesiones">
               <span class="aldea__item-text">{{
@@ -70,7 +72,7 @@
           </li>
           <li
             class="aldea__item cine"
-            @mouseover="sound && playSound('cine', 'aldea')"
+            @mouseover="sound && pyramidSound && playSound('cine', 'aldea')"
           >
             <kinesis-element :strength="70" tag="a" href="#section-cine">
               <span class="aldea__item-text">{{ $t("sections.cine") }}</span>
@@ -92,14 +94,14 @@ export default {
   mixins: [Sound],
   data() {
     return {
-      sound: false,
-      store: this.$store,
+      sound: this.$store.state.sound,
+      pyramidSound: false,
       visible: false,
     };
   },
   methods: {
     toggleSound() {
-      this.sound = !this.sound;
+      this.pyramidSound = !this.pyramidSound;
     },
   },
   mounted() {
