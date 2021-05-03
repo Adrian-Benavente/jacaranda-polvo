@@ -3,11 +3,11 @@
     <nav>
       <ul @mouseout="symbol = null">
         <li :class="$style.item" @mouseover="symbol = 'cine'">
-          <router-link to="/#section-cine" v-slot="{ href, navigate }">
+          <router-link to="/#section-cine" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('cine', 'menu')"
@@ -16,11 +16,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'tv'">
-          <router-link to="/#section-tv" v-slot="{ href, navigate }">
+          <router-link to="/#section-tv" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('tv', 'menu')"
@@ -29,11 +29,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'albums'">
-          <router-link to="/#section-albums" v-slot="{ href, navigate }">
+          <router-link to="/#section-albums" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('albums', 'menu')"
@@ -42,11 +42,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'sesiones'">
-          <router-link to="/#section-sesiones" v-slot="{ href, navigate }">
+          <router-link to="/#section-sesiones" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('sesiones', 'menu')"
@@ -55,11 +55,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'teatro'">
-          <router-link to="/#section-teatro" v-slot="{ href, navigate }">
+          <router-link to="/#section-teatro" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('teatro', 'menu')"
@@ -68,11 +68,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'contenido'">
-          <router-link to="/#section-contenido" v-slot="{ href, navigate }">
+          <router-link to="/#section-contenido" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('contenido', 'menu')"
@@ -82,11 +82,11 @@
           </router-link>
         </li>
         <li :class="$style.item" @mouseover="symbol = 'contacto'">
-          <router-link to="/#section-contacto" v-slot="{ href, navigate }">
+          <router-link to="/#section-contacto" v-slot="{ href }">
             <a
               :href="href"
               @click="
-                navigate;
+                $router.push(href);
                 $emit('close');
               "
               @mouseover="open && playSound('contacto', 'menu')"
