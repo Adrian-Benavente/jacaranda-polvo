@@ -154,12 +154,16 @@ export default {
 <style lang="scss" module>
 @use "../../assets/scss/functions" as fn;
 .container {
-  background-color: black;
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
-  display: grid;
   align-items: end;
+  background-color: black;
+  display: grid;
+  overflow: hidden;
+  margin-top: 2em;
+  min-height: 90vh;
+  position: relative;
+  @media (min-width: 768px) {
+    min-height: 100vh;
+  }
 }
 .scrollOutContainer {
   height: 100%;
@@ -243,7 +247,7 @@ export default {
         &:not(:hover) {
           color: white;
         }
-        @media (min-width: 1920px) {
+        @media (min-width: 768px) {
           font-size: fn.to-proportion-width(14, 1440);
           line-height: 130%;
           padding-right: 3rem;

@@ -129,57 +129,72 @@ export default {
   align-items: end;
   background-color: black;
   overflow: hidden;
-  min-height: 100vh;
+  margin-top: 2rem;
   position: relative;
   display: grid;
   justify-items: end;
+  @media (min-width: 768px) {
+    margin-top: initial;
+    min-height: 100vh;
+  }
 }
 .scrollOutContainer {
   align-items: center;
   display: grid;
   height: 100%;
-}
-.title {
-  left: -4.7%;
-}
-.en .title {
-  left: -3.45%;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: initial;
+  }
 }
 .content {
+  margin-top: fn.to-proportion-width(120, 360);
+  padding: 0 0 3rem 1rem;
   position: relative;
-  width: fn.to-proportion-width(1102, 1440);
-  &::before {
-    border: 1px solid white;
-    content: "";
-    display: block;
-    height: 95.9%;
-    position: absolute;
-    right: 8%;
-    top: 2%;
-    transform: skewY(45deg);
-    width: fn.to-proportion-width(20, 1440);
-  }
-  &::after {
-    border: 1px solid white;
-    content: "";
-    display: block;
-    height: fn.to-proportion-width(20, 1440);
-    margin-left: fn.to-proportion-width(10, 1440);
-    transform: skewX(45deg);
-    width: 90%;
-  }
   .inner {
-    border: 1px solid white;
     display: flex;
-    gap: 3rem;
-    flex-wrap: inherit;
-    justify-content: space-between;
-    padding: fn.to-proportion-width(42, 1440);
-    width: 90.1%;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      border: 1px solid white;
+      flex-direction: row;
+      flex-wrap: inherit;
+      gap: 3rem;
+      justify-content: space-between;
+      padding: fn.to-proportion-width(42, 1440);
+      width: 90.1%;
+    }
+  }
+  @media (min-width: 768px) {
+    margin-top: initial;
+    padding: 0;
+    width: fn.to-proportion-width(1102, 1440);
+    &::before {
+      border: 1px solid white;
+      content: "";
+      display: block;
+      height: 95.9%;
+      position: absolute;
+      right: 8%;
+      top: 2%;
+      transform: skewY(45deg);
+      width: fn.to-proportion-width(20, 1440);
+    }
+    &::after {
+      border: 1px solid white;
+      content: "";
+      display: block;
+      height: fn.to-proportion-width(20, 1440);
+      margin-left: fn.to-proportion-width(10, 1440);
+      transform: skewX(45deg);
+      width: 90%;
+    }
   }
 }
 .form {
-  width: 50%;
+  width: 85%;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 }
 .input,
 .textarea {
@@ -220,8 +235,11 @@ export default {
   text-align: start;
 }
 .textarea {
-  max-height: fn.to-proportion-width(109, 1440);
+  max-height: fn.to-proportion-width(66, 360);
   resize: none;
+  @media (min-width: 768px) {
+    max-height: fn.to-proportion-width(109, 1440);
+  }
 }
 .textarea,
 .send {
@@ -230,7 +248,7 @@ export default {
 .send {
   border-radius: 5px;
   cursor: pointer;
-  height: 68px;
+  height: fn.to-proportion-width(41, 320);
   @media (min-width: 768px) {
     height: fn.to-proportion-width(68, 1440);
   }
@@ -239,7 +257,10 @@ export default {
   color: white;
   height: 100%;
   text-align: start;
-  width: 30%;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 }
 .contactInfo {
   .group {
@@ -283,8 +304,20 @@ export default {
 .manos {
   background: url("../../assets/img/aldea/contacto.svg") center/contain
     no-repeat;
-  height: fn.to-proportion-width(127.87, 1440);
   margin-top: fn.to-proportion-width(108, 1440);
-  width: fn.to-proportion-width(212.71, 1440);
+  height: fn.to-proportion-width(62, 360);
+  width: fn.to-proportion-width(103, 360);
+  @media (min-width: 768px) {
+    height: fn.to-proportion-width(127.87, 1440);
+    width: fn.to-proportion-width(212.71, 1440);
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    left: -4.7%;
+  }
+  .en .title {
+    left: -3.45%;
+  }
 }
 </style>

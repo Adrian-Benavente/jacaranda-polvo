@@ -49,13 +49,20 @@ export default {
 </script>
 
 <style lang="scss" module>
+@use "../../assets/scss/functions" as fn;
 .container {
   align-items: center;
   display: grid;
   background-color: black;
+  margin-top: 2em;
   overflow: hidden;
-  min-height: 100vh;
+  padding-top: fn.to-proportion-width(150, 360);
   position: relative;
+  @media (min-width: 768px) {
+    margin-top: initial;
+    padding-top: initial;
+    min-height: 100vh;
+  }
 }
 .scrollOutContainer {
   align-items: center;

@@ -102,42 +102,57 @@ export default {
 .container {
   background-color: black;
   overflow: hidden;
-  min-height: 100vh;
   position: relative;
-  display: grid;
-  align-items: end;
+  @media (min-width: 768px) {
+    align-items: end;
+    display: grid;
+    min-height: 100vh;
+  }
 }
 .scrollOutContainer {
   height: 100%;
 }
-.title {
-  left: -5.5%;
-}
-.en .title {
-  left: -3.5%;
-}
 .content {
   align-items: center;
   display: flex;
+  justify-content: center;
   height: 100%;
-  justify-content: flex-end;
+  margin-top: fn.to-proportion-width(120, 360);
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    margin-top: initial;
+  }
 }
 .carousel {
-  height: fn.to-proportion-width(653, 1440);
-  margin-bottom: fn.to-proportion-width(30, 1440);
-  max-width: fn.to-proportion-width(1102, 1440);
+  width: 100%;
+  @media (min-width: 768px) {
+    height: fn.to-proportion-width(653, 1440);
+    margin-bottom: fn.to-proportion-width(30, 1440);
+    max-width: fn.to-proportion-width(1102, 1440);
+  }
 }
 .item {
+  aspect-ratio: 16/9;
   display: block;
-  height: fn.to-proportion-width(486, 1440);
-  max-width: 100%;
   overflow: hidden;
+  width: 100%;
+  @media (min-width: 768px) {
+    aspect-ratio: initial;
+    height: fn.to-proportion-width(486, 1440);
+    max-width: 100%;
+    width: initial;
+  }
 }
 .video {
   border: 0;
   display: block;
-  height: fn.to-proportion-width(616, 1440);
-  width: fn.to-proportion-width(1102, 1440);
+  height: 100%;
+  width: 100%;
+  @media (min-width: 768px) {
+    aspect-ratio: initial;
+    height: fn.to-proportion-width(616, 1440);
+    width: fn.to-proportion-width(1102, 1440);
+  }
 }
 .details {
   align-items: center;
@@ -164,19 +179,29 @@ export default {
   text-align: start;
   width: max-content;
   dt {
-    font: normal 400 fn.to-rem(36) / 150% var(--bebas);
+    font: normal 400 1.5rem / 150% var(--bebas);
     letter-spacing: fn.to-rem(0.48);
-    margin-bottom: fn.to-rem(18);
-    @media (min-width: 1990px) {
+    @media (min-width: 768px) {
       font-size: fn.to-proportion-width(36, 1440);
+      margin-bottom: fn.to-rem(18);
     }
   }
   dd {
     font: normal fn.to-rem(14) / 150% var(--montserrat);
     letter-spacing: fn.to-rem(0.48);
-    @media (min-width: 1990px) {
+    max-width: 70%;
+    @media (min-width: 768px) {
       font-size: fn.to-proportion-width(14, 1440);
+      max-width: none;
     }
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    left: -5.5%;
+  }
+  .en .title {
+    left: -3.5%;
   }
 }
 </style>

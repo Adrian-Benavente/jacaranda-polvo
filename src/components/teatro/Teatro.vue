@@ -33,6 +33,9 @@
                 :class="$style.workLink"
                 target="_blank"
               ></a>
+              <a :class="$style.mobileLink" :href="`${link}`" target="_blank">
+                Ver video <span :class="$style.arrowRight"></span>
+              </a>
               <img :class="$style.imgPreview" :src="file" alt="" />
             </dd>
           </div>
@@ -150,21 +153,19 @@ export default {
 <style lang="scss" module>
 @use "../../assets/scss/functions" as fn;
 .container {
-  background-color: black;
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
-  display: grid;
   align-items: end;
+  background-color: black;
+  display: grid;
+  overflow: hidden;
+  margin-top: 2em;
+  min-height: 85vh;
+  position: relative;
+  @media (min-width: 768px) {
+    min-height: 100vh;
+  }
 }
 .scrollOutContainer {
   height: 100%;
-}
-.title {
-  left: -2.1%;
-}
-.en .title {
-  left: -3.35%;
 }
 .workList {
   align-items: center;
@@ -174,19 +175,90 @@ export default {
   justify-items: end;
   .list {
     margin-top: 3rem;
-    max-width: fn.to-proportion-width(1102, 1440);
     text-align: start;
-    width: 80%;
+    width: 90%;
     .listGroup {
       align-items: center;
       display: grid;
-      gap: 2rem;
-      padding: fn.to-rem(60) 0;
+      gap: 1rem;
+      justify-items: end;
+      padding: 1.375rem 0;
       &:not(:last-child) {
         border-bottom: 1px solid white;
       }
+      .imgPreview {
+        display: none;
+      }
+      .workTitle {
+        color: white;
+        font: fn.to-rem(30) var(--bebas);
+        max-width: 85%;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 3;
+        width: 100%;
+        .slash {
+          display: inline-block;
+        }
+        @media (min-width: 768px) {
+          font-size: fn.to-proportion-width(30, 1440);
+          max-width: none;
+          width: initial;
+          .slash {
+            margin-right: 2rem;
+          }
+        }
+      }
+      .workSynopsis {
+        font: fn.to-rem(14) / 150% var(--montserrat);
+        max-width: 85%;
+        padding-right: 1rem;
+        position: relative;
+        transition: color 0.3s;
+        z-index: 2;
+        &:not(:hover) {
+          color: white;
+        }
+        @media (min-width: 768px) {
+          font-size: fn.to-proportion-width(14, 1440);
+          line-height: 130%;
+          padding-right: 3rem;
+          max-width: none;
+        }
+      }
+      .workLink {
+        color: white;
+      }
+      .mobileLink {
+        align-items: center;
+        display: flex;
+        color: var(--color-hero);
+        line-height: normal;
+        margin-top: 0.75rem;
+        .arrowRight {
+          background: url("../../assets/img/lib/arrow-right.svg") center /
+            contain no-repeat;
+          display: inline-block;
+          height: 0.875rem;
+          margin-left: 0.5rem;
+          transition: margin-left 0.3s ease-in-out;
+          width: 0.875rem;
+          @media (min-width: 768px) {
+            height: fn.to-rem(17);
+            margin-left: fn.to-rem(13);
+            width: fn.to-rem(17);
+          }
+        }
+      }
+
       @media (min-width: 768px) {
+        gap: 2rem;
         grid-template-columns: 2fr 3fr;
+        justify-items: initial;
+        padding: fn.to-rem(60) 0;
+        .mobileLink {
+          display: none;
+        }
         .imgPreview {
           display: none;
           height: 200px;
@@ -202,37 +274,19 @@ export default {
           }
         }
       }
-      .workTitle {
-        color: white;
-        font: fn.to-rem(30) var(--bebas);
-        position: relative;
-        text-transform: uppercase;
-        z-index: 3;
-        @media (min-width: 1920px) {
-          font-size: fn.to-proportion-width(30, 1440);
-        }
-        .slash {
-          margin-right: 2rem;
-        }
-      }
-      .workSynopsis {
-        color: white;
-        font: fn.to-rem(14) / 130% var(--montserrat);
-        padding-right: 3rem;
-        position: relative;
-        transition: color 0.3s;
-        z-index: 2;
-        .workLink:hover {
-          color: var(--color-hero);
-        }
-        @media (min-width: 1920px) {
-          font-size: fn.to-proportion-width(14, 1440);
-        }
-      }
-      .workLink {
-        color: white;
-      }
     }
+    @media (min-width: 768px) {
+      max-width: fn.to-proportion-width(1102, 1440);
+      width: 80%;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    left: -2.1%;
+  }
+  .en .title {
+    left: -3.35%;
   }
 }
 </style>

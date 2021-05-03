@@ -111,10 +111,10 @@ export default {
           document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
       } else {
         this.slideOffset = this.slideWidth / 4;
-        this.controlsOffset =
-          document.querySelector(`.${this.$style.slide}`).offsetWidth -
-          document.querySelector(`.${this.$style.controls}`).offsetWidth * 1.6 -
-          this.translateValue;
+        const controls = document.querySelector(`.${this.$style.controls}`);
+        this.controlsOffset = controls.style.cssText = `
+          left: ${window.innerWidth / 2 - controls.offsetWidth / 2}px;
+        `;
       }
     },
   },
@@ -136,10 +136,12 @@ export default {
 .wrapper {
   display: flex;
   gap: 1.5rem;
-  padding-top: fn.to-rem(260);
   position: relative;
   transition: transform 0.5s 0.5s;
   z-index: 1;
+  @media (min-width: 768px) {
+    padding-top: fn.to-rem(260);
+  }
 }
 
 .slide {
@@ -198,6 +200,9 @@ export default {
 .controls {
   display: flex;
   z-index: 2;
+}
+.modalButton {
+  width: 100%;
 }
 .modalButton,
 .modalButton:active {
