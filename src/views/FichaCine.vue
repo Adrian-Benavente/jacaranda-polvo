@@ -175,6 +175,8 @@ export default {
 @use "../assets/scss/functions" as fn;
 @use "../assets/scss/mixins" as mx;
 
+$max-width: fn.to-proportion-width(1186, 1440);
+
 .container {
   background-color: black;
 }
@@ -281,11 +283,11 @@ export default {
     max-width: 90%;
     .title {
       color: var(--color-hero);
-      font: normal 400 fn.to-rem(25) / 150% var(--bebas);
+      font: normal 400 fn.to-rem(24) / 150% var(--bebas);
       margin-bottom: 1em;
       text-align: start;
       @media (min-width: 768px) {
-        font: normal 400 fn.to-rem(35) / fn.to-rem(35) var(--bebas);
+        font: normal 400 fn.to-rem(30) / fn.to-rem(63) var(--bebas);
       }
     }
     .text {
@@ -362,8 +364,11 @@ export default {
   width: 90%;
   .title {
     color: var(--color-hero);
-    font: normal 400 fn.to-rem(20) / fn.to-rem(35) var(--bebas);
+    font: normal 400 fn.to-rem(24) / 150% var(--bebas);
     margin-bottom: 1em;
+    @media (min-width: 768px) {
+      font: normal 400 fn.to-rem(30) / fn.to-rem(63) var(--bebas);
+    }
   }
   .list {
     list-style: none;
@@ -373,7 +378,10 @@ export default {
     }
     .item,
     .item a {
-      font: normal 400 1rem / fn.to-rem(23) var(--montserrat);
+      font: normal 400 0.875rem / 150% var(--montserrat);
+      @media (min-width: 768px) {
+        font: normal 400 1rem / fn.to-rem(23) var(--montserrat);
+      }
     }
     @media (min-width: 768px) {
       column-count: 2;

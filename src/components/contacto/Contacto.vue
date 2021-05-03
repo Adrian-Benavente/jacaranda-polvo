@@ -129,7 +129,7 @@ export default {
   align-items: end;
   background-color: black;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: fn.to-proportion-width(100, 360);
   position: relative;
   display: grid;
   justify-items: end;
@@ -276,7 +276,7 @@ export default {
   }
   dd {
     a {
-      font: 600 15px/50px var(--montserrat);
+      font: 600 0.875rem / normal var(--montserrat);
       @media (min-width: 768px) {
         font: 600 fn.to-proportion-width(15, 1440) /
           fn.to-proportion-width(18, 1440) var(--montserrat);
@@ -285,7 +285,7 @@ export default {
   }
 }
 .hablemos {
-  font: 40px/73px var(--bebas);
+  font: 1.5rem/150% var(--bebas);
   @media (min-width: 768px) {
     font: fn.to-proportion-width(40, 1400) / fn.to-proportion-width(73, 1440)
       var(--bebas);

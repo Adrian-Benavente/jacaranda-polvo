@@ -54,7 +54,7 @@ export default {
   align-items: center;
   display: grid;
   background-color: black;
-  margin-top: 2em;
+  margin-top: fn.to-proportion-width(100, 360);
   overflow: hidden;
   padding-top: fn.to-proportion-width(150, 360);
   position: relative;

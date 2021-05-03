@@ -268,16 +268,17 @@ $max-width: fn.to-proportion-width(1186, 1440);
     display: grid;
     gap: 2.5rem;
     margin: auto;
-    max-width: $max-width;
     padding: 1rem;
-    width: 100%;
+    width: 90%;
     @media (min-width: 768px) {
       --extra-padding: #{fn.to-proportion-width(77, 1440)};
       gap: 0 $gap;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr;
+      max-width: $max-width;
       padding: fn.to-proportion-width(41, 1440) fn.to-proportion-width(82, 1440)
         var(--extra-padding);
+      width: 100%;
       &.extraPadding {
         --extra-padding: #{fn.to-proportion-width(169, 1440)};
       }
@@ -331,8 +332,8 @@ $max-width: fn.to-proportion-width(1186, 1440);
 }
 .about {
   margin: auto;
-  max-width: $max-width;
   text-align: start;
+  width: 90%;
   .top {
     display: grid;
     gap: $gap;
@@ -346,7 +347,7 @@ $max-width: fn.to-proportion-width(1186, 1440);
     margin-bottom: 1rem;
     margin-top: fn.to-proportion-width(100, 1440);
     @media (min-width: 768px) {
-      font: normal 400 fn.to-rem(24) / fn.to-rem(35) var(--bebas);
+      font: normal 400 fn.to-rem(30) / fn.to-rem(63) var(--bebas);
       margin-bottom: fn.to-rem(27);
     }
   }
@@ -400,6 +401,10 @@ $max-width: fn.to-proportion-width(1186, 1440);
     @media (min-width: 768px) {
       font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
     }
+  }
+  @media (min-width: 768px) {
+    max-width: $max-width;
+    width: initial;
   }
 }
 .highlight {
