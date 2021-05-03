@@ -52,7 +52,6 @@ export const albums = {
             "inner.jpg",
             "charango.jpg",
             "puente.jpg",
-            "sofi-y-facu.jpg",
           ],
           spotifyId: "0OjZ66pSQWiE8eRoeBxZo8",
           about: this.$t("albums.projects.pueblo_chico.about"),
@@ -88,7 +87,7 @@ export const albums = {
           },
           year: 2019,
           cover: require("@/assets/img/albums/gordo/gordo/cover.jpg"),
-          artwork: ["front.jpg", "single.jpg", "formacion.jpg", "vivo.jpg"],
+          artwork: ["front.jpg", "single.jpg"],
           spotifyId: "1Cw2RUYcycUVQf2Q2utGR4",
           about: this.$t("albums.projects.gordo.about"),
           details: [

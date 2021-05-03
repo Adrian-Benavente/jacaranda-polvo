@@ -158,11 +158,8 @@ export default {
   display: grid;
   overflow: hidden;
   margin-top: 2em;
-  min-height: 85vh;
+  min-height: 100vh;
   position: relative;
-  @media (min-width: 768px) {
-    min-height: 100vh;
-  }
 }
 .scrollOutContainer {
   height: 100%;
@@ -199,6 +196,7 @@ export default {
         width: 100%;
         .slash {
           display: inline-block;
+          margin-right: 0.25rem;
         }
         @media (min-width: 768px) {
           font-size: fn.to-proportion-width(30, 1440);

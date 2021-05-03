@@ -108,8 +108,8 @@
       "paisajes": {
         "about": "Grabado entre Octubre de 2007 y Noviembre de 2010 en Buenos Aires.",
         "extra": {
-          "title": "Matías Suarez + Hernán Rupolo + Juan Manuel Colonna + Damián Chavez + Juan M. Soria + Santiago Jhones + Pato Toranza + Luli D´Ottavio + Juan Carlos Rissotti + Federico Scholland + Lux Raptor + Facundo Rissotti + Bic Bignone + Fran Villaveirán + Matías Sastre.",
-          "text": "Musicxs"
+          "text": "Matías Suarez + Hernán Rupolo + Juan Manuel Colonna + Damián Chavez + Juan M. Soria + Santiago Jhones + Pato Toranza + Luli D´Ottavio + Juan Carlos Rissotti + Federico Scholland + Lux Raptor + Facundo Rissotti + Bic Bignone + Fran Villaveirán + Matías Sastre.",
+          "title": "Musicxs"
         },
         "personnel": {
           "item_1": "Mezcla: Facu Rissotti",
@@ -129,7 +129,7 @@
           "text": "Joaquin Carámbula + Damian Chavez + Facundo Rissotti + Santiago Jhones + Sofia Viola + Fran Villaveirán + Juan Colonna + Menta y Matto Broster + Marcos Soto + Juan M. Soria + Diego Belli + Sisto Tito Mattos + Mariano Fusaro + Matias Suarez + Gustavo Santangelo + Fred Rincón + Luli Luna Crook + César Canale + Muma Casares + Ana Manterola + Theo Peltzer + Matias Sastre + Juan Romano."
         },
         "personnel": {
-          "item_1": "Mezclado por: Theo Peltzer.",
+          "item_1": "Mezclado por: Theo Peltzer",
           "item_2": "Asistente: Gustavo Santangelo",
           "item_3": "Mastering: El Tornado",
           "item_4": "Producido por: Facundo Rissotti",
@@ -138,52 +138,52 @@
           "item_7": "Producción y arreglos en #8 Procesión de la Virgen: Gustavo Santangelo y Theo Peltzer.",
           "item_8": "Dibujo original de tapa y arte digital: Florencia Rissotti",
           "item_9": "Producción General: Facundo Rissotti"
-        },
-        "raul_leiva": {
-          "about": "Interpretado en el mes de Febrero de 2013 en Florida, Buenos Aires.\n\n",
-          "personnel": {
-            "item_1": "Francisco Villaveirán: Guitarra y charango",
-            "item_2": "Grabación y Mezcla: Facundo Rissotti",
-            "item_3": "Ilustraciones: Rocío Bottero"
-          }
-        },
-        "remolinos": {
-          "about": "Grabado entre Septiembre y Diciembre de 2019 en Saavedra, Buenos Aires.",
-          "personnel": {
-            "item_1": "Inhalo,",
-            "item_2": "Retengo,",
-            "item_3": "Exhalo,",
-            "item_4": "Composición y guitarras: Mar Joppich",
-            "item_5": "Pre producción, grabación, producción y Mezcla: Facu Rissotti",
-            "item_6": "Co producción en tema 1 y 3 + Mastering: Joa.wav",
-            "item_7": "Arte y video: Mar Joppich"
-          }
-        },
-        "rootstica": {
-          "personnel": {
-            "item_1": "Matto Rios: Voz y Guitarra",
-            "item_2": "Santiago Jhones: Bajo y coros",
-            "item_3": "Alejandro Gonzalez: Bateria",
-            "item_4": "Hernan Rupolo: Guitarra y coros",
-            "item_5": "Facundo Rissotti: Teclados y coros",
-            "item_6": "Grabado y mezclado en Cerebrito Recs en Octubre de 2009",
-            "item_7": "por Santiago Jhones.",
-            "item_8": "Fotografias: Eike “Atomhirsch” Kreibohm (Alemania)",
-            "item_9": "Fotografias de banda: Pablo Perez y Santiago Nealon",
-            "item_10": "El sistema Letra: Eduardo Galeano",
-            "item_11": "Revolución Letra: Santiago Jhones",
-            "item_12": "Todas las canciones Letra: Matto Rios / Música: Rootstica"
-          }
-        },
-        "somos_kollas": {
-          "about": "Grabado en Fiambalá, Catamarca. Julio 2015.",
-          "personnel": {
-            "item_1": "Interpretado por: Elbio Montoya",
-            "item_2": "Grabación y Mezcla: Facundo Rissotti",
-            "item_3": "Seis clásicos en clave norteña: Quena, Charango y Guitarra",
-            "item_4": "+ una canción original: Somos Kollas",
-            "item_5": "Producción: Facundo Rissotti"
-          }
+        }
+      },
+      "raul_leiva": {
+        "about": "Interpretado en el mes de Febrero de 2013 en Florida, Buenos Aires.",
+        "personnel": {
+          "item_1": "Francisco Villaveirán: Guitarra y charango",
+          "item_2": "Grabación y Mezcla: Facundo Rissotti",
+          "item_3": "Ilustraciones: Rocío Bottero"
+        }
+      },
+      "remolinos": {
+        "about": "Grabado entre Septiembre y Diciembre de 2019 en Saavedra, Buenos Aires.",
+        "personnel": {
+          "item_1": "Inhalo,",
+          "item_2": "Retengo,",
+          "item_3": "Exhalo,",
+          "item_4": "Composición y guitarras: Mar Joppich",
+          "item_5": "Pre producción, grabación, producción y Mezcla: Facu Rissotti",
+          "item_6": "Co producción en tema 1 y 3 + Mastering: Joa.wav",
+          "item_7": "Arte y video: Mar Joppich"
+        }
+      },
+      "rootstica": {
+        "personnel": {
+          "item_1": "Matto Rios: Voz y Guitarra",
+          "item_2": "Santiago Jhones: Bajo y coros",
+          "item_3": "Alejandro Gonzalez: Bateria",
+          "item_4": "Hernan Rupolo: Guitarra y coros",
+          "item_5": "Facundo Rissotti: Teclados y coros",
+          "item_6": "Grabado y mezclado en Cerebrito Recs en Octubre de 2009",
+          "item_7": "por Santiago Jhones.",
+          "item_8": "Fotografias: Eike “Atomhirsch” Kreibohm (Alemania)",
+          "item_9": "Fotografias de banda: Pablo Perez y Santiago Nealon",
+          "item_10": "El sistema Letra: Eduardo Galeano",
+          "item_11": "Revolución Letra: Santiago Jhones",
+          "item_12": "Todas las canciones Letra: Matto Rios / Música: Rootstica"
+        }
+      },
+      "somos_kollas": {
+        "about": "Grabado en Fiambalá, Catamarca. Julio 2015.",
+        "personnel": {
+          "item_1": "Interpretado por: Elbio Montoya",
+          "item_2": "Grabación y Mezcla: Facundo Rissotti",
+          "item_3": "Seis clásicos en clave norteña: Quena, Charango y Guitarra",
+          "item_4": "+ una canción original: Somos Kollas",
+          "item_5": "Producción: Facundo Rissotti"
         }
       }
     },
@@ -307,7 +307,10 @@
           },
           "item_3": {
             "key": "Música Original",
-            "val": "Facundo Rissotti - Santiago Jhones - Hernán Rupolo - Sebastián Benegas"
+            "val": {
+              "chunk_1": "Facundo Rissotti - Santiago Jhones",
+              "chunk_2": "Hernán Rupolo - Sebastián Benegas"
+            }
           },
           "item_4": {
             "key": "Montaje",

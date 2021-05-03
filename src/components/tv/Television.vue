@@ -159,11 +159,8 @@ export default {
   display: grid;
   overflow: hidden;
   margin-top: 2em;
-  min-height: 90vh;
+  min-height: 100vh;
   position: relative;
-  @media (min-width: 768px) {
-    min-height: 100vh;
-  }
 }
 .scrollOutContainer {
   height: 100%;

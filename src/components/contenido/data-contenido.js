@@ -71,6 +71,7 @@ export const contenido = {
   `,
           image: require("../../assets/img/contenido/06-cancion-de-la-reanimacion.jpg"),
           video: "https://www.youtube.com/embed/d9CEC6Qoj_o",
+          isYouTubeVideo: true,
         },
         {
           id: 6,

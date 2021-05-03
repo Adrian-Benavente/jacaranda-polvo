@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.container">
-    <h2 :class="$style.title">
+    <h2 :class="[$style.title, $style.mainTitle]">
       {{ album.artist }} /
       <span :class="$style.albumTitle">{{ album.title }}</span>
     </h2>
@@ -249,46 +249,58 @@ $max-width: fn.to-proportion-width(1186, 1440);
 }
 .title {
   color: white;
-  font: normal 400 fn.to-rem(30) / fn.to-rem(63) var(--bebas);
-  margin-bottom: fn.to-rem(50);
+  &.mainTitle {
+    font: normal 400 fn.to-rem(24) / normal var(--bebas);
+    padding: 4em 1em 1em;
+    @media (min-width: 768px) {
+      font: normal 400 fn.to-rem(30) / fn.to-rem(63) var(--bebas);
+      margin-bottom: fn.to-rem(50);
+      padding: initial;
+    }
+  }
 }
 .album {
   &Title {
     color: var(--color-hero);
   }
   &Wrapper {
-    --extra-padding: #{fn.to-proportion-width(77, 1440)};
     border: 1px solid #ffffff;
     display: grid;
-    grid-auto-flow: column;
-    gap: 0 $gap;
-    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
     margin: auto;
     max-width: $max-width;
-    padding: fn.to-proportion-width(41, 1440) fn.to-proportion-width(82, 1440)
-      var(--extra-padding);
+    padding: 1rem;
     width: 100%;
-    &.extraPadding {
-      --extra-padding: #{fn.to-proportion-width(169, 1440)};
+    @media (min-width: 768px) {
+      --extra-padding: #{fn.to-proportion-width(77, 1440)};
+      gap: 0 $gap;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr;
+      padding: fn.to-proportion-width(41, 1440) fn.to-proportion-width(82, 1440)
+        var(--extra-padding);
+      &.extraPadding {
+        --extra-padding: #{fn.to-proportion-width(169, 1440)};
+      }
     }
   }
   &Artwork {
     &Img {
+      aspect-ratio: 1/1;
       display: block;
-      height: fn.to-proportion-width(489, 1440);
       object-fit: cover;
-      width: fn.to-proportion-width(489, 1440);
+      width: 100%;
+      @media (min-width: 768px) {
+        height: fn.to-proportion-width(489, 1440);
+        width: fn.to-proportion-width(489, 1440);
+      }
     }
   }
   &Player {
     --extra-space: 0px;
     height: calc(100% + var(--extra-space));
-    &.extraSpace {
-      --extra-space: #{fn.to-proportion-width(45.5, 1440)};
-    }
     .spotify,
     .youtube {
-      height: inherit;
+      height: fn.to-proportion-width(250, 360);
       width: 100%;
     }
     .playlist {
@@ -296,6 +308,15 @@ $max-width: fn.to-proportion-width(1186, 1440);
       display: block;
       height: 100%;
       width: 100%;
+    }
+    @media (min-width: 768px) {
+      .spotify,
+      .youtube {
+        height: inherit;
+      }
+      &.extraSpace {
+        --extra-space: #{fn.to-proportion-width(45.5, 1440)};
+      }
     }
   }
 }
@@ -315,18 +336,27 @@ $max-width: fn.to-proportion-width(1186, 1440);
   .top {
     display: grid;
     gap: $gap;
-    grid-template-columns: 1fr 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .title {
     color: var(--color-hero);
-    font: normal 400 fn.to-rem(24) / fn.to-rem(35) var(--bebas);
-    margin-bottom: fn.to-rem(27);
+    font: normal 400 fn.to-rem(24) / normal var(--bebas);
+    margin-bottom: 1rem;
     margin-top: fn.to-proportion-width(100, 1440);
+    @media (min-width: 768px) {
+      font: normal 400 fn.to-rem(24) / fn.to-rem(35) var(--bebas);
+      margin-bottom: fn.to-rem(27);
+    }
   }
   .text {
     color: white;
-    font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
+    font: normal 400 0.875rem / 150% var(--montserrat);
     margin-bottom: fn.to-rem(27);
+    @media (min-width: 768px) {
+      font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
+    }
   }
   .list {
     list-style: none;
@@ -337,7 +367,7 @@ $max-width: fn.to-proportion-width(1186, 1440);
   }
   .item {
     color: white;
-    font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
+    font: normal 400 0.875rem / 150% var(--montserrat);
     margin-bottom: fn.to-rem(27);
     &.social {
       .link {
@@ -366,6 +396,9 @@ $max-width: fn.to-proportion-width(1186, 1440);
           background-image: url("../assets/img/lib/youtube-circle.svg");
         }
       }
+    }
+    @media (min-width: 768px) {
+      font: normal 400 1rem / fn.to-rem(30) var(--montserrat);
     }
   }
 }

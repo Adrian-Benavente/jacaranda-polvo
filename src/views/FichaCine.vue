@@ -180,10 +180,10 @@ export default {
 }
 .header {
   align-items: center;
-  background: fixed top/100% no-repeat;
+  background: center top/cover no-repeat;
   display: flex;
   flex-direction: column;
-  height: fn.to-proportion-width(453, 1440);
+  height: fn.to-proportion-width(250, 360);
   justify-content: center;
   position: relative;
   .inner {
@@ -193,12 +193,18 @@ export default {
   }
   .title {
     color: white;
-    font: normal 400 fn.to-rem(68) / fn.to-rem(63) var(--bebas);
+    font: normal 400 fn.to-rem(25) / normal var(--bebas);
     text-transform: uppercase;
+    @media (min-width: 768px) {
+      font: normal 400 fn.to-rem(68) / fn.to-rem(63) var(--bebas);
+    }
   }
   .year {
     color: var(--color-hero);
-    font: normal 700 fn.to-rem(25) / fn.to-rem(36) var(--montserrat);
+    font: normal 700 fn.to-rem(18) / 150% var(--montserrat);
+    @media (min-width: 768px) {
+      font: normal 700 fn.to-rem(25) / fn.to-rem(36) var(--montserrat);
+    }
   }
   &::before {
     background: rgba(black, 0.7);
@@ -209,6 +215,10 @@ export default {
     position: absolute;
     top: 0;
     width: 100%;
+  }
+  @media (min-width: 768px) {
+    background: fixed top/100% no-repeat;
+    height: fn.to-proportion-width(453, 1440);
   }
 }
 .la-tierra-que-arde {
@@ -225,20 +235,26 @@ export default {
   .inner {
     margin: auto;
     text-align: start;
-    width: max-content;
+    width: 90%;
+    @media (min-width: 768px) {
+      width: max-content;
+    }
   }
   .player {
     position: relative;
   }
   .iframe {
     --height: calc(var(--width) / 16 * 9);
-    --width: #{fn.to-proportion-width(1075, 1440)};
+    --width: #{fn.to-proportion-width(320, 360)};
     aspect-ratio: 16 / 9;
     border: 0;
     display: block;
     height: var(--height);
     margin: auto;
     width: var(--width);
+    @media (min-width: 768px) {
+      --width: #{fn.to-proportion-width(1075, 1440)};
+    }
   }
   .controls {
     bottom: 0;
@@ -258,24 +274,29 @@ export default {
   padding: fn.to-proportion-width(72, 1440) 0;
   .about {
     align-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: fn.to-proportion-width(100, 1440);
-    justify-items: self-end;
     margin: auto;
-    max-width: fn.to-proportion-width(1192, 1440);
-    grid-template-columns: 1fr 1fr;
+    max-width: 90%;
     .title {
       color: var(--color-hero);
-      font: normal 400 fn.to-rem(35) / fn.to-rem(35) var(--bebas);
+      font: normal 400 fn.to-rem(25) / 150% var(--bebas);
       margin-bottom: 1em;
       text-align: start;
+      @media (min-width: 768px) {
+        font: normal 400 fn.to-rem(35) / fn.to-rem(35) var(--bebas);
+      }
     }
     .text {
       color: white;
-      font: normal 400 1rem / 200% var(--montserrat);
+      font: normal 400 0.875rem / 150% var(--montserrat);
       text-align: start;
       &.short {
         margin-bottom: 1em;
+      }
+      @media (min-width: 768px) {
+        font: normal 400 1rem / 200% var(--montserrat);
       }
     }
     .fullMovie {
@@ -303,38 +324,48 @@ export default {
       }
     }
     .poster {
-      position: relative;
-      &::before {
-        border: 1px solid white;
-        content: "";
-        height: fn.to-proportion-width(599, 1440);
-        left: fn.to-proportion-width(35, 1440);
-        top: -#{fn.to-proportion-width(23, 1440)};
-        width: fn.to-proportion-width(367, 1440);
-        position: absolute;
+      @media (min-width: 768px) {
+        position: relative;
+        &::before {
+          border: 1px solid white;
+          content: "";
+          height: fn.to-proportion-width(599, 1440);
+          left: fn.to-proportion-width(35, 1440);
+          top: -#{fn.to-proportion-width(23, 1440)};
+          width: fn.to-proportion-width(367, 1440);
+          position: absolute;
+        }
       }
     }
     .image {
       display: block;
-      height: fn.to-proportion-width(553, 1440);
-      width: fn.to-proportion-width(367, 1440);
-      position: relative;
-      z-index: 1;
+      width: 100%;
+      @media (min-width: 768px) {
+        height: fn.to-proportion-width(553, 1440);
+        width: fn.to-proportion-width(367, 1440);
+        position: relative;
+        z-index: 1;
+      }
+    }
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: self-end;
+      max-width: fn.to-proportion-width(1192, 1440);
     }
   }
 }
 .ficha {
   margin: auto;
-  max-width: fn.to-proportion-width(1192, 1440);
   padding: fn.to-proportion-width(111, 1440) 0;
   text-align: start;
+  width: 90%;
   .title {
     color: var(--color-hero);
     font: normal 400 fn.to-rem(20) / fn.to-rem(35) var(--bebas);
     margin-bottom: 1em;
   }
   .list {
-    column-count: 2;
     list-style: none;
     .item {
       color: white;
@@ -344,6 +375,13 @@ export default {
     .item a {
       font: normal 400 1rem / fn.to-rem(23) var(--montserrat);
     }
+    @media (min-width: 768px) {
+      column-count: 2;
+    }
+  }
+  @media (min-width: 768px) {
+    max-width: fn.to-proportion-width(1192, 1440);
+    width: initial;
   }
 }
 @include mx.navigate-project-arrows;

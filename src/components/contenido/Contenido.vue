@@ -15,7 +15,13 @@
           <div :class="$style.item">
             <iframe
               :class="$style.video"
-              :src="sound ? current.video : `${current.video}?muted=1`"
+              :src="
+                sound
+                  ? current.video
+                  : `${current.video}?${
+                      current.isYouTubeVideo ? 'mute' : 'muted'
+                    }=1`
+              "
               allowfullscreen
             ></iframe>
           </div>
