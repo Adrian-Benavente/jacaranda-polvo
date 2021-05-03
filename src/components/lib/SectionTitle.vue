@@ -31,19 +31,12 @@ export default {
 .container {
   color: white;
   display: flex;
-  font: 2.5rem var(--bebas-bold);
+  font-family: var(--bebas-bold);
+  font-size: 1.5rem;
   position: absolute;
-  top: 1.5rem;
+  top: 2.5rem;
   left: 1.5rem;
   text-transform: uppercase;
-  @media (min-width: 768px) {
-    bottom: 20vh;
-    flex-direction: column;
-    font-size: fn.to-proportion-width(60, 1440);
-    left: 1vw;
-    top: initial;
-    transform: rotate(-90deg);
-  }
   .title {
     line-height: 100%;
     text-align: left;
@@ -63,9 +56,18 @@ export default {
       width: 1%;
     }
   }
+  @media (min-width: 768px) {
+    bottom: 20vh;
+    flex-direction: column;
+    font-size: fn.to-proportion-width(60, 1440);
+    left: 1vw;
+    top: initial;
+    transform: rotate(-90deg);
+  }
 }
 
 .container.appear {
+  border-bottom: 2px solid white;
   .title {
     .letter {
       opacity: 1;
@@ -86,6 +88,9 @@ export default {
       opacity: 1;
       width: 1000%;
     }
+  }
+  @media (min-width: 768px) {
+    border-bottom: none;
   }
 }
 </style>

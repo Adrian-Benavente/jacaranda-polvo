@@ -328,16 +328,6 @@ export default {
       }
     }
   }
-  &__background {
-    background-image: url("../../assets/img/aldea/sky-bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(50%) grayscale(100%);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
   &__pyramid {
     --glow-color: white;
     @extend %middle;

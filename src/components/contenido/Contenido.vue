@@ -107,11 +107,13 @@ export default {
 @use "../../assets/scss/functions" as fn;
 .container {
   background-color: black;
+  margin-top: fn.to-proportion-width(30, 360);
   overflow: hidden;
   position: relative;
   @media (min-width: 768px) {
     align-items: end;
     display: grid;
+    margin-top: initial;
     min-height: 100vh;
   }
 }

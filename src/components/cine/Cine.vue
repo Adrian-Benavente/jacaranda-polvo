@@ -138,7 +138,7 @@ export default {
 }
 .background {
   background: {
-    attachment: fixed;
+    attachment: scroll;
     color: black;
     position: center;
     size: cover;
@@ -146,6 +146,10 @@ export default {
   height: 100%;
   transition: background-image 0.5s ease-in-out;
   width: 100%;
+  @media (min-width: 768px) {
+    background-attachment: fixed;
+    height: 100vh;
+  }
 }
 .la-tierra-que-arde {
   background-image: url("../../assets/img/cine/la-tierra-que-arde/background.jpg");

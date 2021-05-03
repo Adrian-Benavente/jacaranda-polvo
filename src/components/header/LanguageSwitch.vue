@@ -13,7 +13,7 @@
       />
       ES
     </label>
-    <span :class="$style.septarator">/</span>
+    <span :class="$style.separator">/</span>
     <label
       :class="[$style.option, selectedLanguage === 'en' && $style.highlight]"
     >
@@ -58,7 +58,7 @@ export default {
   color: white;
   cursor: pointer;
   font-family: var(--roboto-bold);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-decoration: none;
   text-transform: uppercase;
   &.highlight {
@@ -67,11 +67,18 @@ export default {
   &:focus {
     outline: none;
   }
+  @media (min-width: 768px) {
+    font-size: 0.875rem;
+  }
 }
 .input {
   appearance: none;
 }
-.septarator {
+.separator {
+  font-size: 0.75rem;
   margin: 0 0.25rem;
+  @media (min-width: 768px) {
+    font-size: 0.875rem;
+  }
 }
 </style>

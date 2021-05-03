@@ -118,6 +118,7 @@ export default {
 .container {
   background-color: black;
   display: grid;
+  margin-top: fn.to-proportion-width(30, 360);
   overflow: hidden;
   padding-top: fn.to-proportion-width(100, 360);
   position: relative;
@@ -125,6 +126,7 @@ export default {
   @media (min-width: 768px) {
     align-items: end;
     justify-items: end;
+    margin-top: initial;
     min-height: 100vh;
     padding-top: initial;
 

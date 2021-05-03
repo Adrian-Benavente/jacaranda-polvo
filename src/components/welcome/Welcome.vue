@@ -76,10 +76,13 @@ export default {
   );
   display: flex;
   justify-content: center;
-  min-height: 70vh;
-  padding: 15% 0 3%;
+  padding: 25% 0 10%;
   position: relative;
   width: 100%;
+  @media (min-width: 768px) {
+    min-height: 70vh;
+    padding: 15% 0 3%;
+  }
 }
 .text {
   color: white;

@@ -47,11 +47,14 @@ export default {
 <style lang="scss" module>
 .backgroundStars {
   background: {
-    attachment: fixed;
+    attachment: scroll;
     image: url("../assets/img/aldea/sky-bg.jpg");
     position: 0 65%;
     repeat: no-repeat;
     size: cover;
+  }
+  @media (min-width: 768px) {
+    background-attachment: fixed;
   }
 }
 </style>

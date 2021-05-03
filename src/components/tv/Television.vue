@@ -120,20 +120,13 @@ export default {
         });
       });
     },
-    isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    },
   },
   mounted() {
-    this.hoverVideo();
+    if (window.matchMedia("(min-width: 768px)").matches) this.hoverVideo();
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 768px)").matches) this.hoverVideo();
+    });
+
     this.so = ScrollOut({
       scope: this.$el,
       once: true,
@@ -161,6 +154,10 @@ export default {
   margin-top: 2em;
   min-height: 100vh;
   position: relative;
+}
+.title {
+  position: relative !important;
+  width: max-content;
 }
 .scrollOutContainer {
   height: 100%;
@@ -283,7 +280,9 @@ export default {
 }
 @media (min-width: 768px) {
   .title {
+    position: absolute !important;
     left: 3%;
+    width: initial;
   }
 }
 </style>
