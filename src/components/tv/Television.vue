@@ -31,6 +31,7 @@
                 Ver video <span :class="$style.arrowRight"></span>
               </a>
               <video
+                v-if="!isMobile"
                 :class="$style.video"
                 muted
                 autoplay
@@ -55,6 +56,7 @@ export default {
   components: { SectionTitle },
   data() {
     return {
+      isMobile: null,
       titleAppears: false,
     };
   },
@@ -122,9 +124,12 @@ export default {
     },
   },
   mounted() {
-    if (window.matchMedia("(min-width: 768px)").matches) this.hoverVideo();
+    const mobile = window.matchMedia("(max-width: 768px)").matches;
+    this.isMobile = mobile;
+    if (!mobile) this.hoverVideo();
     window.addEventListener("resize", () => {
-      if (window.matchMedia("(min-width: 768px)").matches) this.hoverVideo();
+      this.isMobile = mobile;
+      if (!mobile) this.hoverVideo();
     });
 
     this.so = ScrollOut({

@@ -30,11 +30,17 @@ const router = new VueRouter({
   base: process.env.VUE_APP_ROUTER_BASE,
   mode: "history",
   routes,
-  scrollBehavior: function () {
-    return {
-      x: 0,
-      y: 0,
-    };
+  scrollBehavior: function (to, from, savedPosition) {
+    if (to.hash && document.querySelector(to.hash)) {
+      return { selector: to.hash };
+    }
+    if (!savedPosition) {
+      return {
+        x: 0,
+        y: 0,
+      };
+    }
+    return false;
   },
 });
 

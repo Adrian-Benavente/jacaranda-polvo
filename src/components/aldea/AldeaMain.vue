@@ -94,17 +94,23 @@ export default {
   mixins: [Sound],
   data() {
     return {
+      isMobile: null,
       sound: this.$store.state.sound,
       pyramidSound: false,
       visible: false,
     };
   },
   methods: {
+    mediaQueryMobile() {
+      this.isMobile = window.matchMedia("(max-width: 768px)").matches;
+    },
     toggleSound() {
       this.pyramidSound = !this.pyramidSound;
     },
   },
   mounted() {
+    this.mediaQueryMobile();
+    window.addEventListener("resize", this.mediaQueryMobile);
     this.$nextTick(() => {
       setTimeout(() => {
         this.visible = true;
@@ -163,8 +169,10 @@ export default {
       height: 100%;
       text-decoration: none;
       width: 100%;
-      &:hover {
-        filter: drop-shadow(0 0 3px gold);
+      @media (min-width: 768px) {
+        &:hover {
+          filter: drop-shadow(0 0 3px gold);
+        }
       }
     }
     &-text {
@@ -175,17 +183,8 @@ export default {
       text-align: center;
       text-transform: uppercase;
       top: 110%;
-      @media (min-width: 1440px) {
+      @media (min-width: 768px) {
         font-size: fn.to-proportion-width(15, 1440);
-      }
-    }
-    @media (min-width: 800px) {
-      &-text {
-        opacity: 0;
-      }
-      &:hover &-text {
-        font-size: 1.25rem;
-        opacity: 1;
       }
     }
     &.tv {
@@ -251,6 +250,15 @@ export default {
         background-image: url("../../assets/img/aldea/cine.svg");
       }
     }
+    @media (min-width: 768px) {
+      &-text {
+        opacity: 0;
+      }
+      &:hover &-text {
+        font-size: 1.25rem;
+        opacity: 1;
+      }
+    }
   }
   &__menu,
   nav,
@@ -267,15 +275,17 @@ export default {
     &.explode .aldea__item {
       opacity: 1;
       transform: scale(1);
-      &:hover {
-        transition-duration: 0.3s;
-        transform: scale(1.1);
+      @media (min-width: 768px) {
+        &:hover {
+          transition-duration: 0.3s;
+          transform: scale(1.1);
+        }
       }
     }
     &.explode .tv {
       top: -69%;
       left: -30%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: -65%;
         left: 0;
       }
@@ -283,7 +293,7 @@ export default {
     &.explode .teatro {
       top: -70%;
       left: 30%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: -45%;
         left: 30%;
       }
@@ -291,7 +301,7 @@ export default {
     &.explode .contenido {
       top: -30%;
       left: 60%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: 10%;
         left: 55%;
       }
@@ -299,14 +309,14 @@ export default {
     &.explode .albums {
       top: 40%;
       left: 60%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: 65%;
         left: 30%;
       }
     }
     &.explode .contacto {
       top: 65%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: 65%;
         left: -25%;
       }
@@ -314,7 +324,7 @@ export default {
     &.explode .sesiones {
       top: 40%;
       left: -60%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: 10%;
         left: -55%;
       }
@@ -322,7 +332,7 @@ export default {
     &.explode .cine {
       top: -30%;
       left: -60%;
-      @media (min-width: 800px) {
+      @media (min-width: 768px) {
         top: -45%;
         left: -30%;
       }
