@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.container">
+    <ArrowUp link="#" />
     <h2 :class="[$style.title, $style.mainTitle]">
       {{ album.artist }} /
       <span :class="$style.albumTitle">{{ album.title }}</span>
@@ -167,11 +168,12 @@
 <script>
 import CarouselControls from "@/components/lib/CarouselControls";
 import { albums } from "@/components/albums/data-albums";
+import ArrowUp from "@/ArrowUp";
 
 export default {
   name: "FichaAlbums",
   mixins: [albums],
-  components: { CarouselControls },
+  components: { ArrowUp, CarouselControls },
   data() {
     return {
       artist: this.$route.params.artist,

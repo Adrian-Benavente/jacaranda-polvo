@@ -10,50 +10,23 @@
         :title-text="$t('sections.albums')"
         :title-appears="titleAppears"
       />
-      <div :class="$style.grid">
-        <div :class="$style.left">
-          <div :class="$style.info">
-            <h3 :class="$style.infoArtist">{{ currentAlbum.artist }}</h3>
-            <p :class="$style.infoTitle">{{ currentAlbum.title }}</p>
-            <p :class="$style.infoYear">{{ currentAlbum.year }}</p>
-            <router-link
-              :to="`/albums/${currentAlbum.id}/${currentAlbum.slug.artist}/${currentAlbum.slug.title}`"
-              v-slot="{ href, navigate }"
-              custom
-            >
-              <a :class="$style.infoLink" :href="href" @click="navigate">
-                {{ $t("albums.see_album") }}
-                <span :class="$style.arrowRight"></span>
-              </a>
-            </router-link>
-          </div>
-        </div>
-        <div :class="$style.right">
-          <div :class="$style.carouselContent">
-            <router-link
-              :to="`/albums/${currentAlbum.id}/${currentAlbum.slug.artist}/${currentAlbum.slug.title}`"
-              v-slot="{ href, navigate }"
-              custom
-            >
-              <a
-                :href="href"
-                :class="$style.carouselLink"
-                :style="{ backgroundImage: `url('${currentAlbum.cover}')` }"
-                @click="navigate"
-              >
-                <span class="sr-only">{{ currentAlbum.title }}</span>
-              </a>
-            </router-link>
-            <CarouselControls
-              @move-prev="movePrev"
-              @move-next="moveNext"
-              :current="active"
-              :length="albumList.length"
-              :show-numbers="true"
-            />
-          </div>
-        </div>
-      </div>
+      <template v-if="isMobile">
+        <AlbumsMobile
+          :active="active"
+          :albums="albumList"
+          :move-next="moveNext"
+          :move-prev="movePrev"
+        />
+      </template>
+      <template v-else>
+        <AlbumsDesktop
+          :active="active"
+          :albums="albumList"
+          :current-album="currentAlbum"
+          :move-next="moveNext"
+          :move-prev="movePrev"
+        />
+      </template>
     </div>
   </section>
 </template>
@@ -61,16 +34,18 @@
 <script>
 import ScrollOut from "scroll-out";
 import SectionTitle from "@/components/lib/SectionTitle";
-import CarouselControls from "@/components/lib/CarouselControls";
 import { albums } from "@/components/albums/data-albums";
+import AlbumsDesktop from "@/components/albums/AlbumsDesktop";
+import AlbumsMobile from "@/components/albums/AlbumsMobile";
 
 export default {
   name: "Albums",
   mixins: [albums],
-  components: { CarouselControls, SectionTitle },
+  components: { AlbumsMobile, AlbumsDesktop, SectionTitle },
   data() {
     return {
       active: 1,
+      isMobile: null,
       store: this.$store,
       titleAppears: false,
     };
@@ -95,6 +70,11 @@ export default {
     },
   },
   mounted() {
+    const mobile = window.matchMedia("(max-width: 768px)").matches;
+    this.isMobile = mobile;
+    window.addEventListener("resize", () => {
+      this.isMobile = mobile;
+    });
     this.so = ScrollOut({
       scope: this.$el,
       once: true,
@@ -144,105 +124,6 @@ export default {
 }
 .scrollOutContainer {
   height: 100%;
-}
-.grid {
-  align-content: end;
-  color: white;
-  display: grid;
-  font-family: var(--bebas);
-  gap: 0.75rem;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
-  margin: auto 1.5rem auto;
-  overflow: hidden;
-  text-align: start;
-  width: 100%;
-  @media (min-width: 768px) {
-    gap: initial;
-    grid-template-columns: 1fr 2fr;
-    overflow: initial;
-    width: fn.to-proportion-width(1102, 1440);
-  }
-}
-.left {
-  align-self: end;
-  padding: 7rem 0;
-}
-.right {
-  justify-self: end;
-  align-self: center;
-  margin-right: -12.8em;
-  @media (min-width: 738px) {
-    margin-right: initial;
-  }
-}
-.carouselLink {
-  background: {
-    position: center;
-    repeat: no-repeat;
-    size: cover;
-  }
-  display: block;
-  height: fn.to-proportion-width(354, 360);
-  transition: background-image 0.5s;
-  width: fn.to-proportion-width(364, 360);
-  @media (min-width: 768px) {
-    height: fn.to-proportion-width(700, 1440);
-    width: fn.to-proportion-width(700, 1440);
-  }
-}
-.infoArtist,
-.infoTitle,
-.infoYear {
-  margin-bottom: fn.to-rem(5);
-}
-.infoArtist {
-  color: white;
-  font-size: fn.to-rem(25);
-  letter-spacing: fn.to-rem(1);
-  margin-bottom: 1rem;
-  @media (min-width: 1920px) {
-    font-size: fn.to-proportion-width(35, 1440);
-  }
-}
-.infoTitle {
-  font-size: fn.to-rem(18);
-  @media (min-width: 1920px) {
-    font-size: fn.to-proportion-width(20, 1440);
-  }
-}
-.infoYear {
-  font-size: fn.to-rem(18);
-  @media (min-width: 1920px) {
-    font-size: fn.to-proportion-width(16, 1440);
-  }
-}
-.infoLink {
-  align-items: center;
-  color: var(--color-hero);
-  display: flex;
-  font: 0.875rem var(--montserrat);
-  margin-top: 1rem;
-  &:hover .arrowRight {
-    margin-left: 1.2rem;
-  }
-  @media (min-width: 1920px) {
-    font-size: fn.to-proportion-width(18, 1440);
-  }
-}
-.arrowRight {
-  background: url("../../assets/img/lib/arrow-right.svg") center / contain
-    no-repeat;
-  display: inline-block;
-  height: 0.875rem;
-  margin-left: 0.5rem;
-  transition: margin-left 0.3s ease-in-out;
-  width: 0.875rem;
-  @media (min-width: 768px) {
-    height: fn.to-rem(17);
-    margin-left: fn.to-rem(13);
-    width: fn.to-rem(17);
-  }
 }
 
 @keyframes fadeIn {

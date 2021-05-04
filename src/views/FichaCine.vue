@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.container">
+    <ArrowUp link="#" />
     <header :class="[$style.header, $style[`${slug}`]]">
       <div :class="$style.inner">
         <h2 :class="$style.title">{{ fichaData.title }}</h2>
@@ -124,9 +125,10 @@
 <script>
 import CarouselControls from "@/components/lib/CarouselControls";
 import { dataCine } from "@/components/cine/fichas/data-cine";
+import ArrowUp from "@/ArrowUp";
 export default {
   name: "FichaCine",
-  components: { CarouselControls },
+  components: { ArrowUp, CarouselControls },
   mixins: [dataCine],
   data() {
     return {

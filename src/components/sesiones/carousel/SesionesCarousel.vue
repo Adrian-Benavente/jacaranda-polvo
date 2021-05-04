@@ -109,12 +109,6 @@ export default {
         this.slideOffset = this.slideWidth / 2;
         this.controlsOffset =
           document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
-      } else {
-        this.slideOffset = this.slideWidth / 4;
-        const controls = document.querySelector(`.${this.$style.controls}`);
-        this.controlsOffset = controls.style.cssText = `
-          left: ${window.innerWidth / 2 - controls.offsetWidth / 2}px;
-        `;
       }
     },
   },
@@ -129,32 +123,47 @@ export default {
 @use "../../../assets/scss/functions" as fn;
 
 .container {
+  padding-left: 1rem;
   padding-bottom: fn.to-proportion-width(50, 1440);
   position: relative;
+  width: 100vw;
 }
 
 .wrapper {
-  display: flex;
+  display: grid;
   gap: 1.5rem;
+  grid-auto-flow: column;
+  overflow-x: scroll;
   position: relative;
+  scroll-snap-type: x mandatory;
   transition: transform 0.5s 0.5s;
   z-index: 1;
   @media (min-width: 768px) {
+    overflow-x: initial;
     padding-top: fn.to-rem(260);
+    scroll-snap-type: initial;
   }
 }
 
 .slide {
+  scroll-snap-align: start;
   transition: transform 0.3s 0.7s ease-in-out;
   width: fn.to-proportion-width(231, 360);
-  &.active {
-    transform: translateY(-50px);
-    .details {
-      opacity: 1;
-    }
+  .details {
+    opacity: 1;
   }
   @media (min-width: 768px) {
+    scroll-snap-align: initial;
     width: initial;
+    .details {
+      opacity: 0;
+    }
+    &.active {
+      transform: translateY(-50px);
+      .details {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -198,8 +207,11 @@ export default {
   }
 }
 .controls {
-  display: flex;
-  z-index: 2;
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    z-index: 2;
+  }
 }
 .modalButton {
   width: 100%;

@@ -1,0 +1,14 @@
+@mixin fadeIn {
+  @keyframes fadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    10% {
+      display: flex;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

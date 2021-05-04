@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ArrowUp link="#aldea" />
     <div :class="$style.backgroundStars">
       <AldeaMain />
       <Welcome />
@@ -26,10 +27,12 @@ import Teatro from "@/components/teatro/Teatro";
 import Contenido from "@/components/contenido/Contenido";
 import Contacto from "@/components/contacto/Contacto";
 import VideoArena from "@/components/video-arena/VideoArena";
+import ArrowUp from "@/ArrowUp";
 
 export default {
   name: "Home",
   components: {
+    ArrowUp,
     AldeaMain,
     Welcome,
     Cine,
