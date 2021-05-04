@@ -4,29 +4,25 @@
       :class="[$style.option, selectedLanguage === 'es' && $style.highlight]"
     >
       <input
-        :class="$style.input"
+        :class="[$style.input, 'sr-only']"
         name="lang"
         type="radio"
         aria-label="Español"
         value="es"
         v-model="selectedLanguage"
-      />
-      ES
-    </label>
-    <span :class="$style.separator">/</span>
-    <label
+      />ES</label
+    ><span :class="$style.separator">/</span
+    ><label
       :class="[$style.option, selectedLanguage === 'en' && $style.highlight]"
-    >
-      <input
-        :class="$style.input"
+      ><input
+        :class="[$style.input, 'sr-only']"
         name="lang"
         type="radio"
         aria-label="English"
         value="en"
         v-model="selectedLanguage"
-      />
-      EN
-    </label>
+      />EN</label
+    >
   </div>
 </template>
 
