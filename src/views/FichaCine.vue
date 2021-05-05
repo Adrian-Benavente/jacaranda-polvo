@@ -125,7 +125,7 @@
 <script>
 import CarouselControls from "@/components/lib/CarouselControls";
 import { dataCine } from "@/components/cine/fichas/data-cine";
-import ArrowUp from "@/ArrowUp";
+import ArrowUp from "@/components/lib/ArrowUp";
 export default {
   name: "FichaCine",
   components: { ArrowUp, CarouselControls },

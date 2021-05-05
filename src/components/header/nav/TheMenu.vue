@@ -235,7 +235,7 @@ export default {
   bottom: fn.to-proportion-width(33, 1440);
   color: white;
   display: flex;
-  font: normal 400 fn.to-proportion-width(10, 1440) var(--bebas);
+  font: normal 400 1rem / normal var(--bebas);
   flex-direction: column;
   position: absolute;
   right: fn.to-proportion-width(88, 1440);
@@ -245,9 +245,16 @@ export default {
       center/contain;
     content: "";
     display: block;
-    height: fn.to-proportion-width(17.33, 1440);
+    height: fn.to-rem(27.33);
     margin-bottom: 0.35rem;
-    width: fn.to-proportion-width(26, 1440);
+    width: fn.to-rem(36);
+  }
+  @media (min-width: 768px) {
+    font-size: fn.to-proportion-width(10, 1440);
+    &::before {
+      height: fn.to-proportion-width(17.33, 1440);
+      width: fn.to-proportion-width(26, 1440);
+    }
   }
 }
 @keyframes unRoundEdges {

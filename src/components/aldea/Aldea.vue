@@ -3,14 +3,11 @@
     <h2 id="aldea" class="sr-only">Bienvenido/a a Jacarandá Polvo</h2>
     <p class="sr-only">Elegí tu destino...</p>
     <kinesis-container class="aldea__menu">
-      <div
-        @click="toggleSound"
-        @mouseover="sound && pyramidSound && playSound('piramide', 'aldea')"
-      >
+      <div @click="sound && playSound('piramide', 'aldea')">
         <kinesis-element
           :class="[
             'aldea__pyramid',
-            sound && pyramidSound && 'aldea__pyramid--sound-on',
+            sound && 'aldea__pyramid--sound-on',
             visible && 'visible',
           ]"
           aria-hidden="true"
@@ -18,17 +15,14 @@
       </div>
       <nav>
         <ul>
-          <li
-            class="aldea__item tv"
-            @mouseover="sound && pyramidSound && playSound('tv', 'aldea')"
-          >
+          <li class="aldea__item tv" @click="sound && playSound('tv', 'aldea')">
             <kinesis-element :strength="30" tag="a" href="#section-tv">
               <span class="aldea__item-text">{{ $t("sections.tv") }}</span>
             </kinesis-element>
           </li>
           <li
             class="aldea__item teatro"
-            @mouseover="sound && pyramidSound && playSound('teatro', 'aldea')"
+            @click="sound && playSound('teatro', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-teatro">
               <span class="aldea__item-text">{{ $t("sections.theater") }}</span>
@@ -36,9 +30,7 @@
           </li>
           <li
             class="aldea__item contenido"
-            @mouseover="
-              sound && pyramidSound && playSound('contenido', 'aldea')
-            "
+            @click="sound && playSound('contenido', 'aldea')"
           >
             <kinesis-element :strength="40" tag="a" href="#section-contenido">
               <span class="aldea__item-text">{{ $t("sections.content") }}</span>
@@ -46,7 +38,7 @@
           </li>
           <li
             class="aldea__item albums"
-            @mouseover="sound && pyramidSound && playSound('albums', 'aldea')"
+            @click="sound && playSound('albums', 'aldea')"
           >
             <kinesis-element :strength="80" tag="a" href="#section-albums">
               <span class="aldea__item-text">{{ $t("sections.albums") }}</span>
@@ -54,7 +46,7 @@
           </li>
           <li
             class="aldea__item contacto"
-            @mouseover="sound && pyramidSound && playSound('contacto', 'aldea')"
+            @click="sound && playSound('contacto', 'aldea')"
           >
             <kinesis-element :strength="15" tag="a" href="#section-contacto">
               <span class="aldea__item-text">{{ $t("sections.contact") }}</span>
@@ -62,7 +54,7 @@
           </li>
           <li
             class="aldea__item sesiones"
-            @mouseover="sound && pyramidSound && playSound('sesiones', 'aldea')"
+            @click="sound && playSound('sesiones', 'aldea')"
           >
             <kinesis-element :strength="30" tag="a" href="#section-sesiones">
               <span class="aldea__item-text">{{
@@ -72,7 +64,7 @@
           </li>
           <li
             class="aldea__item cine"
-            @mouseover="sound && pyramidSound && playSound('cine', 'aldea')"
+            @click="sound && playSound('cine', 'aldea')"
           >
             <kinesis-element :strength="70" tag="a" href="#section-cine">
               <span class="aldea__item-text">{{ $t("sections.cine") }}</span>
@@ -89,23 +81,23 @@ import { KinesisContainer, KinesisElement } from "vue-kinesis";
 import Sound from "@/mixins/sound";
 
 export default {
-  name: "AldeaMain",
+  name: "Aldea",
   components: { KinesisContainer, KinesisElement },
   mixins: [Sound],
   data() {
     return {
       isMobile: null,
-      sound: this.$store.state.sound,
-      pyramidSound: false,
       visible: false,
     };
+  },
+  computed: {
+    sound() {
+      return this.$store.state.sound;
+    },
   },
   methods: {
     mediaQueryMobile() {
       this.isMobile = window.matchMedia("(max-width: 768px)").matches;
-    },
-    toggleSound() {
-      this.pyramidSound = !this.pyramidSound;
     },
   },
   mounted() {
@@ -346,7 +338,6 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    cursor: url("../../assets/img/lib/soundwaves-enabled.svg"), auto;
     height: 0;
     opacity: 0;
     transition: opacity 1.5s linear, transform 1s cubic-bezier(0.23, 1, 0.32, 1) !important;
@@ -362,7 +353,6 @@ export default {
     &--sound-on {
       --glow-color: gold;
       @include glow-animation(var(--glow-color), 0.5s);
-      cursor: url("../../assets/img/lib/soundwaves-disabled.svg"), auto;
     }
   }
 }

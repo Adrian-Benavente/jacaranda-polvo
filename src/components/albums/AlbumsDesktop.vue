@@ -51,7 +51,7 @@ export default {
   name: "AlbumsDesktop",
   components: { CarouselControls },
   props: {
-    active: Boolean,
+    active: Number,
     albums: Array,
     currentAlbum: Object,
     moveNext: Function,

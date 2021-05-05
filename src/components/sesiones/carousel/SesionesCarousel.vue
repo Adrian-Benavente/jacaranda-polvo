@@ -123,30 +123,37 @@ export default {
 @use "../../../assets/scss/functions" as fn;
 
 .container {
-  padding-left: 1rem;
+  overflow: hidden;
   padding-bottom: fn.to-proportion-width(50, 1440);
   position: relative;
   width: 100vw;
+  @media (min-width: 768px) {
+    overflow: initial;
+  }
 }
 
 .wrapper {
   display: grid;
   gap: 1.5rem;
   grid-auto-flow: column;
-  overflow-x: scroll;
+  height: max-content;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   scroll-snap-type: x mandatory;
   transition: transform 0.5s 0.5s;
   z-index: 1;
   @media (min-width: 768px) {
     overflow-x: initial;
+    overflow-y: initial;
     padding-top: fn.to-rem(260);
     scroll-snap-type: initial;
   }
 }
 
 .slide {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transform: translateX(#{fn.to-proportion-width((231 / 4.5), 360)});
   transition: transform 0.3s 0.7s ease-in-out;
   width: fn.to-proportion-width(231, 360);
   .details {
@@ -154,6 +161,7 @@ export default {
   }
   @media (min-width: 768px) {
     scroll-snap-align: initial;
+    transform: initial;
     width: initial;
     .details {
       opacity: 0;
@@ -179,6 +187,7 @@ export default {
 
 .details {
   background: rgba(18, 18, 18, 0.56);
+  height: 100%;
   opacity: 0;
   margin: auto;
   padding: fn.to-rem(24) fn.to-rem(28);
@@ -204,6 +213,9 @@ export default {
         font-size: fn.to-rem(14);
       }
     }
+  }
+  @media (min-width: 768px) {
+    height: initial;
   }
 }
 .controls {

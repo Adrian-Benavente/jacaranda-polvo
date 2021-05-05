@@ -394,6 +394,7 @@
     }
   },
   "global": {
+    "go_up": "Go up",
     "musicians": "músicos",
     "see_more": "Ver más",
     "sound": "sonido"

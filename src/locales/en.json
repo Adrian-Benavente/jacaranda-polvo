@@ -395,6 +395,7 @@
     }
   },
   "global": {
+    "go_up": "Ir arriba",
     "musicians": "musicians",
     "see_more": "See more",
     "sound": "sound"

@@ -168,7 +168,7 @@
 <script>
 import CarouselControls from "@/components/lib/CarouselControls";
 import { albums } from "@/components/albums/data-albums";
-import ArrowUp from "@/ArrowUp";
+import ArrowUp from "@/components/lib/ArrowUp";
 
 export default {
   name: "FichaAlbums",

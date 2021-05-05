@@ -1,6 +1,6 @@
 <template>
   <a :href="link" :class="['go-up-link', visible && 'visible']">
-    <span class="sr-only">Go up</span>
+    <span class="sr-only">{{ $t("global.go_up") }}</span>
   </a>
 </template>
 <script>
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@use "assets/scss/animations" as an;
+@use "../../assets/scss/animations" as an;
 
 @include an.fadeIn;
 
@@ -39,7 +39,7 @@ export default {
   width: 60px;
   z-index: 9;
   &::before {
-    content: url("assets/img/lib/chevron-up.svg");
+    content: url("../../assets/img/lib/chevron-up.svg");
     color: white;
     font-family: var(--montserrat);
   }
