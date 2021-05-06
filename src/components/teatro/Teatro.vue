@@ -154,8 +154,17 @@ export default {
   margin-top: 2em;
   min-height: 100vh;
   position: relative;
+  &:target {
+    padding-top: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    &:target {
+      padding-top: initial;
+    }
+  }
 }
 .title {
+  left: 1rem;
   position: relative !important;
   width: max-content;
 }
@@ -163,13 +172,13 @@ export default {
   height: 100%;
 }
 .workList {
-  align-items: center;
+  align-items: start;
   color: white;
   display: grid;
   height: 100%;
   justify-items: end;
   .list {
-    margin-top: 3rem;
+    margin-top: 4.5rem;
     text-align: start;
     width: 90%;
     .listGroup {
@@ -207,10 +216,10 @@ export default {
       }
       .workSynopsis {
         font: fn.to-rem(14) / 150% var(--montserrat);
-        max-width: 85%;
         padding-right: 1rem;
         position: relative;
         transition: color 0.3s;
+        width: 85%;
         z-index: 2;
         &:not(:hover) {
           color: white;
@@ -219,7 +228,7 @@ export default {
           font-size: fn.to-proportion-width(14, 1440);
           line-height: 130%;
           padding-right: 3rem;
-          max-width: none;
+          width: initial;
         }
       }
       .workLink {
@@ -275,6 +284,9 @@ export default {
       max-width: fn.to-proportion-width(1102, 1440);
       width: 80%;
     }
+  }
+  @media (min-width: 768px) {
+    align-items: center;
   }
 }
 @media (min-width: 768px) {

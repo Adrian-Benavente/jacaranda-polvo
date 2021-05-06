@@ -5,6 +5,7 @@
     :aria-labelledby="$t('sections.cine')"
   >
     <SectionTitle
+      :class="$style.title"
       :title-text="$t('sections.cine')"
       :title-appears="titleAppears"
     />
@@ -132,8 +133,26 @@ export default {
   height: fn.to-proportion-width(395, 360);
   position: relative;
   overflow: hidden;
+  &:target {
+    margin-top: 5rem;
+  }
   @media (min-width: 768px) {
     height: 100vh;
+    &:target {
+      margin-top: initial;
+    }
+  }
+}
+.title {
+  left: 1rem;
+  position: relative !important;
+  top: 5rem;
+  width: max-content;
+  @media (min-width: 768px) {
+    left: 1.1% !important;
+    position: absolute !important;
+    top: initial;
+    width: initial;
   }
 }
 .background {
@@ -146,6 +165,7 @@ export default {
   height: 100%;
   transition: background-image 0.5s ease-in-out;
   width: 100%;
+
   @media (min-width: 768px) {
     background-attachment: fixed;
     height: 100vh;

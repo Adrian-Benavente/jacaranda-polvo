@@ -133,10 +133,21 @@ export default {
   position: relative;
   display: grid;
   justify-items: end;
+  &:target {
+    padding-top: 2.5rem;
+  }
   @media (min-width: 768px) {
     margin-top: initial;
     min-height: 100vh;
+    &:target {
+      padding-top: initial;
+    }
   }
+}
+.title {
+  left: 1rem;
+  position: relative !important;
+  width: max-content;
 }
 .scrollOutContainer {
   align-items: center;
@@ -148,7 +159,7 @@ export default {
   }
 }
 .content {
-  margin-top: fn.to-proportion-width(120, 360);
+  margin-top: 5rem;
   padding: 0 0 3rem 1rem;
   position: relative;
   .inner {
@@ -315,6 +326,8 @@ export default {
 @media (min-width: 768px) {
   .title {
     left: -4.7%;
+    position: absolute !important;
+    width: initial;
   }
   .en .title {
     left: -3.45%;

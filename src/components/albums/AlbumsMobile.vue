@@ -47,7 +47,6 @@
 export default {
   name: "AlbumsMobile",
   props: {
-    active: Boolean,
     albums: Array,
   },
 };
@@ -61,6 +60,7 @@ export default {
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
   overflow-x: scroll;
+  padding-top: 5rem;
   scroll-snap-type: x mandatory;
   width: 100vw;
 }

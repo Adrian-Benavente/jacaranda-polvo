@@ -18,7 +18,11 @@
             :class="$style.listGroup"
           >
             <dt>
-              <a :href="`${link}`" target="_blank" :class="$style.title">
+              <a
+                :href="`${link}`"
+                target="_blank"
+                :class="[$style.title, $style.listTitle]"
+              >
                 <span :class="$style.slash" aria-hidden="true">/</span>
                 {{ title }}
               </a>
@@ -159,22 +163,35 @@ export default {
   margin-top: 2em;
   min-height: 100vh;
   position: relative;
+  &:target {
+    padding-top: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    margin-top: initial;
+    &:target {
+      padding-top: initial;
+    }
+  }
 }
 .title {
+  left: 1rem;
   position: relative !important;
   width: max-content;
+}
+.listTitle {
+  left: initial;
 }
 .scrollOutContainer {
   height: 100%;
 }
 .workList {
-  align-items: center;
+  align-items: start;
   color: white;
   display: grid;
   height: 100%;
   justify-items: end;
   .list {
-    margin-top: 3rem;
+    margin-top: 4.5rem;
     text-align: start;
     width: 90%;
     .listGroup {
@@ -282,11 +299,18 @@ export default {
       width: 80%;
     }
   }
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 }
 @media (min-width: 768px) {
   .title {
     position: absolute !important;
     left: 3%;
+    width: initial;
+  }
+  .listTitle {
+    position: initial !important;
     width: initial;
   }
 }

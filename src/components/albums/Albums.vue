@@ -11,12 +11,7 @@
         :title-appears="titleAppears"
       />
       <template v-if="isMobile">
-        <AlbumsMobile
-          :active="active"
-          :albums="albumList"
-          :move-next="moveNext"
-          :move-prev="movePrev"
-        />
+        <AlbumsMobile :albums="albumList" />
       </template>
       <template v-else>
         <AlbumsDesktop
@@ -56,6 +51,9 @@ export default {
     },
   },
   methods: {
+    checkMobile() {
+      this.isMobile = window.matchMedia("(max-width: 768px)").matches;
+    },
     movePrev() {
       this.active > 1 ? this.active-- : (this.active = this.albumList.length);
     },
@@ -70,11 +68,8 @@ export default {
     },
   },
   mounted() {
-    const mobile = window.matchMedia("(max-width: 768px)").matches;
-    this.isMobile = mobile;
-    window.addEventListener("resize", () => {
-      this.isMobile = mobile;
-    });
+    this.checkMobile();
+    window.addEventListener("resize", this.checkMobile);
     this.so = ScrollOut({
       scope: this.$el,
       once: true,
@@ -100,8 +95,17 @@ export default {
   display: grid;
   margin-top: fn.to-proportion-width(30, 360);
   overflow: hidden;
-  padding-top: fn.to-proportion-width(100, 360);
   position: relative;
+
+  &:target {
+    padding-top: 2.5rem;
+  }
+
+  .title {
+    left: 1rem;
+    position: relative !important;
+    width: max-content;
+  }
 
   @media (min-width: 768px) {
     align-items: end;
@@ -110,6 +114,15 @@ export default {
     min-height: 100vh;
     padding-top: initial;
 
+    &:target {
+      padding-top: initial;
+    }
+
+    .title {
+      left: initial;
+      position: absolute !important;
+      width: initial;
+    }
     &.en {
       .title {
         left: -2.5%;

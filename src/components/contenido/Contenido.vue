@@ -110,12 +110,23 @@ export default {
   margin-top: fn.to-proportion-width(30, 360);
   overflow: hidden;
   position: relative;
+  &:target {
+    padding-top: 2.5rem;
+  }
   @media (min-width: 768px) {
     align-items: end;
     display: grid;
     margin-top: initial;
     min-height: 100vh;
+    &:target {
+      padding-top: initial;
+    }
   }
+}
+.title {
+  left: 1rem;
+  position: relative !important;
+  width: max-content;
 }
 .scrollOutContainer {
   height: 100%;
@@ -207,6 +218,8 @@ export default {
 @media (min-width: 768px) {
   .title {
     left: -5.5%;
+    position: absolute !important;
+    width: initial;
   }
   .en .title {
     left: -3.5%;

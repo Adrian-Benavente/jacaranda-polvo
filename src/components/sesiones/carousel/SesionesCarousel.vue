@@ -125,10 +125,12 @@ export default {
 .container {
   overflow: hidden;
   padding-bottom: fn.to-proportion-width(50, 1440);
+  padding-top: 5rem;
   position: relative;
   width: 100vw;
   @media (min-width: 768px) {
     overflow: initial;
+    padding-top: initial;
   }
 }
 

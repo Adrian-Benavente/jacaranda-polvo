@@ -7,10 +7,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('cine', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('cine', 'menu')"
               >{{ $t("sections.cine") }}
             </a>
           </router-link>
@@ -20,10 +20,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('tv', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('tv', 'menu')"
               >{{ $t("sections.tv") }}
             </a>
           </router-link>
@@ -33,10 +33,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('albums', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('albums', 'menu')"
               >{{ $t("sections.albums") }}
             </a>
           </router-link>
@@ -46,10 +46,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('sesiones', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('sesiones', 'menu')"
               >{{ $t("sections.sessions") }}
             </a>
           </router-link>
@@ -59,10 +59,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('teatro', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('teatro', 'menu')"
               >{{ $t("sections.theater") }}
             </a>
           </router-link>
@@ -72,10 +72,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('contenido', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('contenido', 'menu')"
             >
               {{ $t("sections.content") }}
             </a>
@@ -86,10 +86,10 @@
             <a
               :href="href"
               @click="
+                open && playSound('contacto', 'menu');
                 $router.push(href);
                 $emit('close');
               "
-              @mouseover="open && playSound('contacto', 'menu')"
               >{{ $t("sections.contact") }}
             </a>
           </router-link>

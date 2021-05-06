@@ -56,12 +56,31 @@ export default {
   background-color: black;
   margin-top: fn.to-proportion-width(30, 360);
   overflow: hidden;
-  padding-top: fn.to-proportion-width(150, 360);
   position: relative;
+
+  &:target {
+    padding-top: 2.5rem;
+  }
+
+  .title {
+    left: 1rem;
+    position: relative !important;
+    width: max-content;
+  }
+
   @media (min-width: 768px) {
     margin-top: initial;
     padding-top: initial;
     min-height: 100vh;
+
+    &:target {
+      padding-top: initial;
+    }
+
+    .title {
+      position: absolute !important;
+      width: initial;
+    }
   }
 }
 .scrollOutContainer {
@@ -71,7 +90,9 @@ export default {
 }
 @media (min-width: 768px) {
   .title {
-    left: -3.9%;
+    left: -3.9% !important;
+    position: absolute !important;
+    width: initial;
     z-index: 2;
   }
 }
