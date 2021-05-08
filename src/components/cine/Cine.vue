@@ -1,7 +1,7 @@
 <template>
   <section
     id="section-cine"
-    :class="$style.container"
+    :class="[$style.container, $style[`${$i18n.locale}`]]"
     :aria-labelledby="$t('sections.cine')"
   >
     <SectionTitle
@@ -138,6 +138,15 @@ export default {
   }
   @media (min-width: 768px) {
     height: 100vh;
+    .title {
+      left: 1.1%;
+      position: absolute;
+      top: initial;
+      width: initial;
+    }
+    &.en .title {
+      left: -0.2%;
+    }
     &:target {
       margin-top: initial;
     }
@@ -145,15 +154,9 @@ export default {
 }
 .title {
   left: 1rem;
-  position: relative !important;
+  position: relative;
   top: 5rem;
   width: max-content;
-  @media (min-width: 768px) {
-    left: 1.1% !important;
-    position: absolute !important;
-    top: initial;
-    width: initial;
-  }
 }
 .background {
   background: {
