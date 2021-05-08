@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.container">
-    <video :class="$style.video" muted autoplay data-scroll>
+    <video :class="$style.video" muted autoplay data-scroll playsinline>
       <source src="../../assets/video/video-arena.webm" type="video/webm" />
       <source src="../../assets/video/video-arena.mp4" type="video/mp4" />
       Sorry, your browser doesn't support embedded videos.
