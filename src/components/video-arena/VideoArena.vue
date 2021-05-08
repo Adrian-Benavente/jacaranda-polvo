@@ -36,4 +36,7 @@ export default {
   height: calc(100vw / 16 * 9px);
   width: 100%;
 }
+.video::-webkit-media-controls {
+  display: none !important;
+}
 </style>
