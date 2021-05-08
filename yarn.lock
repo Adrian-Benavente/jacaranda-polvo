@@ -3232,11 +3232,6 @@ dom-serializer@0:
     domelementtype "^2.0.1"
     entities "^2.0.0"
 
-dom-walk@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
-  integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
-
 domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/domain-browser/download/domain-browser-1.2.0.tgz?cache=0&sync_timestamp=1599393414660&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdomain-browser%2Fdownload%2Fdomain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
@@ -4193,14 +4188,6 @@ glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
     minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
-
-global@^4.3.2:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
-  integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
-  dependencies:
-    min-document "^2.19.0"
-    process "^0.11.10"
 
 globals@^11.1.0:
   version "11.12.0"
@@ -5516,13 +5503,6 @@ mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-2.1.0.tgz?cache=0&sync_timestamp=1596094062640&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmimic-fn%2Fdownload%2Fmimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
-
-min-document@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
-  integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
-  dependencies:
-    dom-walk "^0.1.0"
 
 mini-css-extract-plugin@^0.9.0:
   version "0.9.0"
@@ -6903,11 +6883,6 @@ regenerate@^1.4.0:
   resolved "https://registry.npm.taobao.org/regenerate/download/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
   integrity sha1-ytkq2Oa1kXc0hfvgWkhcr09Ffm8=
 
-regenerator-runtime@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
-  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
-
 regenerator-runtime@^0.13.4:
   version "0.13.7"
   resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.7.tgz?cache=0&sync_timestamp=1595456106555&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
@@ -6969,11 +6944,6 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.npm.taobao.org/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
-
-rellax@^1.12.1:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/rellax/-/rellax-1.12.1.tgz#1b433ef7ac4aa3573449a33efab391c112f6b34d"
-  integrity sha512-XBIi0CDpW5FLTujYjYBn1CIbK2CJL6TsAg/w409KghP2LucjjzBjsujXDAjyBLWgsfupfUcL5WzdnIPcGfK7XA==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
@@ -8303,15 +8273,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
-vue-carousel@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.18.0.tgz#478dfcad3abe2ee44c227020b6e60fb8484dc9f1"
-  integrity sha512-a2zxh7QJioDxNMguqcuJ7TPbfgK5bGDaAXIia7NWxPAWsEvNE4ZtHgsGu40L5Aha4uyjmNKXvleB14QAXFoKig==
-  dependencies:
-    global "^4.3.2"
-    regenerator-runtime "^0.12.1"
-    vue "^2.5.17"
-
 vue-cli-plugin-i18n@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-i18n/-/vue-cli-plugin-i18n-2.1.0.tgz#2b6b0e07c42680558bff0ac42b74bce6015f29b8"
@@ -8325,11 +8286,6 @@ vue-cli-plugin-i18n@~2.1.0:
     vue "^2.6.11"
     vue-i18n "^8.17.0"
     vue-i18n-extract "1.0.2"
-
-vue-dragscroll@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-dragscroll/-/vue-dragscroll-2.1.0.tgz#5be18df3ea41b3fab9d0593780194ed08d22418a"
-  integrity sha512-ZNcvOdrnq9w4US2RqZOfp2cCJzEz1p4xZ1w4I+xKSAFlEOrXbryLe/iclspHH57dco5QT3Azd8/KD930WzadiQ==
 
 vue-eslint-parser@^7.0.0:
   version "7.1.1"
@@ -8390,11 +8346,6 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-parallaxy@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-parallaxy/-/vue-parallaxy-1.1.1.tgz#2f6037f7bffa4b4ca71759924090eca581f5f459"
-  integrity sha512-qZiVpfyRes6Z0Q0DJnsos1WlV7eY478Ek+/s/6CkX67OGCIV5M16X4stQ1AccaEdKvSk+iw8jmfpM/5c6PEFDQ==
-
 vue-router@^3.2.0:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.1.tgz#edf3cf4907952d1e0583e079237220c5ff6eb6c9"
@@ -8421,7 +8372,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^2.5.17, vue@^2.6.11:
+vue@^2.6.11:
   version "2.6.12"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.12.tgz?cache=0&sync_timestamp=1603223959931&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha1-9evU+mvShpQD4pqJau1JBEVskSM=
