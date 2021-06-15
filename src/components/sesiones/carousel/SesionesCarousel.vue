@@ -21,7 +21,10 @@
         </button>
         <article :class="$style.details">
           <h2 :class="$style.title">
-            <button :class="$style.modalButton" @click="modalOpen = true">
+            <button
+              :class="$style.modalButton"
+              @click="openModal(session.youtube)"
+            >
               {{ session.title }}
             </button>
           </h2>
@@ -30,6 +33,7 @@
       </div>
     </div>
     <CarouselControls
+      v-if="!mobile"
       @move-next="moveRight"
       @move-prev="moveLeft"
       :style="{
@@ -60,6 +64,7 @@ export default {
     container: null,
     controlsOffset: null,
     modalOpen: false,
+    mobile: null,
     rem: null,
     slideOffset: null,
     slideWidth: null,
@@ -72,6 +77,9 @@ export default {
     },
   },
   methods: {
+    isMobile() {
+      return window.matchMedia("(max-width: 768px)").matches;
+    },
     moveLeft() {
       if (this.active > 0) {
         this.translateValue += this.slideWidth;
@@ -105,7 +113,7 @@ export default {
         this.rem +
         this.rem / 2;
 
-      if (window.matchMedia("(min-width: 768px)").matches) {
+      if (!this.isMobile()) {
         this.slideOffset = this.slideWidth / 2;
         this.controlsOffset =
           document.querySelector(`.${this.$style.controls}`).offsetWidth / 4.5;
@@ -113,8 +121,14 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(this.setInitial);
-    window.addEventListener("resize", this.setInitial);
+    this.$nextTick(() => {
+      this.setInitial();
+      this.mobile = this.isMobile();
+    });
+    window.addEventListener("resize", () => {
+      this.setInitial();
+      this.mobile = this.isMobile();
+    });
   },
 };
 </script>

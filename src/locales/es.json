@@ -190,7 +190,7 @@
     "see_album": "Ver álbum"
   },
   "cine": {
-    "about_project": "About the project",
+    "about_project": "Sobre el proyecto",
     "full_movie": "Película completa",
     "navigation": {
       "next": "Siguiente proyecto",
@@ -395,6 +395,10 @@
   },
   "global": {
     "go_up": "Go up",
+    "language": {
+      "english": "Inglés",
+      "spanish": "Español"
+    },
     "musicians": "músicos",
     "see_more": "Ver más",
     "sound": "sonido"
@@ -403,7 +407,7 @@
     "tv": "tv",
     "theater": "teatro",
     "content": "contenido",
-    "albums": "álbumes",
+    "albums": "albums",
     "contact": "contacto",
     "sessions": "sesiones",
     "cine": "cine"

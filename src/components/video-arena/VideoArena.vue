@@ -36,11 +36,4 @@ export default {
   height: calc(100vw / 16 * 9px);
   width: 100%;
 }
-.video::-webkit-media-controls {
-  display: none !important;
-}
-//.video::-webkit-media-controls-start-playback-button {
-//  display: none!important;
-//  -webkit-appearance: none;
-//}
 </style>

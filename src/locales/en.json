@@ -396,6 +396,10 @@
   },
   "global": {
     "go_up": "Ir arriba",
+    "language": {
+      "english": "English",
+      "spanish": "Spanish"
+    },
     "musicians": "musicians",
     "see_more": "See more",
     "sound": "sound"

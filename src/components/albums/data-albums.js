@@ -12,7 +12,7 @@ export const albums = {
           },
           year: 2013,
           cover: require("@/assets/img/albums/cerebro-de-uva/los-infelices/cover.jpg"),
-          artwork: ["cover.jpg", "back.jpg", "book.jpg", "inner.jpg"],
+          artwork: ["front.jpg", "back.jpg", "book.jpg", "inner.jpg"],
           spotifyId: "4VAqUyGkY7chvvX0FERxAH",
           about: this.$t("albums.projects.los_infelices.about"),
           details: [

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ArrowUp link="#aldea" />
+    <ArrowUp link="#" />
     <div :class="$style.backgroundStars">
       <Aldea />
       <Welcome />

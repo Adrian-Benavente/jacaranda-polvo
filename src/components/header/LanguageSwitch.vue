@@ -7,7 +7,7 @@
         :class="[$style.input, 'sr-only']"
         name="lang"
         type="radio"
-        aria-label="Español"
+        :aria-label="$t('global.language.spanish')"
         value="es"
         v-model="selectedLanguage"
       />ES</label
@@ -18,7 +18,7 @@
         :class="[$style.input, 'sr-only']"
         name="lang"
         type="radio"
-        aria-label="English"
+        :aria-label="$t('global.language.english')"
         value="en"
         v-model="selectedLanguage"
       />EN</label

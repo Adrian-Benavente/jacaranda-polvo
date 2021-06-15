@@ -248,6 +248,11 @@ $max-width: fn.to-proportion-width(1186, 1440);
 
 .container {
   margin-top: fn.to-proportion-width(100, 1440);
+  overflow: hidden;
+  width: 100vw;
+  @media (min-width: 768px) {
+    width: initial;
+  }
 }
 .title {
   color: white;

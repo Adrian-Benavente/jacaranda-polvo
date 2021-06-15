@@ -153,6 +153,7 @@ export default {
 .item {
   aspect-ratio: 16/9;
   display: block;
+  height: calc(100vw / 16 * 9);
   overflow: hidden;
   width: 100%;
   @media (min-width: 768px) {

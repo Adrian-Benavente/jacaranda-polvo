@@ -29,8 +29,11 @@ export default {
   mounted() {
     this.webp = document.documentElement.classList.contains("webp");
     window.addEventListener("scroll", () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
       const isHome = this.$route.name === "home";
-      this.wrap = isHome && window.scrollY >= window.innerHeight;
+      this.wrap =
+        (isHome && window.scrollY >= window.innerHeight) ||
+        (isMobile && window.scrollY >= window.innerHeight);
       this.hide =
         isHome &&
         window.pageYOffset >= window.innerHeight + window.innerHeight / 2;

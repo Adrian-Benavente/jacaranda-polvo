@@ -119,19 +119,9 @@ export default {
     }
 
     .title {
-      left: initial;
+      left: -2.5%;
       position: absolute !important;
       width: initial;
-    }
-    &.en {
-      .title {
-        left: -2.5%;
-      }
-    }
-    &.es {
-      .title {
-        left: -3.7%;
-      }
     }
   }
 }
