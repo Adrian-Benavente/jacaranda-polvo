@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
+    "audit:fix": "npx yarn-audit-fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -33,7 +34,8 @@
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
     "vue-cli-plugin-i18n": "~2.1.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "yarn-audit-fix": "^7.0.2"
   },
   "eslintConfig": {
     "root": true,
